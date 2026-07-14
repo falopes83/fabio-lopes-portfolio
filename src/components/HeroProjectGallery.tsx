@@ -29,19 +29,19 @@ export function HeroProjectGallery({ projects, imageAlt, progress, isMobile = fa
   const reveal = clamp(progress / (isMobile ? 0.76 : 0.62), 0, 1);
   const flatten = clamp((progress - (isMobile ? 0.16 : 0.24)) / (isMobile ? 0.68 : 0.56), 0, 1);
   const introLift = isMobile ? 0 : 30 * (1 - clamp(progress / 0.18, 0, 1));
-  const rotateX = (isMobile ? 72 : 78) - flatten * (isMobile ? 72 : 78);
-  const translateY = isMobile ? 40 - reveal * 30 : 22 + introLift - reveal * 39;
-  const scale = isMobile ? 0.9 + flatten * 0.16 : 0.9 + flatten * 0.22;
-  const width = isMobile ? 154 + flatten * 18 : 92 + flatten * 34;
-  const tintOpacity = 0.48 * (1 - flatten);
+  const rotateX = (isMobile ? 58 : 62) - flatten * (isMobile ? 58 : 62);
+  const translateY = isMobile ? 40 - reveal * 30 : 24 + introLift - reveal * 40;
+  const scale = isMobile ? 0.9 + flatten * 0.14 : 0.9 + flatten * 0.18;
+  const width = isMobile ? 154 + flatten * 18 : 90 + flatten * 30;
+  const tintOpacity = 0.58 - flatten * 0.18;
 
   return (
     <div
       className="absolute inset-0 min-h-[560px] overflow-hidden md:min-h-screen"
       aria-label={imageAlt}
       style={{
-        perspective: '640px',
-        perspectiveOrigin: '50% 4%',
+        perspective: '980px',
+        perspectiveOrigin: '50% 10%',
         transformStyle: 'preserve-3d',
       }}
     >
@@ -49,7 +49,7 @@ export function HeroProjectGallery({ projects, imageAlt, progress, isMobile = fa
         className="hero-project-gallery absolute left-1/2 top-0 grid -translate-x-1/2 grid-cols-3 gap-1.5 px-1.5 sm:gap-2 sm:px-2 md:gap-2.5 md:px-2.5"
         style={{
           width: `${width}vw`,
-          transform: `translate3d(-50%, ${translateY}vh, 0) rotateX(${rotateX}deg) rotateZ(-0.7deg) scale(${scale})`,
+          transform: `translate3d(-50%, ${translateY}vh, 0) rotateX(${rotateX}deg) scale(${scale})`,
           transformStyle: 'preserve-3d',
         }}
       >
@@ -73,14 +73,14 @@ export function HeroProjectGallery({ projects, imageAlt, progress, isMobile = fa
                   alt={`Projeto ${project.title}`}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]"
                   style={{
-                    filter: `saturate(${0.82 + flatten * 0.18}) contrast(${0.94 + flatten * 0.06}) brightness(${
-                      1.06 - flatten * 0.06
+                    filter: `saturate(${0.58 + flatten * 0.16}) contrast(${0.84 + flatten * 0.08}) brightness(${
+                      1.16 - flatten * 0.08
                     })`,
                   }}
                   loading={imageIndex > 1 ? 'lazy' : 'eager'}
                 />
                 <span
-                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(231,240,251,0.68)_0%,rgba(70,177,153,0.22)_42%,rgba(62,53,212,0.68)_100%)] mix-blend-screen"
+                  className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(231,240,251,0.82)_0%,rgba(255,255,255,0.48)_44%,rgba(70,177,153,0.28)_100%)] mix-blend-screen"
                   style={{ opacity: tintOpacity }}
                 />
               </figure>
