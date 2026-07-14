@@ -211,7 +211,7 @@ export function FloatingContact() {
           onClick={() => {
             setIsOpen((value) => !value);
           }}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--blue-claro)] text-[var(--blue-padrao)] shadow-soft transition hover:-translate-y-0.5 hover:bg-white dark:bg-[var(--fundo)] dark:text-white"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46b199] text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#348f7a]"
         >
           <MessageSquare size={20} />
         </button>
@@ -219,7 +219,7 @@ export function FloatingContact() {
         <a
           href="#home"
           aria-label={t.contact.top}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--blue-claro)] text-[var(--blue-padrao)] shadow-soft transition hover:-translate-y-0.5 hover:bg-white dark:bg-[var(--fundo)] dark:text-white"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46b199] text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#348f7a]"
         >
           <ArrowUp size={22} />
         </a>
