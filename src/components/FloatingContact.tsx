@@ -4,11 +4,8 @@ import { useI18n } from '../i18n';
 import { openContactFormEvent } from '../utils/contact';
 
 const whatsappUrl = 'https://wa.me/5511999981734';
-const formSubmitEndpoint = 'https://formsubmit.co/ajax/falopes.br@gmail.com';
-const minimumSubmitDelayMs = 3500;
-const submitTimeoutMs = 8000;
 
-type SubmitStatus = 'idle' | 'sending' | 'success' | 'fallback' | 'error';
+type SubmitStatus = 'idle' | 'sending' | 'success' | 'fallback';
 type FeedbackType = 'success' | 'error' | 'info';
 
 type FieldProps = {
@@ -113,10 +110,6 @@ function getFormValue(data: FormData, key: string) {
   return typeof value === 'string' ? value.trim() : '';
 }
 
-function wait(ms: number) {
-  return new Promise((resolve) => window.setTimeout(resolve, ms));
-}
-
 function buildWhatsAppUrl(data: FormData) {
   const name = getFormValue(data, 'name');
   const email = getFormValue(data, 'email');
@@ -137,14 +130,12 @@ function buildWhatsAppUrl(data: FormData) {
 
 export function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false);
-  const [formOpenedAt, setFormOpenedAt] = useState(0);
   const [status, setStatus] = useState<SubmitStatus>('idle');
   const { t } = useI18n();
 
   useEffect(() => {
     function handleOpenContactForm() {
       setIsOpen(true);
-      setFormOpenedAt(Date.now());
       setStatus('idle');
     }
 
@@ -160,9 +151,6 @@ export function FloatingContact() {
       const form = event.currentTarget;
       const data = new FormData(form);
       const honey = data.get('_honey');
-      const startedAt = Number(data.get('_form_started_at'));
-
-      data.delete('_form_started_at');
 
       if (typeof honey === 'string' && honey.trim() !== '') {
         form.reset();
@@ -170,32 +158,11 @@ export function FloatingContact() {
         return;
       }
 
-      const submitDelay = Number.isFinite(startedAt) ? Date.now() - startedAt : minimumSubmitDelayMs;
-      if (submitDelay < minimumSubmitDelayMs) {
-        await wait(minimumSubmitDelayMs - submitDelay);
-      }
-
-      const controller = new AbortController();
-      const timeout = window.setTimeout(() => controller.abort(), submitTimeoutMs);
-      const response = await fetch(formSubmitEndpoint, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: data,
-        signal: controller.signal,
-      }).finally(() => window.clearTimeout(timeout));
-
-      if (!response.ok) {
-        throw new Error('FormSubmit request failed');
-      }
-
-      form.reset();
-      setStatus('success');
-    } catch (error) {
-      console.warn('Contact form submission failed. Opening WhatsApp fallback.', error);
-      const form = event.currentTarget;
-      const data = new FormData(form);
       window.location.href = buildWhatsAppUrl(data);
       setStatus('fallback');
+    } catch (error) {
+      console.warn('Could not open WhatsApp contact flow.', error);
+      setStatus('idle');
     }
   }
 
@@ -222,7 +189,6 @@ export function FloatingContact() {
             <input type="hidden" name="_subject" value={t.contact.subject} />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_blacklist" value="casino, crypto, forex, investment, loan, seo, viagra, backlink" />
-            <input type="hidden" name="_form_started_at" value={formOpenedAt} />
             <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
             <FloatingField id="name" label={t.contact.name} autoComplete="name" maxLength={120} required />
@@ -242,7 +208,6 @@ export function FloatingContact() {
 
           {status === 'success' && <FeedbackCard type="success" title={t.contact.successTitle} text={t.contact.successText} />}
           {status === 'fallback' && <FeedbackCard type="info" title={t.contact.fallbackTitle} text={t.contact.fallbackText} />}
-          {status === 'error' && <FeedbackCard type="error" title={t.contact.errorTitle} text={t.contact.errorText} />}
           {status === 'idle' && <FeedbackCard type="info" title={t.contact.infoTitle} text={t.contact.infoText} />}
         </div>
       )}
@@ -252,13 +217,7 @@ export function FloatingContact() {
           type="button"
           aria-label={t.contact.open}
           onClick={() => {
-            setIsOpen((value) => {
-              const nextValue = !value;
-              if (nextValue) {
-                setFormOpenedAt(Date.now());
-              }
-              return nextValue;
-            });
+            setIsOpen((value) => !value);
           }}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--blue-claro)] text-[var(--blue-padrao)] shadow-soft transition hover:-translate-y-0.5 hover:bg-white dark:bg-[var(--fundo)] dark:text-white"
         >

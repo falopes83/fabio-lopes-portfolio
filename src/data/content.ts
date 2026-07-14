@@ -242,7 +242,7 @@ export const dictionary = {
       errorTitle: 'Não foi possível enviar sua mensagem.',
       errorText: 'Tente novamente daqui a pouco.',
       infoTitle: 'Informação disponível.',
-      infoText: 'As informações serão enviadas por e-mail.',
+      infoText: 'As informações serão preparadas para envio pelo WhatsApp.',
     },
   },
   en: {
@@ -461,7 +461,7 @@ export const dictionary = {
       errorTitle: 'Your message could not be sent.',
       errorText: 'Please try again in a moment.',
       infoTitle: 'Information available.',
-      infoText: 'The information will be sent by e-mail.',
+      infoText: 'The information will be prepared for WhatsApp.',
     },
   },
   es: {
@@ -680,7 +680,7 @@ export const dictionary = {
       errorTitle: 'No fue posible enviar tu mensaje.',
       errorText: 'Inténtalo nuevamente en unos instantes.',
       infoTitle: 'Información disponible.',
-      infoText: 'La información será enviada por e-mail.',
+      infoText: 'La información se preparará para enviarla por WhatsApp.',
     },
   },
 };
