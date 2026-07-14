@@ -4,10 +4,9 @@ import { useI18n } from '../i18n';
 import { openContactFormEvent } from '../utils/contact';
 
 const whatsappUrl = 'https://wa.me/5511999981734';
-const contactEmail = 'falopes.br@gmail.com';
 const formSubmitEndpoint = 'https://formsubmit.co/ajax/falopes.br@gmail.com';
 const minimumSubmitDelayMs = 3500;
-const submitTimeoutMs = 12000;
+const submitTimeoutMs = 8000;
 
 type SubmitStatus = 'idle' | 'sending' | 'success' | 'fallback' | 'error';
 type FeedbackType = 'success' | 'error' | 'info';
@@ -118,14 +117,22 @@ function wait(ms: number) {
   return new Promise((resolve) => window.setTimeout(resolve, ms));
 }
 
-function buildMailtoUrl(data: FormData, subject: string) {
+function buildWhatsAppUrl(data: FormData) {
   const name = getFormValue(data, 'name');
   const email = getFormValue(data, 'email');
   const phone = getFormValue(data, 'phone');
   const message = getFormValue(data, 'message');
-  const body = [`Nome: ${name}`, `E-mail: ${email}`, `Telefone: ${phone}`, '', message].join('\n');
+  const text = [
+    'Olá, Fabio. Vim pelo site e gostaria de conversar.',
+    '',
+    `Nome: ${name}`,
+    `E-mail: ${email}`,
+    `Telefone: ${phone}`,
+    '',
+    message,
+  ].join('\n');
 
-  return `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `${whatsappUrl}?text=${encodeURIComponent(text)}`;
 }
 
 export function FloatingContact() {
@@ -184,10 +191,10 @@ export function FloatingContact() {
       form.reset();
       setStatus('success');
     } catch (error) {
-      console.warn('Contact form submission failed. Opening e-mail fallback.', error);
+      console.warn('Contact form submission failed. Opening WhatsApp fallback.', error);
       const form = event.currentTarget;
       const data = new FormData(form);
-      window.location.href = buildMailtoUrl(data, t.contact.subject);
+      window.location.href = buildWhatsAppUrl(data);
       setStatus('fallback');
     }
   }
