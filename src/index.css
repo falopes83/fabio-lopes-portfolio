@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Extrabold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --blue-escuro: #081f33;
+  --blue-padrao: #14334f;
+  --blue-claro: #e7f0fb;
+  --tradewind-escuro: #317c6a;
+  --tradewind-padrao: #46b199;
+  --tradewind-claro: #a5dfd1;
+  --blue-background: #6795ca;
+  --blue-border: #7da9db;
+  --surface-hover: rgba(103, 149, 202, 8%);
+  --tradewind-background: #4eb8a4;
+  --tradewind-border: #8adbcb;
+  --tradewind-hover: rgba(78, 184, 164, 12%);
+  --fundo: #0b1120;
+  --cinza-escuro: #555e68;
+  --cinza-medio: #9da6b2;
+  --cinza-claro: #e5e6ea;
+  --off-white: #f8f9fb;
+  --branco: #ffffff;
+  --linear-light: linear-gradient(0deg, rgba(185, 206, 233, 1) 0%, rgba(248, 249, 251, 1) 34%);
+  --linear-darkblue: linear-gradient(0deg, #081f33 0%, #14334f 100%);
+  --linear-lightblue: linear-gradient(0deg, #e7f0fb 0%, #ffffff 100%);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Cabinet Grotesk', Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.02em;
+    color: inherit;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1.12;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.16;
+  }
+
+  h4 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  small {
+    font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .hero-project-gallery {
+    transform-origin: center top;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  .display-xl {
+    font-family: 'Cabinet Grotesk', Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .display-l {
+    font-family: 'Cabinet Grotesk', Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 1.04;
+    letter-spacing: 0.02em;
+  }
+
+  .display-m {
+    font-family: 'Cabinet Grotesk', Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: 0.02em;
+  }
+
+  .caption {
+    font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-project-gallery {
+    transform: translate3d(-50%, -4vh, 0) rotateX(0deg) scale(1.04) !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--off-white);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--tradewind-padrao);
+  color: var(--blue-escuro);
+}
