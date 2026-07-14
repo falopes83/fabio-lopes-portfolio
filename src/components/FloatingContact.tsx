@@ -97,14 +97,6 @@ function FloatingTextarea({ label }: { label: string }) {
   );
 }
 
-function WhatsAppIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
-      <path d="M12.04 2C6.54 2 2.07 6.45 2.07 11.92c0 1.74.46 3.43 1.33 4.92L2 22l5.29-1.38a10.04 10.04 0 0 0 4.75 1.2h.01c5.5 0 9.97-4.45 9.97-9.92C22.02 6.44 17.54 2 12.04 2Zm0 18.13h-.01a8.3 8.3 0 0 1-4.22-1.15l-.3-.18-3.14.82.84-3.05-.2-.31a8.17 8.17 0 0 1-1.26-4.34c0-4.53 3.72-8.22 8.3-8.22 2.22 0 4.3.86 5.87 2.41a8.15 8.15 0 0 1 2.43 5.8c0 4.53-3.73 8.22-8.31 8.22Zm4.55-6.16c-.25-.12-1.48-.73-1.71-.81-.23-.08-.4-.12-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.12-1.06-.39-2.02-1.24-.75-.66-1.25-1.48-1.4-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.3.37-.45.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.66 4.25 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z" />
-    </svg>
-  );
-}
-
 function getFormValue(data: FormData, key: string) {
   const value = data.get(key);
   return typeof value === 'string' ? value.trim() : '';
@@ -223,16 +215,6 @@ export function FloatingContact() {
         >
           <MessageSquare size={20} />
         </button>
-
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={t.contact.whatsapp}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--tradewind-padrao)] text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[var(--tradewind-escuro)]"
-        >
-          <WhatsAppIcon />
-        </a>
 
         <a
           href="#home"
