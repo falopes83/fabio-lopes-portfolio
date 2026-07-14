@@ -150,7 +150,7 @@ export function FloatingContact() {
         return;
       }
 
-      window.location.href = buildWhatsAppUrl(data);
+      window.open(buildWhatsAppUrl(data), '_blank', 'noopener,noreferrer');
       setStatus('fallback');
     } catch (error) {
       console.warn('Could not open WhatsApp contact flow.', error);
