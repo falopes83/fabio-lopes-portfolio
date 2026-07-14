@@ -4,10 +4,12 @@ import { useI18n } from '../i18n';
 import { openContactFormEvent } from '../utils/contact';
 
 const whatsappUrl = 'https://wa.me/5511999981734';
+const contactEmail = 'falopes.br@gmail.com';
 const formSubmitEndpoint = 'https://formsubmit.co/ajax/falopes.br@gmail.com';
 const minimumSubmitDelayMs = 3500;
+const submitTimeoutMs = 12000;
 
-type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
+type SubmitStatus = 'idle' | 'sending' | 'success' | 'fallback' | 'error';
 type FeedbackType = 'success' | 'error' | 'info';
 
 type FieldProps = {
@@ -98,6 +100,25 @@ function WhatsAppIcon() {
   );
 }
 
+function getFormValue(data: FormData, key: string) {
+  const value = data.get(key);
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function wait(ms: number) {
+  return new Promise((resolve) => window.setTimeout(resolve, ms));
+}
+
+function buildMailtoUrl(data: FormData, subject: string) {
+  const name = getFormValue(data, 'name');
+  const email = getFormValue(data, 'email');
+  const phone = getFormValue(data, 'phone');
+  const message = getFormValue(data, 'message');
+  const body = [`Nome: ${name}`, `E-mail: ${email}`, `Telefone: ${phone}`, '', message].join('\n');
+
+  return `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false);
   const [formOpenedAt, setFormOpenedAt] = useState(0);
@@ -133,15 +154,19 @@ export function FloatingContact() {
         return;
       }
 
-      if (!Number.isFinite(startedAt) || Date.now() - startedAt < minimumSubmitDelayMs) {
-        throw new Error('Form submitted too quickly');
+      const submitDelay = Number.isFinite(startedAt) ? Date.now() - startedAt : minimumSubmitDelayMs;
+      if (submitDelay < minimumSubmitDelayMs) {
+        await wait(minimumSubmitDelayMs - submitDelay);
       }
 
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), submitTimeoutMs);
       const response = await fetch(formSubmitEndpoint, {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: data,
-      });
+        signal: controller.signal,
+      }).finally(() => window.clearTimeout(timeout));
 
       if (!response.ok) {
         throw new Error('FormSubmit request failed');
@@ -149,8 +174,12 @@ export function FloatingContact() {
 
       form.reset();
       setStatus('success');
-    } catch {
-      setStatus('error');
+    } catch (error) {
+      console.warn('Contact form submission failed. Opening e-mail fallback.', error);
+      const form = event.currentTarget;
+      const data = new FormData(form);
+      window.location.href = buildMailtoUrl(data, t.contact.subject);
+      setStatus('fallback');
     }
   }
 
@@ -196,6 +225,7 @@ export function FloatingContact() {
           </form>
 
           {status === 'success' && <FeedbackCard type="success" title={t.contact.successTitle} text={t.contact.successText} />}
+          {status === 'fallback' && <FeedbackCard type="info" title={t.contact.fallbackTitle} text={t.contact.fallbackText} />}
           {status === 'error' && <FeedbackCard type="error" title={t.contact.errorTitle} text={t.contact.errorText} />}
           {status === 'idle' && <FeedbackCard type="info" title={t.contact.infoTitle} text={t.contact.infoText} />}
         </div>
