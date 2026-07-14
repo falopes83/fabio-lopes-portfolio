@@ -23,7 +23,7 @@ export function ProjectsSection() {
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-4xl text-center">
           <p className="font-display text-xl font-extrabold tracking-[0.02em] text-white">{t.projectsIntro.eyebrow}</p>
-          <h2 className="display-m mt-6 text-[var(--tradewind-claro)]">{t.projectsIntro.title}</h2>
+          <h2 className="display-m mt-6 text-white">{t.projectsIntro.title}</h2>
           <p className="mx-auto mt-6 max-w-3xl font-display text-2xl font-bold leading-tight tracking-[0.02em] text-white">
             {t.projectsIntro.line1}
             <br />
