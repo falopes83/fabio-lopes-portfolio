@@ -87,7 +87,12 @@ export function Hero() {
 
           <div className="mt-6 flex w-full max-w-[13.5rem] flex-col justify-center gap-3 md:mt-[30px] md:w-auto md:max-w-none md:flex-row md:flex-wrap">
             <Button href="#projetos" className="w-full md:w-auto">{t.actions.viewProjects}</Button>
-            <Button type="button" onClick={openContactForm} variant="outlineSecondary" className="w-full bg-white md:w-auto">
+            <Button
+              type="button"
+              onClick={openContactForm}
+              variant="outlineSecondary"
+              className="w-full bg-white md:w-auto dark:!bg-[var(--blue-escuro)] dark:hover:!bg-[rgba(103,149,202,0.16)]"
+            >
               {t.actions.schedule}
             </Button>
           </div>
