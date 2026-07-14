@@ -47,6 +47,15 @@ function FeedbackCard({ type, title, text }: { type: FeedbackType; title: string
   );
 }
 
+function ButtonSpinner() {
+  return (
+    <span
+      className="h-4 w-4 animate-spin rounded-full border-2 border-white/35 border-t-white"
+      aria-hidden="true"
+    />
+  );
+}
+
 function FloatingField({ id, label, type = 'text', required = false, autoComplete, maxLength }: FieldProps) {
   return (
     <div className="relative">
@@ -220,7 +229,7 @@ export function FloatingContact() {
               className="mt-1 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[var(--tradewind-padrao)] font-display text-base font-semibold text-white transition hover:bg-[var(--tradewind-escuro)] disabled:cursor-wait disabled:opacity-70 dark:bg-[var(--tradewind-background)] dark:hover:bg-[var(--tradewind-border)]"
             >
               {status === 'sending' ? t.contact.sending : t.contact.submit}
-              <Send size={16} />
+              {status === 'sending' ? <ButtonSpinner /> : <Send size={16} />}
             </button>
           </form>
 
