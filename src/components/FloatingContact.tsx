@@ -158,6 +158,15 @@ export function FloatingContact() {
     }
   }
 
+  function handleScrollToTop() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
+  }
+
   return (
     <div className="fixed right-5 top-1/2 z-[60] -translate-y-1/2">
       {isOpen && (
@@ -175,7 +184,7 @@ export function FloatingContact() {
           </button>
 
           <h2 className="font-display text-2xl font-extrabold text-[var(--blue-escuro)] dark:text-white">{t.contact.title}</h2>
-          <p className="mt-4 font-sans text-sm leading-6 text-[var(--cinza-escuro)] dark:text-white/70">{t.contact.text}</p>
+          <p className="mt-4 font-sans text-sm leading-6 text-[var(--cinza-escuro)] dark:text-white">{t.contact.text}</p>
 
           <form onSubmit={handleSubmit} className="mt-5 grid gap-3">
             <input type="hidden" name="_subject" value={t.contact.subject} />
@@ -216,13 +225,14 @@ export function FloatingContact() {
           <MessageSquare size={20} />
         </button>
 
-        <a
-          href="#home"
+        <button
+          type="button"
           aria-label={t.contact.top}
+          onClick={handleScrollToTop}
           className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46b199] text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#348f7a] dark:bg-[#6795ca] dark:hover:bg-[#7da9db]"
         >
           <ArrowUp size={22} />
-        </a>
+        </button>
       </div>
     </div>
   );

@@ -173,7 +173,7 @@ export const dictionary = {
       portraitAlt: 'Foto de Fabio Lopes',
       timelineTitle: 'Experiência construída na prática',
       lessonsTitle: 'O que essa jornada me ensinou',
-      areasTitle: 'Áreas de atuação',
+      areasTitle: 'Skills',
     },
     timeline: [
       ['2003', 'Design Gráfico', 'Marcas, comunicação visual e materiais impressos.'],
@@ -215,6 +215,72 @@ export const dictionary = {
       'Branding',
       'Estratégia de Produto',
       'Marketing Digital',
+    ],
+    toolCapsules: [
+      {
+        label: 'Pesquisa Contextual',
+        icons: ['/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Mapa de Afinidade',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Síntese de Insights',
+        icons: ['/assets/icons/miro.svg'],
+      },
+      {
+        label: 'Ferramentas de Design',
+        icons: ['/assets/icons/figma.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Ferramentas de IA',
+        icons: ['/assets/icons/chatgpt.svg', '/assets/icons/claude.svg', '/assets/icons/adobe-firefly.png'],
+      },
+      {
+        label: 'Adobe Creative Suite',
+        icons: ['/assets/icons/adobe-illustrator.svg', '/assets/icons/adobe-ps.svg', '/assets/icons/adobe-premiere.svg'],
+      },
+      {
+        label: 'Ferramentas de Colaboração',
+        icons: ['/assets/icons/miro.svg', '/assets/icons/notion.svg', '/assets/icons/jira.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Product Design',
+        icons: ['/assets/icons/figma.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Prototipação',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Design Systems',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Design Responsivo',
+        icons: ['/assets/icons/html-5.svg', '/assets/icons/css-3.svg'],
+      },
+      {
+        label: 'HTML5',
+        icons: ['/assets/icons/html-5.svg'],
+      },
+      {
+        label: 'CSS3',
+        icons: ['/assets/icons/css-3.svg'],
+      },
+      {
+        label: 'React',
+        icons: ['/assets/icons/react.svg'],
+      },
+      {
+        label: 'GitHub',
+        icons: ['/assets/icons/github.svg'],
+      },
+      {
+        label: 'WordPress',
+        icons: ['/assets/icons/wordpress.svg'],
+      },
     ],
     footer: {
       headline: 'Grandes produtos não nascem de telas.',
@@ -391,7 +457,7 @@ export const dictionary = {
       portraitAlt: 'Photo of Fabio Lopes',
       timelineTitle: 'Experience built in practice',
       lessonsTitle: 'What this journey taught me',
-      areasTitle: 'Areas of expertise',
+      areasTitle: 'Skills',
     },
     timeline: [
       ['2003', 'Graphic Design', 'Brands, visual communication and printed materials.'],
@@ -433,6 +499,72 @@ export const dictionary = {
       'Branding',
       'Product Strategy',
       'Digital Marketing',
+    ],
+    toolCapsules: [
+      {
+        label: 'Contextual Inquiry',
+        icons: ['/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Affinity Mapping',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Insight Synthesis',
+        icons: ['/assets/icons/miro.svg'],
+      },
+      {
+        label: 'Design Tools',
+        icons: ['/assets/icons/figma.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'AI Tools',
+        icons: ['/assets/icons/chatgpt.svg', '/assets/icons/claude.svg', '/assets/icons/adobe-firefly.png'],
+      },
+      {
+        label: 'Adobe Creative Suite',
+        icons: ['/assets/icons/adobe-illustrator.svg', '/assets/icons/adobe-ps.svg', '/assets/icons/adobe-premiere.svg'],
+      },
+      {
+        label: 'Collaboration Tools',
+        icons: ['/assets/icons/miro.svg', '/assets/icons/notion.svg', '/assets/icons/jira.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Product Design',
+        icons: ['/assets/icons/figma.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Prototyping',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Design Systems',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Responsive Design',
+        icons: ['/assets/icons/html-5.svg', '/assets/icons/css-3.svg'],
+      },
+      {
+        label: 'HTML5',
+        icons: ['/assets/icons/html-5.svg'],
+      },
+      {
+        label: 'CSS3',
+        icons: ['/assets/icons/css-3.svg'],
+      },
+      {
+        label: 'React',
+        icons: ['/assets/icons/react.svg'],
+      },
+      {
+        label: 'GitHub',
+        icons: ['/assets/icons/github.svg'],
+      },
+      {
+        label: 'WordPress',
+        icons: ['/assets/icons/wordpress.svg'],
+      },
     ],
     footer: {
       headline: 'Great products are not born from screens.',
@@ -609,7 +741,7 @@ export const dictionary = {
       portraitAlt: 'Foto de Fabio Lopes',
       timelineTitle: 'Experiencia construida en la práctica',
       lessonsTitle: 'Lo que este recorrido me enseñó',
-      areasTitle: 'Áreas de actuación',
+      areasTitle: 'Skills',
     },
     timeline: [
       ['2003', 'Diseño Gráfico', 'Marcas, comunicación visual y materiales impresos.'],
@@ -651,6 +783,72 @@ export const dictionary = {
       'Branding',
       'Estrategia de Producto',
       'Marketing Digital',
+    ],
+    toolCapsules: [
+      {
+        label: 'Investigación Contextual',
+        icons: ['/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Mapeo de Afinidad',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Síntesis de Insights',
+        icons: ['/assets/icons/miro.svg'],
+      },
+      {
+        label: 'Herramientas de Diseño',
+        icons: ['/assets/icons/figma.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Herramientas de IA',
+        icons: ['/assets/icons/chatgpt.svg', '/assets/icons/claude.svg', '/assets/icons/adobe-firefly.png'],
+      },
+      {
+        label: 'Adobe Creative Suite',
+        icons: ['/assets/icons/adobe-illustrator.svg', '/assets/icons/adobe-ps.svg', '/assets/icons/adobe-premiere.svg'],
+      },
+      {
+        label: 'Herramientas de Colaboración',
+        icons: ['/assets/icons/miro.svg', '/assets/icons/notion.svg', '/assets/icons/jira.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Product Design',
+        icons: ['/assets/icons/figma.svg', '/assets/icons/figjam.png'],
+      },
+      {
+        label: 'Prototipado',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Design Systems',
+        icons: ['/assets/icons/figma.svg'],
+      },
+      {
+        label: 'Diseño Responsivo',
+        icons: ['/assets/icons/html-5.svg', '/assets/icons/css-3.svg'],
+      },
+      {
+        label: 'HTML5',
+        icons: ['/assets/icons/html-5.svg'],
+      },
+      {
+        label: 'CSS3',
+        icons: ['/assets/icons/css-3.svg'],
+      },
+      {
+        label: 'React',
+        icons: ['/assets/icons/react.svg'],
+      },
+      {
+        label: 'GitHub',
+        icons: ['/assets/icons/github.svg'],
+      },
+      {
+        label: 'WordPress',
+        icons: ['/assets/icons/wordpress.svg'],
+      },
     ],
     footer: {
       headline: 'Los grandes productos no nacen de pantallas.',

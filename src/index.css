@@ -133,6 +133,14 @@
     letter-spacing: 0.02em;
   }
 
+  .about-display {
+    font-family: 'Cabinet Grotesk', Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 11vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: 0.02em;
+  }
+
   .display-l {
     font-family: 'Cabinet Grotesk', Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
     font-weight: 800;
@@ -157,7 +165,26 @@
   }
 }
 
+@media (min-width: 768px) {
+  .about-display {
+    font-size: 64px;
+    line-height: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .app-remaza-hero-scroll {
+    height: 100svh !important;
+  }
+
+  .app-remaza-case-content {
+    margin-top: 0 !important;
+  }
+
   .hero-project-gallery {
     transform: translate3d(-50%, -4vh, 0) rotateX(0deg) scale(1.04) !important;
   }

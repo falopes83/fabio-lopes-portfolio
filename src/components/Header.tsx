@@ -248,7 +248,7 @@ export function Header() {
                         key={project.title}
                         href={`/projetos/${projectSlugs[index]}`}
                         onClick={() => setIsOpen(false)}
-                        className="py-1 font-display text-xs font-semibold text-[var(--cinza-escuro)] transition-colors duration-300 hover:text-teal dark:text-white/70 dark:hover:text-[var(--tradewind-border)]"
+                        className="py-1 font-display text-xs font-semibold text-[var(--cinza-escuro)] transition-colors duration-300 hover:text-teal dark:text-white dark:hover:text-[var(--tradewind-border)]"
                       >
                         {project.title}
                       </a>
