@@ -165,8 +165,8 @@ export const dictionary = {
     ],
     about: {
       eyebrow: 'Sobre',
-      titleLine1: 'Mais de 20 anos aprendendo',
-      titleLine2: 'a resolver problemas',
+      titleLine1: 'Conectando design, tecnologia',
+      titleLine2: 'e estratégia de produto',
       textStart:
         'Desde 2003, participo da criação de marcas, sites, plataformas, sistemas corporativos e produtos digitais. Com o tempo, o foco deixou de ser apenas desenhar interfaces e passou a ser ',
       textStrong: 'compreender problemas, conectar pessoas e transformar objetivos de negócio em experiências mais claras.',
@@ -733,8 +733,8 @@ export const dictionary = {
     ],
     about: {
       eyebrow: 'Sobre mí',
-      titleLine1: 'Más de 20 años aprendiendo',
-      titleLine2: 'a resolver problemas',
+      titleLine1: 'Conectando diseño, tecnología',
+      titleLine2: 'y estrategia de producto',
       textStart:
         'Desde 2003, participo en la creación de marcas, sitios, plataformas, sistemas corporativos y productos digitales. Con el tiempo, el foco dejó de ser solo diseñar interfaces y pasó a ser ',
       textStrong: 'comprender problemas, conectar personas y transformar objetivos de negocio en experiencias más claras.',

@@ -125,6 +125,68 @@
     will-change: transform;
   }
 
+  .case-lightbox-in {
+    animation: caseLightboxFadeIn 180ms ease-out both;
+  }
+
+  .case-lightbox-out {
+    animation: caseLightboxFadeOut 180ms ease-in both;
+  }
+
+  .case-lightbox-figure-in {
+    animation: caseLightboxZoomIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    transform-origin: center;
+  }
+
+  .case-lightbox-figure-out {
+    animation: caseLightboxZoomOut 180ms ease-in both;
+    transform-origin: center;
+  }
+
+  @keyframes caseLightboxFadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes caseLightboxFadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes caseLightboxZoomIn {
+    from {
+      opacity: 0;
+      transform: translateY(14px) scale(0.94);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes caseLightboxZoomOut {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(10px) scale(0.96);
+    }
+  }
+
   .display-xl {
     font-family: 'Cabinet Grotesk', Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
     font-weight: 800;
@@ -187,6 +249,13 @@
 
   .hero-project-gallery {
     transform: translate3d(-50%, -4vh, 0) rotateX(0deg) scale(1.04) !important;
+  }
+
+  .case-lightbox-in,
+  .case-lightbox-out,
+  .case-lightbox-figure-in,
+  .case-lightbox-figure-out {
+    animation: none !important;
   }
 }
 

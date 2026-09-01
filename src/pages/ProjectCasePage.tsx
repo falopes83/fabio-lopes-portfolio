@@ -2,16 +2,27 @@ import {
   ArrowLeft,
   BadgeDollarSign,
   CalendarDays,
+  Component,
   FileText,
   GraduationCap,
   Headset,
+  MousePointer2,
+  Network,
+  Palette,
   Receipt,
+  Route,
+  Search,
   Smartphone,
   UserRoundCog,
   Users,
   WalletCards,
+  Waypoints,
+  X,
+  ZoomIn,
+  type LucideIcon,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { projectSlugs } from '../data/content';
 import { useI18n } from '../i18n';
 import { Button } from '../components/Button';
@@ -33,58 +44,56 @@ const appRemazaSections = [
   {
     id: 'desafio',
     label: 'Desafio',
-    title: 'Transformar complexidade em uma jornada mais clara.',
-    intro: 'Conteúdo introdutório em desenvolvimento para apresentar o problema central e as principais frentes de investigação.',
+    title: 'Simplificar um produto complexo sem perder profundidade.',
+    intro:
+      'O aplicativo concentrava diversas funcionalidades importantes para o consorciado, como pagamentos, assembleias, ofertas de lance, documentos e informações da cota. O desafio era organizar esse ecossistema em uma experiência clara, intuitiva e confiável, respeitando diferentes níveis de familiaridade com tecnologia e termos financeiros.',
+    complement:
+      'Além do redesenho visual, foi necessário revisar a arquitetura da informação, reorganizar fluxos e estabelecer uma base consistente para a evolução do produto.',
     visual: 'stacked',
   },
   {
     id: 'atuacao',
     label: 'Atuação',
-    title: 'Da estratégia ao desenho das principais decisões.',
-    intro: 'Conteúdo introdutório em desenvolvimento para detalhar responsabilidades, colaboração e entregáveis do projeto.',
-    visual: 'split',
+    title: 'Do entendimento do problema à construção da solução.',
+    intro:
+      'Minha participação envolveu todas as etapas do desenvolvimento da experiência do produto, desde o entendimento das necessidades do negócio e dos usuários até a definição da interface final. O trabalho combinou estratégia, arquitetura da informação e design de interface para construir uma experiência consistente, escalável e preparada para evoluir junto ao aplicativo.',
+    visual: 'scope',
   },
   {
     id: 'user-experience',
     label: 'User Experience',
-    title: 'Organizar fluxos para reduzir atrito na experiência.',
-    intro: 'Conteúdo introdutório em desenvolvimento para narrar jornadas, arquitetura de informação e critérios de usabilidade.',
-    visual: 'wide',
+    title: 'Projetando jornadas completas, não apenas interfaces.',
+    intro:
+      'Cada funcionalidade foi desenhada como um fluxo completo, considerando diferentes estados da experiência, validações e cenários de uso. A preocupação não era apenas criar telas visualmente consistentes, mas garantir que cada etapa conduzisse o usuário de forma clara, reduzindo dúvidas e facilitando a conclusão das tarefas.',
+    visual: 'login-flow',
   },
   {
     id: 'design-system',
     label: 'Design System',
-    title: 'Consistência visual para sustentar evolução.',
-    intro: 'Conteúdo introdutório em desenvolvimento para explicar componentes, padrões de interface e alinhamento visual.',
+    title: 'Uma base consistente para um produto em constante evolução.',
+    intro:
+      'O crescimento do aplicativo exigia uma base visual consistente para manter a experiência previsível e facilitar futuras evoluções. O Design System reuniu componentes reutilizáveis, padrões de interface, estilos e regras de comportamento, garantindo mais consistência entre as telas e maior agilidade durante o processo de prototipação.',
     visual: 'mosaic',
-  },
-  {
-    id: 'mapeando-jornadas',
-    label: 'Mapeando jornadas',
-    title: 'Enxergar o caminho antes de redesenhar a interface.',
-    intro: 'Conteúdo introdutório em desenvolvimento para apresentar mapas, fluxos e pontos de decisão ao longo da jornada.',
-    visual: 'stacked',
-  },
-  {
-    id: 'prototipacao',
-    label: 'Prototipação',
-    title: 'Tornar ideias navegáveis para testar decisões.',
-    intro: 'Conteúdo introdutório em desenvolvimento para organizar protótipos, variações de tela e refinamentos de interação.',
-    visual: 'split',
   },
   {
     id: 'aprendizados',
     label: 'Aprendizados',
-    title: 'O que o processo revelou sobre produto e experiência.',
-    intro: 'Conteúdo introdutório em desenvolvimento para registrar aprendizados do projeto sem antecipar resultados definitivos.',
-    visual: 'wide',
+    title: 'Cada decisão de design impacta toda a experiência.',
+    intro:
+      'Ao longo do projeto, diversos gargalos da primeira versão foram identificados em conjunto com a Product Owner. Em vez de tratar cada problema de forma isolada, optamos por estruturar uma solução mais ampla, capaz de orientar a evolução do produto como um todo.',
+    complement:
+      'Essa abordagem permitiu que melhorias fossem incorporadas gradualmente nas builds de desenvolvimento, enquanto uma nova versão do aplicativo era planejada com uma experiência mais consistente, preparada para atender às necessidades atuais e futuras do negócio.',
+    visual: 'none',
   },
   {
     id: 'conclusao',
     label: 'Conclusão',
-    title: 'Uma base mais clara para evoluir a Área do Cliente.',
-    intro: 'Conteúdo introdutório em desenvolvimento para fechar a narrativa e indicar próximos desdobramentos do case.',
-    visual: 'mosaic',
+    title: 'Construindo produtos preparados para evoluir.',
+    intro:
+      'Este projeto demonstrou que boas experiências digitais são resultado de decisões estruturadas, e não apenas de interfaces bem desenhadas. Ao organizar funcionalidades, definir padrões e planejar a evolução do produto, foi possível criar uma base sólida para as próximas etapas do APP Remaza.',
+    complement:
+      'É esse olhar estratégico, que conecta negócio, experiência e tecnologia, que busco levar para cada projeto em que participo.',
+    visual: 'none',
   },
 ];
 
@@ -134,7 +143,65 @@ const appRemazaNeeds = [
   },
 ];
 
-function ContextList({ title, items }: { title: string; items: typeof appRemazaPrimaryAudience }) {
+const appRemazaScope = [
+  {
+    icon: Search,
+    text: 'Pesquisa e alinhamento com stakeholders',
+  },
+  {
+    icon: Users,
+    text: 'Levantamento das necessidades dos usuários',
+  },
+  {
+    icon: Network,
+    text: 'Arquitetura da informação',
+  },
+  {
+    icon: Route,
+    text: 'Definição dos fluxos de navegação',
+  },
+  {
+    icon: MousePointer2,
+    text: 'UX Design',
+  },
+  {
+    icon: Palette,
+    text: 'UI Design',
+  },
+  {
+    icon: Component,
+    text: 'Design System',
+  },
+  {
+    icon: Waypoints,
+    text: 'Prototipação em alta fidelidade',
+  },
+];
+
+type IconListItem = {
+  icon: LucideIcon;
+  text: string;
+};
+
+const appRemazaLoginFlowImages = [
+  {
+    src: '/assets/projects/app-remaza/04-a.webp',
+    alt: 'Fluxo de login do APP Remaza - visão principal',
+    caption: 'Fluxo de login do APP Remaza',
+  },
+  {
+    src: '/assets/projects/app-remaza/04-b.webp',
+    alt: 'Fluxo de login do APP Remaza - estados e validações',
+    caption: 'Estados e validações do fluxo de login',
+  },
+  {
+    src: '/assets/projects/app-remaza/04-c.webp',
+    alt: 'Fluxo de login do APP Remaza - cenários complementares',
+    caption: 'Cenários complementares do fluxo de login',
+  },
+];
+
+function ContextList({ title, items }: { title: string; items: IconListItem[] }) {
   return (
     <div>
       <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{title}</h3>
@@ -142,6 +209,22 @@ function ContextList({ title, items }: { title: string; items: typeof appRemazaP
         {items.map(({ icon: Icon, text }) => (
           <li key={text} className="flex items-start gap-3">
             <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]" strokeWidth={2.2} />
+            <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{text}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ScopeBlock() {
+  return (
+    <div className="mt-14 border-y border-[var(--cinza-claro)] py-10 dark:border-[var(--blue-padrao)] md:py-12">
+      <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">Escopo de atuação</h3>
+      <ul className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-x-10">
+        {appRemazaScope.map(({ icon: Icon, text }) => (
+          <li key={text} className="flex items-start gap-3">
+            <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]" strokeWidth={2.2} aria-hidden="true" />
             <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{text}</span>
           </li>
         ))}
@@ -170,9 +253,154 @@ function CaseContextBlock() {
   );
 }
 
+function ZoomableCaseImage({ src, alt, caption, onZoom }: { src: string; alt: string; caption: string; onZoom: () => void }) {
+  return (
+    <figure>
+      <button
+        type="button"
+        className="group relative block w-full overflow-hidden rounded-md bg-[#edf4fb] text-left shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:bg-[rgba(20,51,79,0.42)] dark:focus-visible:ring-offset-[var(--fundo)]"
+        onClick={onZoom}
+      >
+        <img src={src} alt={alt} loading="lazy" className="w-full transition duration-500 group-hover:scale-[1.015]" />
+        <span className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)]">
+          <ZoomIn size={26} strokeWidth={2.6} aria-hidden="true" />
+        </span>
+      </button>
+      <figcaption className="mt-4 font-sans text-sm leading-6 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function CaseImageGallery() {
+  const [zoomedImage, setZoomedImage] = useState<(typeof appRemazaLoginFlowImages)[number] | null>(null);
+  const [canUsePortal, setCanUsePortal] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  useEffect(() => {
+    setCanUsePortal(true);
+  }, []);
+
+  function openLightbox(image: (typeof appRemazaLoginFlowImages)[number]) {
+    setIsClosing(false);
+    setZoomedImage(image);
+  }
+
+  function closeLightbox() {
+    if (isClosing) {
+      return;
+    }
+
+    setIsClosing(true);
+    window.setTimeout(() => {
+      setZoomedImage(null);
+      setIsClosing(false);
+    }, 180);
+  }
+
+  useEffect(() => {
+    if (!zoomedImage) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [zoomedImage]);
+
+  const lightbox = zoomedImage ? (
+    <div
+      className={`fixed inset-0 z-[999] flex items-center justify-center bg-[rgba(8,31,51,0.88)] p-5 backdrop-blur-sm ${
+        isClosing ? 'case-lightbox-out' : 'case-lightbox-in'
+      }`}
+      role="dialog"
+      aria-modal="true"
+      aria-label={zoomedImage.alt}
+      onClick={closeLightbox}
+    >
+      <button
+        type="button"
+        className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)]"
+        onClick={(event) => {
+          event.stopPropagation();
+          closeLightbox();
+        }}
+        aria-label="Fechar imagem ampliada"
+      >
+        <X size={24} strokeWidth={2.4} />
+      </button>
+      <figure
+        className={`grid max-w-[min(1180px,calc(100vw-2.5rem))] gap-4 ${
+          isClosing ? 'case-lightbox-figure-out' : 'case-lightbox-figure-in'
+        }`}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <img
+          src={zoomedImage.src}
+          alt={zoomedImage.alt}
+          className="max-h-[82svh] w-full rounded-md bg-white object-contain shadow-soft"
+        />
+        <figcaption className="font-sans text-sm leading-6 text-white">
+          {zoomedImage.caption}
+        </figcaption>
+      </figure>
+    </div>
+  ) : null;
+
+  return (
+    <div className="mt-12">
+      <div className="grid gap-[30px]">
+        <ZoomableCaseImage
+          src={appRemazaLoginFlowImages[0].src}
+          alt={appRemazaLoginFlowImages[0].alt}
+          caption={appRemazaLoginFlowImages[0].caption}
+          onZoom={() => openLightbox(appRemazaLoginFlowImages[0])}
+        />
+        <div className="grid gap-[30px] md:grid-cols-2">
+          {appRemazaLoginFlowImages.slice(1).map((image) => (
+            <ZoomableCaseImage
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              caption={image.caption}
+              onZoom={() => openLightbox(image)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {canUsePortal && lightbox ? createPortal(lightbox, document.body) : lightbox}
+    </div>
+  );
+}
+
 function CaseVisualBlock({ variant }: { variant: string }) {
   if (variant === 'context') {
     return <CaseContextBlock />;
+  }
+
+  if (variant === 'scope') {
+    return <ScopeBlock />;
+  }
+
+  if (variant === 'login-flow') {
+    return <CaseImageGallery />;
+  }
+
+  if (variant === 'none') {
+    return null;
   }
 
   const baseSurface =
@@ -424,7 +652,9 @@ function AppRemazaCasePage() {
               <section
                 key={section.id}
                 id={section.id}
-                className="scroll-mt-28 py-20 first:pt-0 md:py-32"
+                className={`scroll-mt-28 first:pt-0 ${
+                  section.visual === 'none' ? 'py-12 md:py-14' : 'py-20 md:py-20'
+                }`}
               >
                 <article className="grid gap-10">
                   <div className="max-w-4xl">
