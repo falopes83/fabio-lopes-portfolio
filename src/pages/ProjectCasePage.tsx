@@ -1981,6 +1981,14 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
   );
 }
 
+function ProjectCaseContentHeader({ currentTitle, currentHref }: { currentTitle: string; currentHref: string }) {
+  return (
+    <div className="mx-auto max-w-6xl px-5 pb-10 md:pb-12">
+      <ProjectBreadcrumb currentTitle={currentTitle} currentHref={currentHref} />
+    </div>
+  );
+}
+
 function CaseContextBlock({
   leftTitle = 'Público principal',
   leftItems = appRemazaPrimaryAudience,
@@ -2727,10 +2735,6 @@ function AppRemazaCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
-              <ProjectBreadcrumb currentTitle="App Remaza" currentHref="/projetos/app-remaza" inverted />
-            </div>
-
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">APP Remaza</p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.5rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
@@ -2773,6 +2777,7 @@ function AppRemazaCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
+        <ProjectCaseContentHeader currentTitle="App Remaza" currentHref="/projetos/app-remaza" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -2870,10 +2875,6 @@ function FrestoCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
-              <ProjectBreadcrumb currentTitle="Fresto" currentHref="/projetos/fresto" inverted />
-            </div>
-
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">Fresto</p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
@@ -2920,6 +2921,7 @@ function FrestoCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
+        <ProjectCaseContentHeader currentTitle="Fresto" currentHref="/projetos/fresto" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -3017,10 +3019,6 @@ function MotoRemazaCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
-              <ProjectBreadcrumb currentTitle="Moto Remaza" currentHref="/projetos/moto-remaza" inverted />
-            </div>
-
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
                 Automotivo e e-commerce
@@ -3073,6 +3071,7 @@ function MotoRemazaCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
+        <ProjectCaseContentHeader currentTitle="Moto Remaza" currentHref="/projetos/moto-remaza" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -3170,10 +3169,6 @@ function Gamp21CasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
-              <ProjectBreadcrumb currentTitle="Gamp21" currentHref="/projetos/gamp21" inverted />
-            </div>
-
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
                 Conteúdo, educação e acolhimento
@@ -3221,6 +3216,7 @@ function Gamp21CasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
+        <ProjectCaseContentHeader currentTitle="Gamp21" currentHref="/projetos/gamp21" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -3318,10 +3314,6 @@ function DaitanCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
-              <ProjectBreadcrumb currentTitle="Honda Daitan" currentHref="/projetos/daitan" inverted />
-            </div>
-
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
                 Redesign de site automotivo · 2023
@@ -3369,6 +3361,7 @@ function DaitanCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
+        <ProjectCaseContentHeader currentTitle="Honda Daitan" currentHref="/projetos/daitan" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -3488,10 +3481,6 @@ function ConsorcioRemazaCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
-              <ProjectBreadcrumb currentTitle="Consórcio Remaza" currentHref="/projetos/consorcio-remaza" inverted />
-            </div>
-
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
                 UX/UI Design · Plataforma digital
@@ -3539,6 +3528,7 @@ function ConsorcioRemazaCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
+        <ProjectCaseContentHeader currentTitle="Consórcio Remaza" currentHref="/projetos/consorcio-remaza" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
