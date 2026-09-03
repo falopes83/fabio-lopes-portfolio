@@ -6,6 +6,7 @@ import {
   FileText,
   GraduationCap,
   Headset,
+  Home,
   Minus,
   MousePointer2,
   Network,
@@ -1924,6 +1925,62 @@ function CaseSectionText({ section, index }: { section: CaseSection; index: numb
   );
 }
 
+function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { currentTitle: string; currentHref: string; inverted?: boolean }) {
+  const linkClass = inverted
+    ? 'text-white/82 hover:text-white focus-visible:ring-white'
+    : 'text-[var(--cinza-escuro)] hover:text-[var(--blue-padrao)] focus-visible:ring-[var(--tradewind-padrao)] dark:text-[var(--blue-border)] dark:hover:text-white';
+  const currentClass = inverted
+    ? 'text-white'
+    : 'text-[var(--blue-padrao)] dark:text-white';
+  const separatorClass = inverted
+    ? 'text-white/45'
+    : 'text-[var(--cinza-escuro)]/45 dark:text-white/36';
+
+  return (
+    <nav
+      aria-label="Breadcrumb"
+      className={`inline-flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-2 rounded-md border px-3 py-2 font-display text-xs font-bold backdrop-blur-md ${
+        inverted
+          ? 'border-white/28 bg-black/18 text-white shadow-soft'
+          : 'border-[var(--cinza-claro)] bg-white/86 text-[var(--blue-padrao)] shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/82'
+      }`}
+    >
+      <a
+        href="/"
+        className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+          inverted ? 'focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
+        } ${linkClass}`}
+        aria-label="Home"
+      >
+        <Home size={16} strokeWidth={2.4} aria-hidden="true" />
+      </a>
+      <span className={separatorClass} aria-hidden="true">
+        &gt;
+      </span>
+      <a
+        href="/#projetos"
+        className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+          inverted ? 'focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
+        } ${linkClass}`}
+      >
+        Projetos
+      </a>
+      <span className={separatorClass} aria-hidden="true">
+        &gt;
+      </span>
+      <a
+        href={currentHref}
+        className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+          inverted ? 'focus-visible:ring-white focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
+        } ${currentClass}`}
+        aria-current="page"
+      >
+        {currentTitle}
+      </a>
+    </nav>
+  );
+}
+
 function CaseContextBlock({
   leftTitle = 'Público principal',
   leftItems = appRemazaPrimaryAudience,
@@ -2561,13 +2618,7 @@ function GenericProjectCasePage({ slug }: ProjectCasePageProps) {
     <main>
       <section className="overflow-hidden bg-gradient-to-b from-[var(--blue-claro)] to-white pt-12 dark:from-[var(--fundo)] dark:to-[#020e1a]">
         <div className="mx-auto max-w-6xl px-5 py-12 md:py-20">
-          <a
-            href="/#projetos"
-            className="inline-flex items-center gap-2 font-display text-sm font-bold text-[var(--tradewind-padrao)] transition hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:text-[var(--blue-background)] dark:hover:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
-          >
-            <ArrowLeft size={16} />
-            {t.projectPage.back}
-          </a>
+          <ProjectBreadcrumb currentTitle={project.title} currentHref={`/projetos/${slug}`} />
 
           <div className="mt-10 grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-end">
             <div>
@@ -2676,13 +2727,9 @@ function AppRemazaCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <a
-              href="/#projetos"
-              className="absolute left-5 top-6 inline-flex items-center gap-2 rounded-md border border-white/28 bg-black/18 px-4 py-3 font-display text-xs font-bold text-white backdrop-blur-md transition hover:border-white/60 hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)] md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]"
-            >
-              <ArrowLeft size={16} />
-              Voltar
-            </a>
+            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
+              <ProjectBreadcrumb currentTitle="App Remaza" currentHref="/projetos/app-remaza" inverted />
+            </div>
 
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">APP Remaza</p>
@@ -2823,13 +2870,9 @@ function FrestoCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <a
-              href="/#projetos"
-              className="absolute left-5 top-6 inline-flex items-center gap-2 rounded-md border border-white/28 bg-black/18 px-4 py-3 font-display text-xs font-bold text-white backdrop-blur-md transition hover:border-white/60 hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)] md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]"
-            >
-              <ArrowLeft size={16} />
-              Voltar
-            </a>
+            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
+              <ProjectBreadcrumb currentTitle="Fresto" currentHref="/projetos/fresto" inverted />
+            </div>
 
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">Fresto</p>
@@ -2974,13 +3017,9 @@ function MotoRemazaCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <a
-              href="/#projetos"
-              className="absolute left-5 top-6 inline-flex items-center gap-2 rounded-md border border-white/28 bg-black/18 px-4 py-3 font-display text-xs font-bold text-white backdrop-blur-md transition hover:border-white/60 hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)] md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]"
-            >
-              <ArrowLeft size={16} />
-              Voltar
-            </a>
+            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
+              <ProjectBreadcrumb currentTitle="Moto Remaza" currentHref="/projetos/moto-remaza" inverted />
+            </div>
 
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
@@ -3131,13 +3170,9 @@ function Gamp21CasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <a
-              href="/#projetos"
-              className="absolute left-5 top-6 inline-flex items-center gap-2 rounded-md border border-white/28 bg-black/18 px-4 py-3 font-display text-xs font-bold text-white backdrop-blur-md transition hover:border-white/60 hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)] md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]"
-            >
-              <ArrowLeft size={16} />
-              Voltar
-            </a>
+            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
+              <ProjectBreadcrumb currentTitle="Gamp21" currentHref="/projetos/gamp21" inverted />
+            </div>
 
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
@@ -3283,13 +3318,9 @@ function DaitanCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <a
-              href="/#projetos"
-              className="absolute left-5 top-6 inline-flex items-center gap-2 rounded-md border border-white/28 bg-black/18 px-4 py-3 font-display text-xs font-bold text-white backdrop-blur-md transition hover:border-white/60 hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)] md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]"
-            >
-              <ArrowLeft size={16} />
-              Voltar
-            </a>
+            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
+              <ProjectBreadcrumb currentTitle="Honda Daitan" currentHref="/projetos/daitan" inverted />
+            </div>
 
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
@@ -3457,13 +3488,9 @@ function ConsorcioRemazaCasePage() {
 
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
-            <a
-              href="/#projetos"
-              className="absolute left-5 top-6 inline-flex items-center gap-2 rounded-md border border-white/28 bg-black/18 px-4 py-3 font-display text-xs font-bold text-white backdrop-blur-md transition hover:border-white/60 hover:bg-white/12 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)] md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]"
-            >
-              <ArrowLeft size={16} />
-              Voltar
-            </a>
+            <div className="absolute left-5 top-6 md:left-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))]">
+              <ProjectBreadcrumb currentTitle="Consórcio Remaza" currentHref="/projetos/consorcio-remaza" inverted />
+            </div>
 
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
