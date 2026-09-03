@@ -1926,9 +1926,10 @@ function CaseSectionText({ section, index }: { section: CaseSection; index: numb
 }
 
 function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { currentTitle: string; currentHref: string; inverted?: boolean }) {
+  const linkColor = 'rgb(70 177 153 / var(--tw-bg-opacity, 1))';
   const linkClass = inverted
-    ? 'text-white/82 hover:text-white focus-visible:ring-white'
-    : 'text-[var(--cinza-escuro)] hover:text-[var(--blue-padrao)] focus-visible:ring-[var(--tradewind-padrao)] dark:text-[var(--blue-border)] dark:hover:text-white';
+    ? 'focus-visible:ring-white'
+    : 'focus-visible:ring-[var(--tradewind-padrao)]';
   const currentClass = inverted
     ? 'text-white'
     : 'text-[var(--blue-padrao)] dark:text-white';
@@ -1939,17 +1940,14 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
   return (
     <nav
       aria-label="Breadcrumb"
-      className={`inline-flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-2 rounded-md border px-3 py-2 font-display text-xs font-bold backdrop-blur-md ${
-        inverted
-          ? 'border-white/28 bg-black/18 text-white shadow-soft'
-          : 'border-[var(--cinza-claro)] bg-white/86 text-[var(--blue-padrao)] shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/82'
-      }`}
+      className="inline-flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-2 font-display text-base font-bold"
     >
       <a
         href="/"
         className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           inverted ? 'focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
         } ${linkClass}`}
+        style={{ color: linkColor }}
         aria-label="Home"
       >
         <Home size={16} strokeWidth={2.4} aria-hidden="true" />
@@ -1962,6 +1960,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
         className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           inverted ? 'focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
         } ${linkClass}`}
+        style={{ color: linkColor }}
       >
         Projetos
       </a>
@@ -1973,6 +1972,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
         className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           inverted ? 'focus-visible:ring-white focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
         } ${currentClass}`}
+        style={{ color: linkColor }}
         aria-current="page"
       >
         {currentTitle}
@@ -1983,7 +1983,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
 
 function ProjectCaseContentHeader({ currentTitle, currentHref }: { currentTitle: string; currentHref: string }) {
   return (
-    <div className="mx-auto max-w-6xl px-5 pb-10 md:pb-12">
+    <div className="mx-auto max-w-6xl px-5 pb-16 md:pb-24">
       <ProjectBreadcrumb currentTitle={currentTitle} currentHref={currentHref} />
     </div>
   );
