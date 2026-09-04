@@ -1299,197 +1299,206 @@ const designSystemImages: CaseImageItem[] = [
   },
 ];
 
-// Para inserir as imagens finais do Fresto, preencha o campo `src` em cada item mantendo o `alt` descritivo.
 const frestoContextImage: CaseImageItem = {
+  src: '/assets/projects/fresto/fresto-home.webp',
   alt: 'Captura da página inicial do Fresto com hero, fotografias dos pratos e conteúdo institucional',
   caption: 'Uma experiência digital criada para apresentar a marca e despertar o interesse pelo Fresto.',
   placeholder: 'Inserir visão geral da Home',
+  fit: 'contain',
 };
 
 const frestoChallengeImages: CaseImageItem[] = [
   {
+    src: '/assets/projects/fresto/fresto-comida.webp',
     alt: 'Composição com fotografias de pizza, hambúrguer, prato fresco e sobremesa utilizadas no site do Fresto',
     caption: 'Fotografias escolhidas para provocar desejo e aproximar o usuário da experiência do restaurante.',
     placeholder: 'Inserir composição de pratos',
-  },
-  {
-    alt: 'Detalhe de uma seção do site Fresto com fotografia de um prato em destaque',
-    caption: 'A comida como protagonista da comunicação.',
-    placeholder: 'Inserir prato em destaque',
-  },
-  {
-    alt: 'Trecho da interface do Fresto combinando fotografia, título e chamada para ação',
-    caption: 'Conteúdo e imagem trabalhando juntos para convidar o usuário.',
-    placeholder: 'Inserir fotografia + CTA',
+    fit: 'contain',
   },
 ];
 
-const frestoProcessImage: CaseImageItem = {
-  alt: 'Referências visuais do Fresto, estudos de layout e versão final da página inicial no Figma',
-  caption: 'Referências da marca e do segmento ajudaram a definir o direcionamento visual do projeto.',
-  placeholder: 'Inserir referências + estudos visuais + layout final',
-};
-
 const frestoUsabilityImages: CaseImageItem[] = [
   {
+    src: '/assets/projects/fresto/unidades.webp',
     alt: 'Jornada para conhecer uma unidade do Fresto, passando pela home, seção de unidades, localização e horários',
     caption: 'Informações de cada unidade organizadas para serem encontradas com facilidade.',
     placeholder: 'Inserir jornada das unidades',
+    fit: 'contain',
   },
   {
+    src: '/assets/projects/fresto/fresto-trabalhe-conosco.webp',
     alt: 'Jornada da página Trabalhe Conosco do Fresto com apresentação de oportunidades e acesso ao canal de candidatura',
     caption: 'Uma experiência visual que orienta quem deseja trabalhar no Fresto.',
     placeholder: 'Inserir experiência Trabalhe Conosco',
+    fit: 'contain',
   },
 ];
 
 const frestoDesignSystemImages: CaseImageItem[] = [
   {
+    src: '/assets/projects/fresto/componentes.webp',
     alt: 'Elementos visuais do site Fresto, incluindo paleta de cores, tipografia, botões, ícones e tratamentos de imagem',
     caption: 'Elementos visuais que aproximam a interface da personalidade do Fresto.',
     placeholder: 'Inserir cores + tipografia + botões',
-  },
-  {
-    alt: 'Componentes do site Fresto, incluindo cards de unidades, chamadas para ação, blocos de conteúdo e cards de oportunidades',
-    caption: 'Componentes reutilizáveis para organizar diferentes tipos de informação.',
-    placeholder: 'Inserir cards e componentes',
-  },
-  {
-    alt: 'Linguagem visual do Fresto aplicada nas páginas home, unidades, eventos, Trabalhe Conosco e contato',
-    caption: 'A mesma linguagem visual aplicada aos diferentes pontos de contato da marca.',
-    placeholder: 'Inserir componentes aplicados nas páginas',
+    fit: 'contain',
   },
 ];
 
 const frestoLearningImage: CaseImageItem = {
+  src: '/assets/projects/fresto/fresto-redes-sociais.webp',
   alt: 'Seção da página inicial do Fresto com feed do Instagram integrado mostrando publicações da marca',
   caption: 'O conteúdo das redes sociais também ajuda a manter o site conectado às novidades da marca.',
   placeholder: 'Inserir seção do Instagram integrada à Home',
+  fit: 'contain',
 };
 
-// Para inserir as imagens finais da Moto Remaza, preencha o campo `src` em cada item mantendo o `alt` descritivo.
 const motoRemazaContextImage: CaseImageItem = {
+  src: '/assets/projects/moto-remaza/1-home.webp',
   alt: 'Visão geral do site Moto Remaza com modelos de motos, chamadas de compra e conteúdos de apoio',
   caption: 'Visão geral da nova home do Moto Remaza.',
   placeholder: '[INSERIR IMAGEM — Visão geral da nova home do Moto Remaza]',
+  fit: 'contain',
 };
 
 const motoRemazaChallengeImages: CaseImageItem[] = [
   {
-    alt: 'Composição representando diferentes perfis de motociclistas ou categorias de motos',
-    caption: 'Diferentes perfis e categorias orientam caminhos de navegação mais claros.',
-    placeholder: '[INSERIR IMAGEM — Composição representando diferentes perfis de motociclistas ou categorias de motos]',
-  },
-  {
+    src: '/assets/projects/moto-remaza/motoremaza-listagem.webp',
     alt: 'Página de categoria ou listagem de motos da Moto Remaza com filtros e modelos em destaque',
     caption: 'Pesquisa e comparação como parte central da jornada.',
     placeholder: '[INSERIR IMAGEM — Listagem de modelos e categorias]',
+    fit: 'contain',
   },
   {
+    src: '/assets/projects/moto-remaza/motoremaza-diferenciais.webp',
     alt: 'Página de detalhe de uma moto com informações técnicas, imagem do modelo e chamada para contato',
     caption: 'Informações importantes organizadas para apoiar a decisão.',
     placeholder: '[INSERIR IMAGEM — Detalhe de modelo com informações principais]',
+    fit: 'contain',
   },
 ];
 
 const motoRemazaProcessImage: CaseImageItem = {
+  src: '/assets/projects/moto-remaza/motoremaza-fluxo.webp',
   alt: 'Visão geral das interfaces ou fluxo principal do projeto Moto Remaza',
   caption: 'Visão geral das interfaces e do fluxo principal do projeto.',
   placeholder: '[INSERIR IMAGEM — Visão geral das interfaces ou fluxo principal do projeto]',
+  fit: 'contain',
 };
 
 const motoRemazaResearchImage: CaseImageItem = {
+  src: '/assets/projects/moto-remaza/motoremaza-diferenciais.webp',
   alt: 'Síntese visual dos direcionamentos da pesquisa do projeto Moto Remaza',
   caption: 'Direcionamentos reais identificados a partir das conversas com stakeholders e motociclistas.',
   placeholder: '[INSERIR IMAGEM — Síntese visual dos direcionamentos da pesquisa]',
+  fit: 'contain',
 };
 
 const motoRemazaNavigationImages: CaseImageItem[] = [
   {
+    src: '/assets/projects/moto-remaza/1-home.webp',
     alt: 'Header e menus de navegação do site Moto Remaza',
     caption: 'Header e menus de navegação planejados para acesso direto às principais áreas.',
     placeholder: '[INSERIR IMAGEM — Header e menus de navegação]',
+    fit: 'contain',
   },
   {
+    src: '/assets/projects/moto-remaza/motoremaza-listagem.webp',
     alt: 'Mega menu ou atalhos para modelos e serviços do site Moto Remaza',
     caption: 'Atalhos estratégicos conectam modelos, serviços e momentos da jornada.',
     placeholder: '[INSERIR IMAGEM — Mega menu ou atalhos para modelos e serviços]',
+    fit: 'contain',
   },
 ];
 
 const motoRemazaModelImages: CaseImageItem[] = [
   {
+    src: '/assets/projects/moto-remaza/motoremaza-modelos.webp',
     alt: 'Catálogo de modelos com categorias do site Moto Remaza',
     caption: 'Catálogo de modelos organizado por categorias e necessidades de uso.',
     placeholder: '[INSERIR IMAGEM — Catálogo de modelos com categorias]',
+    fit: 'contain',
   },
   {
+    src: '/assets/projects/moto-remaza/motoremaza-diferenciais.webp',
     alt: 'Página de detalhes de uma motocicleta no site Moto Remaza',
     caption: 'Página de detalhes com versões, cores e informações do modelo.',
     placeholder: '[INSERIR IMAGEM — Página de detalhes de uma motocicleta]',
+    fit: 'contain',
   },
 ];
 
 const motoRemazaUsedImages: CaseImageItem[] = [
   {
+    src: '/assets/projects/moto-remaza/motoremaza-seminovos copiar.webp',
     alt: 'Listagem de motos seminovas com filtros no site Moto Remaza',
     caption: 'Filtros e informações organizadas para facilitar a busca por seminovos.',
     placeholder: '[INSERIR IMAGEM — Listagem de motos seminovas com filtros]',
+    fit: 'contain',
   },
   {
+    src: '/assets/projects/moto-remaza/motoremaza-seminovos-detalhes copiar.webp',
     alt: 'Página de detalhes de uma moto seminova no site Moto Remaza',
     caption: 'Detalhes de uma moto seminova apresentados de forma prática e profissional.',
     placeholder: '[INSERIR IMAGEM — Página de detalhes de uma moto seminova]',
+    fit: 'contain',
   },
 ];
 
 const motoRemazaServiceImages: CaseImageItem[] = [
   {
+    src: '/assets/projects/moto-remaza/motoremaza-test-ride copiar.webp',
     alt: 'Agendamento de test-ride no site Moto Remaza',
     caption: 'Test-ride como parte da jornada de descoberta e decisão.',
     placeholder: '[INSERIR IMAGEM — Agendamento de test-ride]',
+    fit: 'contain',
   },
   {
+    src: '/assets/projects/moto-remaza/motoremaza-agendar-revisao copiar.webp',
     alt: 'Agendamento de serviços e revisão no site Moto Remaza',
     caption: 'Serviços e revisão conectam o site à rotina de cuidado com a moto.',
     placeholder: '[INSERIR IMAGEM — Agendamento de serviços e revisão]',
+    fit: 'contain',
   },
   {
+    src: '/assets/projects/moto-remaza/motoremaza-pecas.webp',
     alt: 'Peças, acessórios e assistência técnica no site Moto Remaza',
     caption: 'Peças, acessórios e assistência técnica reunidos no ecossistema digital.',
     placeholder: '[INSERIR IMAGEM — Peças, acessórios e assistência técnica]',
+    fit: 'contain',
   },
 ];
 
 const motoRemazaNextStepsImage: CaseImageItem = {
+  src: '/assets/projects/moto-remaza/motoremaza-pecas-plp.webp',
   alt: 'Conceito da futura área personalizada por modelo de moto no site Moto Remaza',
   caption: 'Evolução planejada: uma área personalizada por modelo de moto, ainda não disponível na versão atual.',
   placeholder: '[INSERIR IMAGEM — Conceito da futura área personalizada por modelo de moto]',
+  fit: 'contain',
 };
 
 const motoRemazaRelationshipImages: CaseImageItem[] = [
   {
-    alt: 'Página Trabalhe Conosco do site Moto Remaza',
-    caption: 'Atalho para quem deseja trabalhar na Moto Remaza.',
-    placeholder: '[INSERIR IMAGEM — Página Trabalhe Conosco]',
-  },
-  {
+    src: '/assets/projects/moto-remaza/motoremaza-falediretoria copiar.webp',
     alt: 'Canal de comunicação com a diretoria no site Moto Remaza',
     caption: 'Canal de comunicação com a diretoria como parte da cultura de escuta do Grupo Remaza.',
     placeholder: '[INSERIR IMAGEM — Canal de comunicação com a diretoria]',
+    fit: 'contain',
   },
 ];
 
 const motoRemazaLearningImage: CaseImageItem = {
+  src: '/assets/projects/moto-remaza/motoremaza-diferentes-relacoes.webp',
   alt: 'Motociclista em uma situação de uso real ou composição com diferentes jornadas',
   caption: 'Uma composição mais editorial sobre as diferentes relações das pessoas com a moto.',
   placeholder: '[INSERIR IMAGEM — Motociclista em uma situação de uso real ou composição com diferentes jornadas]',
 };
 
 const motoRemazaConclusionImage: CaseImageItem = {
-  alt: 'Composição final com telas desktop e mobile do Moto Remaza',
-  caption: 'Composição final com telas desktop e mobile do Moto Remaza.',
+  src: '/assets/projects/moto-remaza/1-home-mobile.webp',
+  alt: 'Composição final com telas mobile do Moto Remaza',
+  caption: 'Composição final com telas mobile do Moto Remaza.',
   placeholder: '[INSERIR IMAGEM — Composição final com telas desktop e mobile do Moto Remaza]',
+  fit: 'contain',
 };
 
 const motoRemazaDirectionItems = [
@@ -2104,11 +2113,6 @@ function FrestoChallengeVisualBlock() {
   return (
     <div className="mt-12 grid gap-[30px]">
       <CaseImageSlot image={frestoChallengeImages[0]} aspectClass="aspect-[16/8]" />
-      <div className="grid gap-[30px] md:grid-cols-2">
-        {frestoChallengeImages.slice(1).map((image) => (
-          <CaseImageSlot key={image.caption} image={image} aspectClass="aspect-[4/3]" />
-        ))}
-      </div>
     </div>
   );
 }
@@ -2120,7 +2124,7 @@ function FrestoUsabilityVisualBlock() {
         <div key={image.caption}>
           <div className="mb-6">
             <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">
-              Fluxo {index + 1} - {index === 0 ? 'Conhecer uma unidade' : 'Encontrar uma oportunidade'}
+              {index === 0 ? 'Conhecer uma unidade' : 'Encontrar uma oportunidade'}
             </h3>
           </div>
           <CaseImageSlot image={image} aspectClass="aspect-[16/8]" />
@@ -2133,12 +2137,7 @@ function FrestoUsabilityVisualBlock() {
 function FrestoDesignSystemVisualBlock() {
   return (
     <div className="mt-12 grid gap-[30px]">
-      <div className="grid gap-[30px] md:grid-cols-2">
-        {frestoDesignSystemImages.slice(0, 2).map((image) => (
-          <CaseImageSlot key={image.caption} image={image} aspectClass="aspect-[4/3]" />
-        ))}
-      </div>
-      <CaseImageSlot image={frestoDesignSystemImages[2]} aspectClass="aspect-[16/8]" />
+      <CaseImageSlot image={frestoDesignSystemImages[0]} aspectClass="aspect-[16/8]" />
     </div>
   );
 }
@@ -2187,7 +2186,7 @@ function MotoRemazaUsabilityVisualBlock() {
 
 function MotoRemazaImagePairBlock({ images, titles }: { images: CaseImageItem[]; titles: string[] }) {
   return (
-    <div className="mt-12 grid gap-12">
+    <div className={`mt-12 grid gap-12 ${images.length > 1 ? 'md:grid-cols-2' : ''}`}>
       {images.map((image, index) => (
         <div key={image.caption}>
           <div className="mb-6">
@@ -2300,12 +2299,7 @@ function CaseVisualBlock({ variant }: { variant: string }) {
   }
 
   if (variant === 'fresto-scope') {
-    return (
-      <div className="grid gap-10">
-        <ScopeBlock items={frestoScope} />
-        <CaseImageSlot image={frestoProcessImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+    return <ScopeBlock items={frestoScope} />;
   }
 
   if (variant === 'fresto-challenge') {
@@ -2379,7 +2373,7 @@ function CaseVisualBlock({ variant }: { variant: string }) {
   }
 
   if (variant === 'moto-relationship') {
-    return <MotoRemazaImagePairBlock images={motoRemazaRelationshipImages} titles={['Trabalhe Conosco', 'Canal com a diretoria']} />;
+    return <MotoRemazaImagePairBlock images={motoRemazaRelationshipImages} titles={['Canal com a diretoria']} />;
   }
 
   if (variant === 'moto-learning') {

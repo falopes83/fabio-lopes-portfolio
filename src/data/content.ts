@@ -285,7 +285,10 @@ export const dictionary = {
     footer: {
       headline: 'Grandes produtos não nascem de telas.',
       text: 'Nascem da compreensão dos problemas certos. Vamos conversar sobre seu produto, processo ou experiência digital?',
-      copyright: 'Fabio Lopes UX & Product Designer © 2026. Todos os direitos reservados.',
+      copyright: [
+        'Falopes Tecnologia Ltda. CNPJ: 44.968.718/0001-41',
+        'Fabio Lopes UX & Product Designer © 2026. Todos os direitos reservados.',
+      ],
     },
     contact: {
       title: 'Vamos juntos?',
@@ -569,7 +572,10 @@ export const dictionary = {
     footer: {
       headline: 'Great products are not born from screens.',
       text: 'They are born from understanding the right problems. Let’s talk about your product, process or digital experience?',
-      copyright: 'Fabio Lopes UX & Product Designer © 2026. All rights reserved.',
+      copyright: [
+        'Falopes Tecnologia Ltda. CNPJ: 44.968.718/0001-41',
+        'Fabio Lopes UX & Product Designer © 2026. Todos os direitos reservados.',
+      ],
     },
     contact: {
       title: 'Shall we build together?',
@@ -853,7 +859,10 @@ export const dictionary = {
     footer: {
       headline: 'Los grandes productos no nacen de pantallas.',
       text: 'Nacen de comprender los problemas correctos. ¿Conversamos sobre tu producto, proceso o experiencia digital?',
-      copyright: 'Fabio Lopes UX & Product Designer © 2026. Todos los derechos reservados.',
+      copyright: [
+        'Falopes Tecnologia Ltda. CNPJ: 44.968.718/0001-41',
+        'Fabio Lopes UX & Product Designer © 2026. Todos os direitos reservados.',
+      ],
     },
     contact: {
       title: '¿Vamos juntos?',

@@ -106,7 +106,13 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-6xl px-5 text-right text-xs font-semibold text-white/45">{t.footer.copyright}</div>
+      <div className="mx-auto mt-12 grid max-w-6xl gap-3 px-5 text-xs font-semibold leading-5 text-white/45 md:grid-cols-2 md:items-center">
+        {t.footer.copyright.map((line) => (
+          <p key={line} className="md:last:text-right">
+            {line}
+          </p>
+        ))}
+      </div>
     </footer>
   );
 }
