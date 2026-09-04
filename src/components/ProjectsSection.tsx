@@ -15,6 +15,8 @@ export function ProjectsSection() {
         <img
           src="/assets/bg-project.svg"
           alt=""
+          loading="lazy"
+          decoding="async"
           className="absolute inset-x-0 -top-20 h-[calc(100vh+160px)] w-full object-cover opacity-100 dark:opacity-60 dark:grayscale"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,31,51,0)_0%,rgba(8,31,51,0.12)_34%,rgba(8,31,51,0.72)_100%)] dark:bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.34)_42%,rgba(0,0,0,0.86)_100%)]" />

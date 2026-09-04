@@ -72,12 +72,16 @@ export function HeroProjectGallery({ projects, imageAlt, progress, isMobile = fa
                   src={project.image}
                   alt={`Projeto ${project.title}`}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]"
+                  width="700"
+                  height="400"
+                  decoding="async"
                   style={{
                     filter: `saturate(${0.58 + flatten * 0.16}) contrast(${0.84 + flatten * 0.08}) brightness(${
                       1.16 - flatten * 0.08
                     })`,
                   }}
-                  loading={imageIndex > 1 ? 'lazy' : 'eager'}
+                  loading="lazy"
+                  fetchPriority="low"
                 />
                 <span
                   className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(231,240,251,0.82)_0%,rgba(255,255,255,0.48)_44%,rgba(70,177,153,0.28)_100%)] mix-blend-screen"

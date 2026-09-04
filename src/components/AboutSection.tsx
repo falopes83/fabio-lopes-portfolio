@@ -10,7 +10,7 @@ function ToolCapsule({ label, icons }: { label: string; icons: string[] }) {
         <span className="flex shrink-0 items-center -space-x-1">
           {icons.map((icon) => (
             <span key={icon} className="flex h-5 w-5 items-center justify-center rounded-full border border-white bg-white dark:border-[var(--fundo)]">
-              <img src={icon} alt="" className="h-3.5 w-3.5 object-contain" loading="lazy" />
+              <img src={icon} alt="" className="h-3.5 w-3.5 object-contain" loading="lazy" decoding="async" />
             </span>
           ))}
         </span>
@@ -23,8 +23,8 @@ function ToolCapsule({ label, icons }: { label: string; icons: string[] }) {
 function Portrait({ alt }: { alt: string }) {
   return (
     <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-[32px] md:mx-0 md:max-w-none">
-      <img src="/assets/fabiolopes.png" alt={alt} className="h-auto w-full dark:hidden" />
-      <img src="/assets/fabiolopes-alt.png" alt={alt} className="hidden h-auto w-full dark:block" />
+      <img src="/assets/fabiolopes.png" alt={alt} className="h-auto w-full dark:hidden" loading="lazy" decoding="async" />
+      <img src="/assets/fabiolopes-alt.png" alt={alt} className="hidden h-auto w-full dark:block" loading="lazy" decoding="async" />
     </div>
   );
 }

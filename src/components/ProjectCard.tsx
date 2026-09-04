@@ -24,6 +24,9 @@ export function ProjectCard({ index, project }: ProjectCardProps) {
           src={project.image}
           alt={`Thumbnail do projeto ${project.title}`}
           loading="lazy"
+          decoding="async"
+          width="700"
+          height="400"
           className="h-[112%] w-full -translate-y-[5%] object-cover transition duration-500 group-hover:-translate-y-[8%] group-hover:scale-[1.035]"
         />
         <span className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)]">

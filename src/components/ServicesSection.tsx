@@ -31,7 +31,10 @@ export function ServicesSection() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  loading={index === 0 ? 'eager' : 'lazy'}
+                  loading="lazy"
+                  decoding="async"
+                  width="360"
+                  height="288"
                   className="aspect-[5/4] h-auto w-full rounded-md object-contain object-center grayscale dark:invert"
                 />
                 <h3 className="mt-5 font-display text-[1.4rem] font-extrabold leading-tight tracking-[0.02em] text-ocean dark:text-white">
