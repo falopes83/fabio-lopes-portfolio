@@ -1,7 +1,7 @@
 import { projectSlugs } from './data/content';
 
 export const siteUrl = 'https://falopes.com.br';
-export const defaultSocialImage = '/assets/fabiolopes.png';
+export const defaultSocialImage = '/assets/fabiolopes.webp';
 
 export type StructuredData = Record<string, unknown>;
 

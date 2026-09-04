@@ -22,9 +22,16 @@ function ToolCapsule({ label, icons }: { label: string; icons: string[] }) {
 
 function Portrait({ alt }: { alt: string }) {
   return (
-    <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-[32px] md:mx-0 md:max-w-none">
-      <img src="/assets/fabiolopes.png" alt={alt} className="h-auto w-full dark:hidden" loading="lazy" decoding="async" />
-      <img src="/assets/fabiolopes-alt.png" alt={alt} className="hidden h-auto w-full dark:block" loading="lazy" decoding="async" />
+    <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-[32px] bg-[var(--tradewind-padrao)] md:mx-0 md:max-w-none dark:bg-[var(--blue-background)]">
+      <img
+        src="/assets/fabiolopes.webp"
+        alt={alt}
+        className="h-auto w-full"
+        loading="lazy"
+        decoding="async"
+        width="1254"
+        height="1254"
+      />
     </div>
   );
 }
