@@ -2730,12 +2730,13 @@ function AppRemazaCasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">APP Remaza</p>
+              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">Product Design para consórcio</p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.5rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Redesenhando a experiência
-                <br className="hidden md:block" />
-                da Área do Cliente.
+                Aplicativo para gestão de consórcio
               </h1>
+              <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
+                Projeto desenvolvido para o App Remaza, redesenhando a experiência da Área do Cliente.
+              </p>
               <div className="mt-8 flex flex-wrap items-end gap-x-10 gap-y-5">
                 <div>
                   <p className="caption font-bold uppercase text-white/56">Atuação</p>
@@ -2771,7 +2772,7 @@ function AppRemazaCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
-        <ProjectCaseContentHeader currentTitle="App Remaza" currentHref="/projetos/app-remaza" />
+        <ProjectCaseContentHeader currentTitle="Aplicativo para gestão de consórcio" currentHref="/projetos/app-remaza" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -2870,11 +2871,9 @@ function FrestoCasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">Fresto</p>
+              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">UX/UI para gastronomia</p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                <span className="block">Uma experiência digital</span>
-                <span className="block">para despertar</span>
-                <span className="block">o apetite.</span>
+                Fresto — Rede de restaurantes
               </h1>
               <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
                 UX e Web Design para uma rede de restaurantes presente em clubes de São Paulo.
@@ -2915,7 +2914,7 @@ function FrestoCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
-        <ProjectCaseContentHeader currentTitle="Fresto" currentHref="/projetos/fresto" />
+        <ProjectCaseContentHeader currentTitle="Fresto — Rede de restaurantes" currentHref="/projetos/fresto" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -3018,10 +3017,10 @@ function MotoRemazaCasePage() {
                 Automotivo e e-commerce
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Moto Remaza
+                Concessionárias de motos Honda
               </h1>
               <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Uma experiência digital criada para acompanhar diferentes jornadas sobre duas rodas.
+                Projeto desenvolvido para a Moto Remaza, criando uma experiência digital para acompanhar diferentes jornadas sobre duas rodas.
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
@@ -3065,7 +3064,7 @@ function MotoRemazaCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
-        <ProjectCaseContentHeader currentTitle="Moto Remaza" currentHref="/projetos/moto-remaza" />
+        <ProjectCaseContentHeader currentTitle="Concessionárias de motos Honda" currentHref="/projetos/moto-remaza" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -3168,7 +3167,7 @@ function Gamp21CasePage() {
                 Conteúdo, educação e acolhimento
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Gamp21
+                Gamp21 — Parentalidade nas empresas
               </h1>
               <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
                 Uma experiência digital para aproximar mães, pais e empresas de conteúdos, cursos e orientações sobre parentalidade.
@@ -3210,7 +3209,7 @@ function Gamp21CasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
-        <ProjectCaseContentHeader currentTitle="Gamp21" currentHref="/projetos/gamp21" />
+        <ProjectCaseContentHeader currentTitle="Gamp21 — Parentalidade nas empresas" currentHref="/projetos/gamp21" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
@@ -3313,10 +3312,10 @@ function DaitanCasePage() {
                 Redesign de site automotivo · 2023
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Honda Daitan
+                Concessionária Honda
               </h1>
               <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Uma experiência mais rápida, responsiva e fácil de utilizar para clientes e equipes responsáveis pela atualização do site.
+                Projeto desenvolvido para a Honda Daitan, criando uma experiência mais rápida, responsiva e fácil de utilizar.
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
@@ -3355,7 +3354,7 @@ function DaitanCasePage() {
       </section>
 
       <section className="app-remaza-case-content relative z-20 bg-white py-16 dark:bg-[var(--fundo)] md:-mt-[80vh] md:py-24">
-        <ProjectCaseContentHeader currentTitle="Honda Daitan" currentHref="/projetos/daitan" />
+        <ProjectCaseContentHeader currentTitle="Concessionária Honda" currentHref="/projetos/daitan" />
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[14rem_minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">

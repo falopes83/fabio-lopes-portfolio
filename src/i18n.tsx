@@ -15,6 +15,10 @@ function isLanguage(value: string | null): value is Language {
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window === 'undefined') {
+      return 'pt';
+    }
+
     const saved = window.localStorage.getItem('language');
     return isLanguage(saved) ? saved : 'pt';
   });

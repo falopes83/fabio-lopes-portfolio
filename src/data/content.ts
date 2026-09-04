@@ -93,38 +93,38 @@ export const dictionary = {
     },
     projects: [
       {
-        title: 'App Remaza',
+        title: 'Aplicativo para gestão de consórcio',
         tags: ['Plataforma digital', 'Experiência do Cliente', 'Serviços Financeiros'],
         description:
           'De pagamentos a assembleias e informações de cota e atendimento, o desafio era transformar processos dispersos em uma experiência mais simples, acessível e organizada para milhares de clientes.',
         image: sharedImages.projects[0],
       },
       {
-        title: 'Fresto',
+        title: 'Fresto — Rede de restaurantes',
         tags: ['Experiência Digital', 'Gastronomia', 'Site Institucional'],
         description:
           'O objetivo era traduzir a personalidade do restaurante para o ambiente digital, valorizando seus produtos, unidades e canais de contato em uma experiência tão convidativa quanto uma visita ao salão.',
         image: sharedImages.projects[1],
       },
       {
-        title: 'Moto Remaza',
+        title: 'Concessionárias de motos Honda',
         tags: ['E-commerce', 'Experiência de Compra', 'Mobilidade'],
         description:
           'Entre modelos, serviços, acessórios e conteúdo, o projeto organizou diferentes jornadas em uma única plataforma, tornando a experiência mais clara para quem está pesquisando, comparando ou planejando sua próxima moto.',
         image: sharedImages.projects[2],
       },
       {
-        title: 'Gamp21',
+        title: 'Gamp21 — Parentalidade nas empresas',
         tags: ['Conteúdo Digital', 'Educação', 'Acolhimento'],
         description:
           'O projeto nasceu para apoiar mães, pais e cuidadores com conteúdo acessível sobre gestação, infância e desenvolvimento, aproximando conhecimento especializado de quem mais precisa dele.',
         image: sharedImages.projects[3],
       },
       {
-        title: 'Daitan',
+        title: 'Concessionária Honda',
         tags: ['Captação Digital', 'Automotivo', 'Conversão'],
         description:
-          'Mais do que exibir veículos, o desafio era criar uma experiência capaz de apoiar a descoberta, comparação e escolha do próximo Honda de forma simples e intuitiva.',
+          'Mais do que exibir veículos, o desafio era criar uma experiência capaz de apoiar a descoberta, comparação e escolha do próximo veículo de forma simples e intuitiva.',
         image: sharedImages.projects[4],
       },
       {
@@ -380,38 +380,38 @@ export const dictionary = {
     },
     projects: [
       {
-        title: 'App Remaza',
+        title: 'Consortium management app',
         tags: ['Digital platform', 'Customer Experience', 'Financial Services'],
         description:
           'From payments to assemblies, quota information and support, the challenge was to turn scattered processes into a simpler, more accessible and organized experience for thousands of customers.',
         image: sharedImages.projects[0],
       },
       {
-        title: 'Fresto',
+        title: 'Fresto — Restaurant network',
         tags: ['Digital Experience', 'Food', 'Institutional Website'],
         description:
           'The goal was to translate the restaurant personality into the digital environment, highlighting products, locations and contact channels in an experience as inviting as a visit.',
         image: sharedImages.projects[1],
       },
       {
-        title: 'Moto Remaza',
+        title: 'Honda motorcycle dealerships',
         tags: ['E-commerce', 'Purchase Experience', 'Mobility'],
         description:
           'Among models, services, accessories and content, the project organized different journeys into one platform, making the experience clearer for people researching, comparing or planning their next motorcycle.',
         image: sharedImages.projects[2],
       },
       {
-        title: 'Gamp21',
+        title: 'Gamp21 — Corporate parenting',
         tags: ['Digital Content', 'Education', 'Care'],
         description:
           'The project was created to support mothers, fathers and caregivers with accessible content about pregnancy, childhood and development, bringing specialized knowledge closer to those who need it.',
         image: sharedImages.projects[3],
       },
       {
-        title: 'Daitan',
+        title: 'Honda dealership',
         tags: ['Digital Acquisition', 'Automotive', 'Conversion'],
         description:
-          'More than displaying vehicles, the challenge was to create an experience that supports discovery, comparison and choice of the next Honda in a simple and intuitive way.',
+          'More than displaying vehicles, the challenge was to create an experience that supports discovery, comparison and choice of the next vehicle in a simple and intuitive way.',
         image: sharedImages.projects[4],
       },
       {
@@ -667,38 +667,38 @@ export const dictionary = {
     },
     projects: [
       {
-        title: 'App Remaza',
+        title: 'Aplicación para gestión de consorcio',
         tags: ['Plataforma digital', 'Experiencia del Cliente', 'Servicios Financieros'],
         description:
           'De pagos a asambleas, información de cuota y atención, el desafío era transformar procesos dispersos en una experiencia más simple, accesible y organizada para miles de clientes.',
         image: sharedImages.projects[0],
       },
       {
-        title: 'Fresto',
+        title: 'Fresto — Red de restaurantes',
         tags: ['Experiencia Digital', 'Gastronomía', 'Sitio Institucional'],
         description:
           'El objetivo era traducir la personalidad del restaurante al entorno digital, valorizando productos, unidades y canales de contacto en una experiencia tan invitante como una visita.',
         image: sharedImages.projects[1],
       },
       {
-        title: 'Moto Remaza',
+        title: 'Concesionarias de motos Honda',
         tags: ['E-commerce', 'Experiencia de Compra', 'Movilidad'],
         description:
           'Entre modelos, servicios, accesorios y contenido, el proyecto organizó diferentes jornadas en una sola plataforma, haciendo más clara la experiencia de quien investiga, compara o planea su próxima moto.',
         image: sharedImages.projects[2],
       },
       {
-        title: 'Gamp21',
+        title: 'Gamp21 — Parentalidad en empresas',
         tags: ['Contenido Digital', 'Educación', 'Acogida'],
         description:
           'El proyecto nació para apoyar madres, padres y cuidadores con contenido accesible sobre gestación, infancia y desarrollo, acercando conocimiento especializado a quienes más lo necesitan.',
         image: sharedImages.projects[3],
       },
       {
-        title: 'Daitan',
+        title: 'Concesionaria Honda',
         tags: ['Captación Digital', 'Automotriz', 'Conversión'],
         description:
-          'Más que exhibir vehículos, el desafío era crear una experiencia capaz de apoyar el descubrimiento, la comparación y la elección del próximo Honda de forma simple e intuitiva.',
+          'Más que exhibir vehículos, el desafío era crear una experiencia capaz de apoyar el descubrimiento, la comparación y la elección del próximo vehículo de forma simple e intuitiva.',
         image: sharedImages.projects[4],
       },
       {
