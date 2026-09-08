@@ -46,11 +46,12 @@ type CaseSection = {
 type CaseImpactContent = {
   intro: string;
   items: {
-    category: 'Para o usuário' | 'Para o negócio' | 'Para a operação';
+    category: string;
     title: string;
     text: string;
     icon: LucideIcon;
   }[];
+  note?: string;
   testimonial?: {
     text?: string;
     name?: string;
@@ -158,27 +159,35 @@ const caseImpactContent: Record<string, CaseImpactContent> = {
   },
   'impact-gamp21': {
     intro:
-      'A experiência digital aproximou acolhimento, orientação e serviços especializados para famílias e empresas.',
+      'Nos últimos seis meses, o site apareceu mais de 103 mil vezes nos resultados do Google e recebeu 847 acessos orgânicos. Grande parte dessa descoberta aconteceu por meio de artigos e materiais educativos sobre amamentação, cuidados com o bebê e pós-parto, fortalecendo o Gamp21 como fonte de orientação para mães e pais.',
     items: [
       {
-        category: 'Para o usuário',
-        title: 'Conteúdo mais acolhedor',
-        text: 'A organização das informações ajudou mães, pais e responsáveis a encontrar apoio e orientação em momentos de dúvida.',
+        category: 'Aparições no Google',
+        title: '+103 mil',
+        text: 'aparições registradas nos resultados de busca do Google nos últimos seis meses.',
         icon: Users,
       },
       {
-        category: 'Para o negócio',
-        title: 'Serviços mais compreensíveis',
-        text: 'A apresentação das soluções tornou mais clara a atuação da Gamp21 tanto para famílias quanto para empresas.',
-        icon: BadgeDollarSign,
+        category: 'Acessos orgânicos',
+        title: '847',
+        text: 'acessos vindos de busca orgânica no mesmo período.',
+        icon: MousePointer2,
       },
       {
-        category: 'Para a operação',
-        title: 'Conteúdo como ponto de contato',
-        text: 'O blog e as páginas de serviço criaram caminhos permanentes de descoberta, orientação e relacionamento com o público.',
-        icon: Component,
+        category: 'Cliques no celular',
+        title: '70%',
+        text: 'dos cliques realizados por pessoas acessando pelo celular.',
+        icon: Smartphone,
+      },
+      {
+        category: 'Materiais educativos',
+        title: '+47 mil',
+        text: 'impressões dos materiais educativos em PDF nos últimos seis meses.',
+        icon: FileText,
       },
     ],
+    note:
+      'Os conteúdos educativos se tornaram uma importante porta de entrada para pessoas que procuram informações sobre gestação, amamentação, pós-parto e cuidados com o bebê.',
   },
   'impact-consorcio-remaza': {
     intro:
@@ -660,7 +669,7 @@ const gamp21Sections: CaseSection[] = [
   {
     id: 'impacto',
     label: 'Impacto',
-    title: 'Impacto da solução',
+    title: 'Conteúdo que amplia o alcance',
     intro: caseImpactContent['impact-gamp21'].intro,
     visual: 'impact-gamp21',
   },
@@ -2398,10 +2407,11 @@ function CaseImpactBlock({ content }: { content: CaseImpactContent }) {
     content.testimonial.company
       ? content.testimonial
       : null;
+  const gridClass = content.items.length >= 4 ? 'sm:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-3';
 
   return (
     <div className="mt-12 grid gap-6">
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className={`grid gap-5 ${gridClass}`}>
         {content.items.map(({ category, title, text, icon: Icon }) => (
           <article
             key={category}
@@ -2422,6 +2432,12 @@ function CaseImpactBlock({ content }: { content: CaseImpactContent }) {
           </article>
         ))}
       </div>
+
+      {content.note && (
+        <p className="max-w-3xl rounded-md border border-[var(--cinza-claro)] bg-[var(--off-white)] px-6 py-5 font-sans text-base leading-7 text-[var(--cinza-escuro)] shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[rgba(20,51,79,0.42)] dark:text-[var(--cinza-claro)]">
+          {content.note}
+        </p>
+      )}
 
       {testimonial && (
         <blockquote className="rounded-md border border-[var(--cinza-claro)] bg-[var(--off-white)] p-6 shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[rgba(20,51,79,0.42)]">
