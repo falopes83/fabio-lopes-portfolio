@@ -2661,10 +2661,10 @@ function CaseCropCard({
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   return (
-    <figure className={`overflow-hidden rounded-md bg-[#edf4fb] shadow-soft dark:bg-[rgba(20,51,79,0.42)] ${className}`}>
+    <figure className={`flex flex-col overflow-hidden rounded-md bg-[#edf4fb] shadow-soft dark:bg-[rgba(20,51,79,0.42)] ${className}`}>
       <button
         type="button"
-        className="group relative block h-full min-h-[14rem] w-full overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:focus-visible:ring-offset-[var(--fundo)]"
+        className="group relative block min-h-[14rem] w-full flex-1 overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:focus-visible:ring-offset-[var(--fundo)]"
         onClick={() => setIsLightboxOpen(true)}
         aria-label={`Ampliar imagem: ${image.alt}`}
       >
@@ -2672,7 +2672,7 @@ function CaseCropCard({
           src={image.src ?? ''}
           alt={image.alt}
           loading="lazy"
-          className={`h-full w-full object-cover transition duration-500 group-hover:scale-[1.015] ${imageClassName}`}
+          className={`absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.015] ${imageClassName}`}
         />
         <span className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)]">
           <ZoomIn size={24} strokeWidth={2.6} aria-hidden="true" />
@@ -2983,7 +2983,7 @@ function ConsorcioRemazaTrustVisualBlock() {
 function ConsorcioRemazaContentVisualBlock() {
   return (
     <div className="mt-12 grid items-start gap-[30px] md:grid-cols-2">
-      <CaseImageSlot image={consorcioRemazaContentImages[0]} aspectClass="aspect-[16/10] min-h-[22rem]" />
+      <CaseCropCard image={consorcioRemazaContentImages[0]} title="Central de notícias" className="min-h-[22rem]" imageClassName="object-top" />
       <CaseCropCard image={consorcioRemazaContentImages[1]} title="Dúvidas frequentes" className="min-h-[22rem]" imageClassName="object-top" />
     </div>
   );
@@ -2991,11 +2991,11 @@ function ConsorcioRemazaContentVisualBlock() {
 
 function ConsorcioRemazaRelationshipVisualBlock() {
   return (
-    <div className="mt-12 grid items-start gap-[30px] md:grid-cols-[1fr_0.72fr]">
+    <div className="mt-12 grid gap-[30px]">
       <CaseImageSlot image={consorcioRemazaRelationshipImages[0]} aspectClass="aspect-[16/10] min-h-[22rem]" />
-      <div className="grid gap-[30px]">
-        <CaseCropCard image={consorcioRemazaRelationshipImages[1]} title="Falar com a empresa" className="min-h-[12rem]" imageClassName="object-top" />
-        <CaseCropCard image={consorcioRemazaRelationshipImages[2]} title="Encontrar uma unidade" className="min-h-[12rem]" imageClassName="object-top" />
+      <div className="grid items-start gap-[30px] md:grid-cols-2">
+        <CaseCropCard image={consorcioRemazaRelationshipImages[1]} title="Falar com a empresa" className="min-h-[16rem]" imageClassName="object-top" />
+        <CaseCropCard image={consorcioRemazaRelationshipImages[2]} title="Encontrar uma unidade" className="min-h-[16rem]" imageClassName="object-top" />
       </div>
     </div>
   );
@@ -3003,8 +3003,8 @@ function ConsorcioRemazaRelationshipVisualBlock() {
 
 function ConsorcioRemazaOpportunitiesVisualBlock() {
   return (
-    <div className="mt-12 grid items-start gap-[30px] md:grid-cols-[1fr_0.72fr]">
-      <CaseImageSlot image={consorcioRemazaOpportunityImages[0]} aspectClass="aspect-[16/10] min-h-[22rem]" />
+    <div className="mt-12 grid items-start gap-[30px] md:grid-cols-2">
+      <CaseCropCard image={consorcioRemazaOpportunityImages[0]} title="Seja um representante" className="min-h-[22rem]" imageClassName="object-top" />
       <CaseCropCard image={consorcioRemazaOpportunityImages[1]} title="Trabalhe conosco" className="min-h-[22rem]" imageClassName="object-top" />
     </div>
   );
