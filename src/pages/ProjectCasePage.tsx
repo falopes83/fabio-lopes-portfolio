@@ -406,94 +406,95 @@ const appRemazaScope = [
 
 const gamp21Sections: CaseSection[] = [
   {
-    id: 'rede-de-apoio',
+    id: 'contexto',
     label: 'Contexto',
-    title: 'Uma rede de apoio para quem está começando',
+    title: 'Apoio para quem está começando uma nova fase',
     intro:
-      'A chegada de um filho traz descobertas, dúvidas e muitas responsabilidades. O Gamp21 atua como uma rede de apoio para mães, pais e empresas, oferecendo conteúdos, cursos e orientações para tornar esse momento mais acolhedor e consciente.',
+      'A chegada de um filho traz descobertas, dúvidas e novas responsabilidades. O Gamp21 atua como uma rede de apoio para mães, pais e empresas, oferecendo cursos, conteúdos e orientações desde a gestação até a primeira infância.',
     complement:
-      'O projeto do site nasceu da necessidade de apresentar esse trabalho com mais clareza, aproximando a marca tanto das famílias quanto das organizações interessadas em apoiar seus colaboradores.',
+      'O site foi criado para apresentar esse trabalho de forma acolhedora e aproximar a marca tanto das famílias quanto das organizações interessadas em apoiar seus colaboradores.',
     visual: 'gamp-context',
   },
   {
-    id: 'familias-e-empresas',
+    id: 'desafio',
     label: 'Desafio',
-    title: 'Conversar com famílias e empresas na mesma experiência',
-    intro: 'O principal desafio foi equilibrar duas formas diferentes de comunicação.',
+    title: 'Falar com famílias e empresas no mesmo espaço',
+    intro:
+      'O principal desafio foi equilibrar públicos com necessidades diferentes.',
     complement:
-      'De um lado, mães e pais procurando informações confiáveis para lidar com as dúvidas da parentalidade. Do outro, empresas interessadas em oferecer cursos de paternidade e ações de apoio aos seus colaboradores.',
+      'Enquanto mães e pais procuravam informações confiáveis para lidar com a parentalidade, as empresas precisavam compreender os cursos e serviços que poderiam oferecer aos seus colaboradores.',
     extraParagraphs: [
-      'O site precisava acolher o público familiar e, ao mesmo tempo, transmitir profissionalismo, estrutura e credibilidade para o ambiente corporativo.',
+      'A experiência precisava ser humana e acolhedora, mas também transmitir organização, experiência profissional e clareza comercial.',
     ],
-    visual: 'gamp-audiences',
+    visual: 'none',
   },
   {
-    id: 'organizacao',
+    id: 'atuacao',
     label: 'Atuação',
     title: 'Organização, conteúdo e experiência digital',
     intro:
-      'Minha atuação envolveu a organização da arquitetura do site, a definição dos principais caminhos de navegação e a criação das interfaces.',
+      'Minha atuação envolveu a organização da arquitetura do site, a definição dos principais caminhos de navegação e a criação das interfaces para desktop e mobile.',
     complement:
-      'O trabalho buscou dar mais visibilidade aos serviços do Gamp21, facilitar o entendimento da proposta e direcionar cada público para o conteúdo mais relevante, mantendo uma experiência simples e acolhedora.',
+      'O trabalho buscou facilitar o acesso aos serviços, valorizar os conteúdos produzidos pelo Gamp21 e direcionar cada público para a informação mais relevante.',
     bullets: [
       'Arquitetura da informação',
       'Organização dos conteúdos',
       'Direção visual',
       'UX/UI Design',
       'Interfaces responsivas',
-      'Estruturação da jornada entre conteúdos e serviços',
+      'Estruturação da navegação',
+      'Destaque para conteúdos e serviços',
     ],
     visual: 'gamp-scope',
   },
   {
-    id: 'informacao-acessivel',
-    label: 'Experiência',
-    title: 'Informação acessível em um momento de transformação',
-    intro:
-      'A linguagem visual e a organização das páginas foram pensadas para transmitir proximidade, segurança e cuidado.',
-    complement:
-      'Em vez de apresentar a parentalidade de maneira excessivamente técnica, o site procura conversar com mães e pais de forma humana, ajudando o usuário a compreender os serviços e encontrar apoio com facilidade.',
-    visual: 'gamp-care',
-  },
-  {
-    id: 'solucoes',
+    id: 'servicos',
     label: 'Serviços',
     title: 'Soluções para famílias e ambientes de trabalho',
     intro:
-      'Os serviços receberam destaque para que empresas e famílias pudessem compreender rapidamente como o Gamp21 atua.',
+      'Os serviços receberam destaque para que empresas e famílias pudessem compreender rapidamente as diferentes formas de atuação do Gamp21.',
     complement:
-      'Para o público corporativo, o site apresenta o Gamp21 como parceiro na criação de cursos e ações voltadas à paternidade, contribuindo para colaboradores mais preparados e apoiados durante essa nova fase da vida.',
+      'A organização em categorias facilita a apresentação de cursos, rodas de conversa, consultorias e acompanhamentos, ajudando o usuário a encontrar uma solução adequada para cada momento.',
+    extraParagraphs: [
+      'Para o público corporativo, a página também posiciona o Gamp21 como parceiro de empresas que desejam apoiar seus colaboradores durante a maternidade e a paternidade.',
+    ],
     visual: 'gamp-services',
   },
   {
-    id: 'blog',
+    id: 'conteudo',
     label: 'Conteúdo',
-    title: 'Um canal que aproxima a marca das famílias',
+    title: 'Informação que aproxima a marca das famílias',
     intro:
-      'O blog “Para mães e pais” ocupa um papel importante dentro da experiência. Além de responder às dúvidas mais comuns sobre maternidade e paternidade, ele também amplia o alcance orgânico do Gamp21 por meio das buscas no Google.',
+      'A área “Para mães e pais” reúne conteúdos sobre gestação, alimentação, cuidados com o bebê, parentalidade e primeira infância.',
     complement:
-      'O conteúdo ajuda novos usuários a descobrirem a marca e cria um primeiro contato baseado em informação, confiança e acolhimento.',
+      'Além de apoiar as famílias com informações acessíveis, essa produção de conteúdo amplia os pontos de entrada para o site por meio das buscas orgânicas no Google.',
+    extraParagraphs: [
+      'O blog estabelece um primeiro contato baseado em informação e confiança, permitindo que novas pessoas conheçam o trabalho do Gamp21 antes mesmo de procurar um serviço.',
+    ],
     visual: 'gamp-blog',
   },
   {
-    id: 'equilibrio',
+    id: 'aprendizado',
     label: 'Aprendizado',
     title: 'Equilibrar acolhimento e posicionamento profissional',
     intro:
       'O projeto mostrou como uma mesma experiência pode conversar com públicos diferentes sem perder sua identidade.',
     complement:
       'Foi necessário encontrar um equilíbrio entre o tom humano esperado pelas famílias e a clareza comercial necessária para apresentar os serviços às empresas.',
-    visual: 'gamp-balance',
+    extraParagraphs: [
+      'Também foi importante compreender o conteúdo como parte da experiência, ajudando o Gamp21 a manter uma presença digital útil mesmo antes do contato direto com seus profissionais.',
+    ],
+    visual: 'none',
   },
   {
-    id: 'apoio-digital',
+    id: 'conclusao',
     label: 'Conclusão',
-    title: 'Apoio que começa antes do primeiro contato',
+    title: 'Um ponto de apoio entre conteúdo e serviço',
     intro:
-      'O site do Gamp21 transformou conteúdos, cursos e serviços em uma experiência mais organizada e acessível.',
+      'O site organizou conteúdos, cursos e serviços em uma experiência capaz de acolher famílias e apresentar o trabalho do Gamp21 ao ambiente corporativo.',
     complement:
-      'Mais do que apresentar a empresa, o projeto criou um ponto de apoio digital para mães, pais e organizações que desejam tornar a experiência da parentalidade mais consciente, acolhedora e bem acompanhada.',
-    visual: 'gamp-conclusion',
+      'Mais do que uma presença institucional, o projeto criou um ponto de encontro entre informação, cuidado e apoio durante as diferentes etapas da parentalidade.',
+    visual: 'none',
   },
 ];
 
@@ -501,81 +502,134 @@ const daitanSections: CaseSection[] = [
   {
     id: 'contexto',
     label: 'Contexto',
-    title: 'Uma experiência digital para diferentes momentos de compra',
+    title: 'Uma concessionária com diferentes pontos de contato',
     intro:
-      'A Daitan atende desde clientes interessados nos lançamentos e modelos mais sofisticados da Honda até pessoas que procuram um seminovo com segurança e procedência.',
+      'A Honda Daitan atende públicos com necessidades distintas. Enquanto alguns clientes procuram um veículo novo e desejam conhecer versões, tecnologias e condições de compra, outros pesquisam seminovos, peças, acessórios ou serviços de manutenção.',
     complement:
-      'Desenvolvido em 2023, o novo site foi pensado para tornar esse portfólio mais fácil de conhecer, reunindo veículos, ofertas, serviços e canais de atendimento em uma experiência simples e objetiva.',
+      'O projeto nasceu da necessidade de organizar esse universo em uma experiência digital capaz de acompanhar diferentes momentos da relação entre o cliente e a concessionária.',
     visual: 'daitan-context',
   },
   {
     id: 'desafio',
     label: 'Desafio',
-    title: 'Velocidade para quem acessa. Praticidade para quem atualiza.',
+    title: 'Organizar uma experiência que muda constantemente',
     intro:
-      'Além de apresentar dificuldades de navegação, o site anterior demorava para carregar e tornava a atualização dos conteúdos mais trabalhosa.',
+      'O mercado automotivo exige atualizações frequentes. Novos modelos, versões, ofertas, veículos seminovos e serviços precisam ser publicados e atualizados com agilidade.',
     complement:
-      'O desafio era criar uma estrutura rápida, responsiva e fácil de administrar, considerando a entrada constante de novos modelos, versões, ofertas e veículos seminovos pelas equipes das concessionárias.',
-    visual: 'daitan-challenge',
+      'Além de facilitar a navegação para o cliente, o projeto precisava oferecer uma estrutura prática para a manutenção do conteúdo, permitindo que diferentes áreas do site fossem atualizadas sem comprometer a consistência da experiência.',
+    visual: 'none',
   },
   {
     id: 'atuacao',
     label: 'Atuação',
-    title: 'Da organização do conteúdo à interface responsiva',
+    title: 'Da organização do conteúdo à experiência responsiva',
     intro:
       'Minha atuação envolveu a organização da arquitetura do site, a definição dos principais caminhos de navegação e a criação das interfaces para desktop e mobile.',
     complement:
-      'O projeto também estabeleceu algumas das soluções que posteriormente seriam evoluídas no site da Moto Remaza, funcionando como um primeiro passo dessa abordagem para o ecossistema digital das concessionárias do grupo.',
+      'O trabalho contemplou diferentes áreas da jornada: apresentação dos veículos, seminovos, tecnologias, peças e acessórios, revisão programada, condições especiais e canais de atendimento.',
+    bullets: [
+      'Arquitetura da informação',
+      'Organização dos conteúdos',
+      'UX/UI Design',
+      'Interfaces responsivas',
+      'Estruturação das páginas de modelos',
+      'Organização da experiência de seminovos',
+      'Estruturação das áreas de pós-venda',
+      'Criação de formulários e pontos de conversão',
+      'Padronização visual entre diferentes áreas do site',
+    ],
     visual: 'daitan-scope',
   },
   {
-    id: 'experiencia',
-    label: 'Experiência',
-    title: 'Conteúdo fácil de encontrar e ações bem direcionadas',
+    id: 'veiculos-novos',
+    label: 'Veículos novos',
+    title: 'Informação para apoiar a escolha do cliente',
     intro:
-      'A experiência foi estruturada para que o usuário pudesse conhecer os veículos, acessar detalhes dos modelos e encontrar rapidamente o atendimento mais adequado para cada necessidade.',
+      'As páginas de modelos foram organizadas para apresentar o veículo de maneira visual e facilitar o acesso às informações mais importantes durante a decisão de compra.',
     complement:
-      'Banners responsivos e chamadas distribuídas pelas páginas direcionam para diferentes formulários, como agendamento de test-drive, solicitação de informações, cadastro de interesse e contato com a diretoria.',
-    visual: 'daitan-experience',
+      'Versões, diferenciais, cores, tecnologias, ficha técnica e ações como solicitar uma cotação ou agendar um test drive passam a fazer parte de uma mesma experiência.',
+    extraParagraphs: [
+      'A estrutura também foi pensada para receber novos modelos e atualizações frequentes sem exigir a criação de uma experiência completamente diferente para cada lançamento.',
+    ],
+    visual: 'daitan-new-cars',
   },
   {
-    id: 'gestao-de-conteudo',
-    label: 'Gestão de conteúdo',
-    title: 'Uma estrutura preparada para mudanças constantes',
+    id: 'tecnologia-diferenciais',
+    label: 'Tecnologia',
+    title: 'Detalhes que ajudam a construir valor',
     intro:
-      'Como lançamentos, versões, ofertas e veículos seminovos mudam com frequência, o site precisava oferecer mais autonomia para as equipes responsáveis pelas concessionárias.',
+      'Além das informações comerciais, as páginas também apresentam tecnologias, recursos de segurança e diferenciais de cada veículo.',
     complement:
-      'A estrutura foi desenvolvida para facilitar a publicação e a atualização dos conteúdos, reduzindo a dependência técnica nas tarefas recorrentes do site.',
-    visual: 'daitan-content',
+      'O conteúdo foi dividido em categorias para facilitar a exploração e permitir que o cliente compreenda os benefícios do modelo sem enfrentar uma página excessivamente técnica ou desorganizada.',
+    visual: 'daitan-technology',
   },
   {
-    id: 'responsividade-performance',
+    id: 'seminovos',
+    label: 'Seminovos',
+    title: 'Busca e comparação para diferentes perfis de compra',
+    intro:
+      'A área de seminovos atende um público com necessidades diferentes daquele que procura um veículo novo.',
+    complement:
+      'A experiência foi estruturada para permitir a busca, a aplicação de filtros e a visualização das informações principais de cada veículo, ajudando o usuário a reduzir as opções antes de entrar em contato com a concessionária.',
+    extraParagraphs: [
+      'No detalhe, fotos, características e informações do automóvel dão mais segurança para continuar a jornada.',
+    ],
+    visual: 'daitan-used-cars',
+  },
+  {
+    id: 'pos-venda',
+    label: 'Pós-venda',
+    title: 'A experiência continua depois da compra',
+    intro:
+      'O relacionamento com o cliente não termina na escolha do automóvel. O site também organiza serviços importantes para quem já possui um Honda, como peças, acessórios e revisão programada.',
+    complement:
+      'Na área de peças e acessórios, o usuário pode selecionar o modelo e visualizar itens compatíveis. Já na revisão programada, encontra informações sobre serviços previstos, quilometragem e valores relacionados à manutenção do veículo.',
+    visual: 'daitan-after-sales',
+  },
+  {
+    id: 'relacionamento',
+    label: 'Relacionamento',
+    title: 'Atendimento para clientes e empresas',
+    intro:
+      'Além das jornadas de compra e pós-venda, o site reúne canais voltados a necessidades específicas.',
+    complement:
+      'A área de condições especiais apresenta informações para pessoas jurídicas e outros públicos elegíveis, enquanto o Linha Direta cria um canal para dúvidas, sugestões, críticas e elogios.',
+    extraParagraphs: [
+      'Esses pontos de contato ampliam o papel do site e aproximam diferentes públicos da concessionária.',
+    ],
+    visual: 'daitan-relationship',
+  },
+  {
+    id: 'experiencia-responsiva',
     label: 'Responsividade',
-    title: 'Uma experiência rápida em qualquer dispositivo',
+    title: 'A mesma jornada em diferentes telas',
     intro:
-      'O projeto priorizou o carregamento das páginas e a adaptação dos conteúdos para diferentes tamanhos de tela, especialmente nos banners e áreas de destaque.',
+      'Como boa parte das pesquisas por veículos acontece pelo celular, a adaptação para telas menores foi considerada em diferentes partes da experiência.',
     complement:
-      'O objetivo foi oferecer uma navegação mais fluida, permitindo que o usuário encontrasse veículos e canais de atendimento tanto pelo computador quanto pelo celular.',
-    visual: 'daitan-performance',
+      'Banners, páginas de modelos, filtros, detalhes de seminovos e catálogos de acessórios foram reorganizados para preservar a leitura e manter as principais ações sempre acessíveis.',
+    visual: 'daitan-responsive',
   },
   {
     id: 'aprendizado',
     label: 'Aprendizado',
-    title: 'A base para uma experiência mais madura',
+    title: 'Projetar uma estrutura preparada para evoluir',
     intro:
-      'O projeto da Daitan ajudou a consolidar uma estrutura digital capaz de acompanhar a rotina de uma concessionária: novos veículos, campanhas, seminovos e diferentes solicitações de atendimento.',
+      'O projeto reforçou a importância de criar uma experiência capaz de receber atualizações frequentes sem perder consistência.',
     complement:
-      'Os aprendizados obtidos durante sua criação também serviram como ponto de partida para decisões que seriam aprofundadas posteriormente no projeto da Moto Remaza.',
-    visual: 'daitan-learning',
+      'Mais do que desenhar páginas isoladas, foi necessário pensar em estruturas reutilizáveis para modelos, ofertas, serviços e conteúdos que mudam ao longo do tempo.',
+    extraParagraphs: [
+      'Esse olhar ajudou a transformar o site em uma base mais flexível para a operação digital da concessionária.',
+    ],
+    visual: 'none',
   },
   {
     id: 'conclusao',
     label: 'Conclusão',
-    title: 'Uma concessionária mais acessível no ambiente digital',
+    title: 'Muito além de uma vitrine de veículos',
     intro:
-      'O novo site transformou um ambiente lento e difícil de atualizar em uma experiência mais rápida, organizada e preparada para mudanças frequentes.',
+      'O site da Honda Daitan reúne diferentes etapas da jornada automotiva em uma experiência mais organizada, desde a descoberta de um novo modelo até a busca por seminovos, acessórios, manutenção e atendimento.',
     complement:
-      'Mais do que apresentar veículos, o projeto aproximou clientes e concessionária por meio de caminhos claros para conhecer modelos, demonstrar interesse e iniciar uma conversa com a Daitan.',
+      'O projeto criou uma base digital capaz de conectar produtos, serviços e relacionamento, acompanhando o cliente antes, durante e depois da compra.',
     visual: 'none',
   },
 ];
@@ -584,96 +638,155 @@ const consorcioRemazaSections: CaseSection[] = [
   {
     id: 'contexto',
     label: 'Contexto',
-    title: 'O primeiro grande desafio na WebSupply',
+    title: 'O primeiro grande projeto de uma nova trajetória',
     intro:
-      'O Consórcio Remaza foi meu primeiro projeto na WebSupply e marcou o início de uma nova fase na minha trajetória como designer.',
+      'O Consórcio Remaza foi meu primeiro projeto na WebSupply e marcou o início de uma nova etapa da minha trajetória profissional.',
     complement:
-      'Mais do que atualizar a presença digital da empresa, o projeto buscava tornar o consórcio mais simples de compreender e aproximar o público do time comercial.',
+      'Mais do que atualizar a aparência do site, o trabalho buscou facilitar o entendimento sobre o consórcio e criar caminhos mais práticos para pessoas interessadas em conquistar um imóvel, automóvel ou motocicleta.',
+    extraParagraphs: [
+      'O projeto também precisava apoiar a operação comercial da empresa, aproximando os usuários dos representantes responsáveis pelo atendimento.',
+    ],
     visual: 'consorcio-context',
   },
   {
     id: 'desafio',
     label: 'Desafio',
-    title: 'Tornar uma decisão importante mais fácil',
+    title: 'Tornar uma escolha complexa mais compreensível',
     intro:
-      'Contratar um consórcio envolve planejamento, confiança e muitas dúvidas. O desafio era apresentar as possibilidades de forma clara, permitindo que diferentes públicos entendessem o produto e avaliassem se ele fazia sentido para sua realidade.',
+      'A contratação de um consórcio envolve valores, prazos, parcelas e regras que podem gerar dúvidas antes mesmo do contato com a equipe comercial.',
     complement:
-      'Também era necessário transmitir segurança durante toda a jornada, principalmente nos momentos em que o usuário precisava conversar com um vendedor.',
+      'O desafio foi organizar essas informações sem sobrecarregar a experiência e permitir que o usuário tivesse uma primeira noção sobre suas possibilidades.',
+    extraParagraphs: [
+      'Ao mesmo tempo, cada interação precisava criar oportunidades reais para que a equipe de vendas continuasse o atendimento de maneira mais contextualizada.',
+    ],
     visual: 'consorcio-challenge',
   },
   {
     id: 'atuacao',
     label: 'Atuação',
-    title: 'Uma experiência que conectava clientes e vendedores',
+    title: 'Da experiência pública às ferramentas comerciais',
     intro:
-      'Minha atuação envolveu a criação das interfaces do site institucional e de diferentes jornadas de simulação e conversão.',
+      'Minha atuação envolveu a organização da arquitetura do site, a definição dos caminhos de navegação e a criação das interfaces públicas e comerciais.',
     complement:
-      'Desenvolvemos simuladores que ajudavam o usuário a visualizar possibilidades de pagamento antes de iniciar o contato. Além de facilitar a tomada de decisão, essas ferramentas geravam leads mais contextualizados para o time comercial.',
+      'O projeto contemplou páginas institucionais, simuladores, áreas de conteúdo, canais de atendimento, landing pages e estruturas destinadas aos representantes de vendas.',
     bullets: [
-      'Interfaces do site institucional',
-      'Jornadas de simulação',
-      'Fluxos de conversão',
-      'Geração de leads para vendas',
-      'Experiência desktop e mobile',
-      'Apoio à jornada comercial',
+      'Arquitetura da informação',
+      'Organização dos conteúdos',
+      'UX/UI Design',
+      'Interfaces responsivas',
+      'Estruturação dos simuladores',
+      'Criação de jornadas de geração de leads',
+      'Landing pages para representantes',
+      'Organização de canais de atendimento',
+      'Apoio visual à estrutura comercial',
+      'Padronização das principais áreas do site',
     ],
     visual: 'consorcio-scope',
   },
   {
-    id: 'ecossistema-comercial',
-    label: 'Ecossistema comercial',
-    title: 'O projeto continuava depois do site',
+    id: 'simulacao',
+    label: 'Simulação',
+    title: 'Uma decisão que começa pela realidade do usuário',
     intro:
-      'O trabalho não ficou restrito à experiência do público. Também foram criadas centrais e ferramentas de apoio para o time de vendas, conectando a jornada digital ao atendimento comercial.',
+      'Os simuladores foram criados para ajudar o usuário a explorar possibilidades antes de conversar com um representante.',
     complement:
-      'Essa visão tornou o projeto especialmente amplo: não estávamos desenhando apenas páginas, mas parte de um ecossistema utilizado por clientes, vendedores e diferentes áreas da empresa.',
+      'A experiência permite escolher o tipo de consórcio, informar alguns dados e visualizar opções de planos de acordo com o valor pretendido.',
+    extraParagraphs: [
+      'Mais do que apresentar produtos, o simulador cria uma ponte entre o interesse inicial do usuário e a equipe comercial, gerando um contato com mais contexto para a continuidade do atendimento.',
+    ],
+    visual: 'consorcio-simulation',
+  },
+  {
+    id: 'experiencia-mobile',
+    label: 'Experiência mobile',
+    title: 'Simular também pelo celular',
+    intro:
+      'A jornada foi adaptada para que as principais ações continuassem acessíveis em telas menores.',
+    complement:
+      'No mobile, etapas, campos e opções de planos foram reorganizados verticalmente, mantendo a orientação sobre o progresso e facilitando a interação com formulários e resultados.',
+    visual: 'consorcio-mobile',
+  },
+  {
+    id: 'estrutura-comercial',
+    label: 'Estrutura comercial',
+    title: 'Uma experiência que também apoia quem vende',
+    intro:
+      'O projeto não ficou restrito ao site voltado ao consumidor. Também foram desenvolvidas estruturas digitais para apoiar representantes e equipes comerciais.',
+    complement:
+      'Landing pages individuais permitiram que cada profissional divulgasse os produtos e recebesse contatos diretamente. A área de vendas reuniu acessos importantes para a rotina do representante, como dados pessoais, documentos, tabelas e materiais de apoio.',
     visual: 'consorcio-commercial',
   },
   {
     id: 'confianca',
-    label: 'Confiança',
-    title: 'A presença do vendedor também fazia parte da experiência',
+    label: 'Confiança no atendimento',
+    title: 'Pessoas reais por trás da experiência',
     intro:
-      'Percebemos que a confiança não dependia apenas da interface. A forma como os vendedores apareciam no ambiente digital também influenciava a decisão do cliente.',
+      'A apresentação dos representantes também fez parte da construção de uma relação mais próxima com o cliente.',
     complement:
-      'Por isso, orientamos a produção de fotografias profissionais para os consultores. O resultado trouxe mais consistência, credibilidade e valorização para os próprios colaboradores, além de deixar o atendimento mais humano e confiável.',
+      'Foram definidas orientações para a produção de fotografias profissionais, buscando transmitir mais cuidado, credibilidade e segurança tanto para os colaboradores quanto para as pessoas que entrariam em contato com eles.',
+    extraParagraphs: [
+      'A identificação clara do profissional ajudou a humanizar uma jornada que normalmente poderia parecer distante ou excessivamente comercial.',
+    ],
     visual: 'consorcio-trust',
   },
   {
-    id: 'conteudo-alcance',
-    label: 'Conteúdo e alcance',
-    title: 'Informação como parte da estratégia',
+    id: 'conteudo',
+    label: 'Conteúdo',
+    title: 'Informação para apoiar uma escolha consciente',
     intro:
-      'Uma empresa parceira ficou responsável pela estratégia de conteúdo e engajamento, publicando notícias e materiais sobre consórcio de forma recorrente.',
+      'A Central de Notícias ampliou o papel do site ao reunir conteúdos sobre consórcio, mobilidade, imóveis e outros assuntos relacionados aos objetivos dos clientes.',
     complement:
-      'Esse trabalho fortaleceu a presença orgânica da marca e contribuiu para melhorar sua posição nos mecanismos de busca, ampliando o alcance do projeto para além das campanhas comerciais.',
+      'A produção constante de conteúdo ajudou a responder dúvidas, atrair novos usuários pelas buscas e melhorar a presença digital da empresa.',
     extraParagraphs: [
-      'Essa frente é apresentada aqui como parte do ecossistema do projeto, sem atribuir a mim a execução da estratégia de conteúdo.',
+      'A área de dúvidas frequentes complementa esse trabalho, oferecendo respostas mais diretas para quem ainda está conhecendo o funcionamento do consórcio.',
     ],
     visual: 'consorcio-content',
   },
   {
+    id: 'relacionamento',
+    label: 'Relacionamento',
+    title: 'Diferentes caminhos para continuar a jornada',
+    intro:
+      'Além dos simuladores, o site oferece caminhos para usuários que já são clientes ou que precisam de atendimento mais específico.',
+    complement:
+      'A área do cliente reúne serviços relacionados ao consórcio, enquanto o Linha Direta permite o envio de dúvidas e solicitações. A página de unidades e filiais ajuda a conectar a experiência digital ao atendimento presencial.',
+    visual: 'consorcio-relationship',
+  },
+  {
+    id: 'novas-oportunidades',
+    label: 'Novas oportunidades',
+    title: 'Expandindo também a rede comercial',
+    intro:
+      'O ecossistema digital também contempla pessoas interessadas em atuar junto à empresa.',
+    complement:
+      'A página “Seja um representante” apresenta a oportunidade e organiza os benefícios e recursos disponíveis para o profissional. A área “Trabalhe conosco” amplia os caminhos para quem deseja fazer parte da organização.',
+    visual: 'consorcio-opportunities',
+  },
+  {
     id: 'aprendizado',
     label: 'Aprendizado',
-    title: 'Design também acontece fora das telas',
+    title: 'Projetar para o usuário e para a operação',
     intro:
-      'Esse projeto me mostrou que uma experiência digital não é construída somente com interfaces.',
+      'O principal aprendizado foi compreender que uma experiência digital não termina na interface utilizada pelo cliente.',
     complement:
-      'Simuladores, conteúdo, ferramentas comerciais, atendimento e até a apresentação dos vendedores faziam parte da percepção de confiança da marca. Foi quando comecei a enxergar com mais clareza como o design poderia conectar diferentes pontos do negócio.',
+      'O projeto precisou considerar quem pesquisa, quem simula, quem recebe o lead e quem continua o atendimento. Conectar esses diferentes pontos ajudou a criar uma solução mais útil para o usuário e mais próxima da operação comercial.',
+    extraParagraphs: [
+      'Por ter sido meu primeiro grande projeto na WebSupply, o Consórcio Remaza também marcou uma evolução importante na forma como passei a pensar arquitetura, conversão e continuidade da jornada.',
+    ],
     visual: 'none',
   },
   {
     id: 'conclusao',
     label: 'Conclusão',
-    title: 'Um ponto de partida que ainda me representa',
+    title: 'Um projeto que abriu novos caminhos',
     intro:
-      'Atualmente, o Consórcio Remaza está passando por uma nova atualização visual, conduzida por outra profissional — e tenho gostado muito de acompanhar a evolução do trabalho.',
+      'O projeto transformou o site em um ecossistema capaz de informar, simular, gerar oportunidades e apoiar o atendimento comercial.',
     complement:
-      'Este case registra a etapa da qual participei: um projeto de grande escala, que marcou meu início na WebSupply e ajudou a construir uma base importante para a presença digital da empresa.',
+      'Os simuladores tornaram a escolha mais concreta para o usuário, enquanto as landing pages e ferramentas de vendas aproximaram a experiência digital dos profissionais responsáveis pela continuidade da jornada.',
     extraParagraphs: [
-      'Mesmo pertencendo a outro momento da marca e da minha carreira, ele continua sendo um trabalho do qual tenho muito orgulho.',
+      'Atualmente, o site passa por uma nova evolução visual, conduzida por outra profissional. Este case registra a estrutura que serviu como ponto de partida e um projeto que permanece especialmente importante na minha trajetória.',
     ],
-    visual: 'consorcio-conclusion',
+    visual: 'none',
   },
 ];
 
@@ -903,64 +1016,33 @@ const gamp21ProjectCharacteristics: IconListItem[] = [
 ];
 
 const gamp21HomeImage: CaseImageItem = {
+  src: '/assets/projects/gamp21/home.webp',
   alt: 'Página inicial do Gamp21 com seção de acolhimento para mães, pais e empresas',
-  caption: 'Página inicial e seção de acolhimento do projeto Gamp21.',
-  placeholder: '[IMAGEM DO PROJETO — Página inicial / seção de acolhimento]',
+  caption: 'Página inicial no desktop, apresentando a proposta do Gamp21 e seus principais caminhos.',
 };
 
-const gamp21HeroImage: CaseImageItem = {
-  alt: 'Hero ou visão geral da página inicial do Gamp21',
-  caption: 'Hero ou visão geral da página inicial.',
-  placeholder: '[IMAGEM DO PROJETO — Hero ou visão geral da página inicial]',
-};
-
-const gamp21AudienceImage: CaseImageItem = {
-  alt: 'Seção do Gamp21 representando famílias ou empresas',
-  caption: 'Uma experiência planejada para acolher famílias e apresentar soluções para empresas.',
-  placeholder: '[IMAGEM DO PROJETO — Seção que represente famílias ou empresas]',
-};
-
-const gamp21ScreenSequenceImage: CaseImageItem = {
-  alt: 'Sequência de telas desktop e mobile do projeto Gamp21',
-  caption: 'Sequência de telas desktop e mobile.',
-  placeholder: '[IMAGEM DO PROJETO — Sequência de telas desktop e mobile]',
-};
-
-const gamp21CareImage: CaseImageItem = {
-  alt: 'Página inicial ou seção do Gamp21 com abordagem humana e acolhedora',
-  caption: 'Conteúdo organizado para transmitir proximidade, segurança e cuidado.',
-  placeholder: '[IMAGEM DO PROJETO — Página inicial ou seção com abordagem humana e acolhedora]',
+const gamp21MobileHomeImage: CaseImageItem = {
+  src: '/assets/projects/gamp21/(iPhone%20SE).webp',
+  alt: 'Página inicial do Gamp21 em um iPhone SE',
+  caption: 'A mesma experiência adaptada para a navegação mobile.',
 };
 
 const gamp21ServicesImage: CaseImageItem = {
-  alt: 'Seção ou página de serviços e cursos do Gamp21',
-  caption: 'Serviços e cursos apresentados para famílias e ambientes de trabalho.',
-  placeholder: '[IMAGEM DO PROJETO — Seção ou página de serviços e cursos]',
+  src: '/assets/projects/gamp21/servicos.webp',
+  alt: 'Página de serviços do Gamp21 com cursos, consultorias e acompanhamentos',
+  caption: 'Serviços organizados para famílias, empresas e diferentes momentos da parentalidade.',
 };
 
-const gamp21BlogImages: CaseImageItem[] = [
-  {
-    alt: 'Listagem do blog Para mães e pais do Gamp21',
-    caption: 'Listagem do blog “Para mães e pais”.',
-    placeholder: '[IMAGEM DO PROJETO — Listagem do blog “Para mães e pais”]',
-  },
-  {
-    alt: 'Página interna de um artigo do blog do Gamp21',
-    caption: 'Página interna de um artigo.',
-    placeholder: '[IMAGEM DO PROJETO — Página interna de um artigo]',
-  },
-];
-
-const gamp21BalanceImage: CaseImageItem = {
-  alt: 'Composição com detalhes visuais ou diferentes páginas do Gamp21',
-  caption: 'Detalhes visuais e diferentes páginas da experiência.',
-  placeholder: '[IMAGEM DO PROJETO — Composição com detalhes visuais ou diferentes páginas]',
+const gamp21BlogImage: CaseImageItem = {
+  src: '/assets/projects/gamp21/blog.webp',
+  alt: 'Página Para mães e pais do Gamp21 com listagem de conteúdos',
+  caption: 'A área “Para mães e pais” organiza conteúdos acessíveis para as famílias.',
 };
 
-const gamp21ConclusionImage: CaseImageItem = {
-  alt: 'Encerramento com mockup ou visão geral do site Gamp21',
-  caption: 'Encerramento com mockup ou visão geral do site.',
-  placeholder: '[IMAGEM DO PROJETO — Encerramento com mockup ou visão geral do site]',
+const gamp21HomeContentImage: CaseImageItem = {
+  src: '/assets/projects/gamp21/home-maes_pais.webp',
+  alt: 'Seção Para mães e pais presente na página inicial do Gamp21',
+  caption: 'Os conteúdos também aparecem na home como ponto de entrada para novas leituras.',
 };
 
 const daitanParticipation: IconListItem[] = [
@@ -969,24 +1051,36 @@ const daitanParticipation: IconListItem[] = [
     text: 'Arquitetura da informação',
   },
   {
-    icon: Route,
-    text: 'Mapeamento da jornada de compra',
+    icon: FileText,
+    text: 'Organização dos conteúdos',
   },
   {
     icon: MousePointer2,
     text: 'UX/UI Design',
   },
   {
-    icon: FileText,
-    text: 'Organização de conteúdo comercial',
+    icon: Smartphone,
+    text: 'Interfaces responsivas',
   },
   {
     icon: Component,
-    text: 'Padrões de interface para formulários e chamadas',
+    text: 'Estruturação das páginas de modelos',
   },
   {
-    icon: Smartphone,
-    text: 'Experiência responsiva',
+    icon: Route,
+    text: 'Organização da experiência de seminovos',
+  },
+  {
+    icon: Headset,
+    text: 'Estruturação das áreas de pós-venda',
+  },
+  {
+    icon: UserRoundCog,
+    text: 'Criação de formulários e pontos de conversão',
+  },
+  {
+    icon: Palette,
+    text: 'Padronização visual entre diferentes áreas do site',
   },
 ];
 
@@ -1000,16 +1094,20 @@ const daitanProjectCharacteristics: IconListItem[] = [
     text: 'Busca por seminovos com segurança e procedência',
   },
   {
+    icon: Component,
+    text: 'Tecnologias, acessórios e serviços de manutenção',
+  },
+  {
+    icon: BadgeDollarSign,
+    text: 'Condições corporativas e oportunidades comerciais',
+  },
+  {
     icon: Headset,
-    text: 'Canais de atendimento em destaque',
+    text: 'Canais de atendimento e relacionamento',
   },
   {
     icon: FileText,
-    text: 'Atualizações frequentes de modelos, ofertas e seminovos',
-  },
-  {
-    icon: Smartphone,
-    text: 'Experiência responsiva para desktop e mobile',
+    text: 'Atualizações frequentes de modelos, ofertas e serviços',
   },
 ];
 
@@ -1066,168 +1164,259 @@ const consorcioRemazaProjectCharacteristics: IconListItem[] = [
 const consorcioRemazaScope: IconListItem[] = [
   {
     icon: Network,
-    text: 'Organização da presença digital',
+    text: 'Arquitetura da informação',
   },
   {
-    icon: Component,
-    text: 'Criação de simuladores',
-  },
-  {
-    icon: Route,
-    text: 'Fluxos de captação e conversão',
+    icon: FileText,
+    text: 'Organização dos conteúdos',
   },
   {
     icon: MousePointer2,
-    text: 'Interfaces para site institucional',
+    text: 'UX/UI Design',
   },
   {
-    icon: Headset,
-    text: 'Conexão com o atendimento comercial',
+    icon: Smartphone,
+    text: 'Interfaces responsivas',
+  },
+  {
+    icon: Component,
+    text: 'Estruturação dos simuladores',
+  },
+  {
+    icon: BadgeDollarSign,
+    text: 'Criação de jornadas de geração de leads',
   },
   {
     icon: Users,
-    text: 'Valorização do time de vendas',
+    text: 'Landing pages para representantes',
+  },
+  {
+    icon: Headset,
+    text: 'Organização de canais de atendimento',
+  },
+  {
+    icon: UserRoundCog,
+    text: 'Apoio visual à estrutura comercial',
+  },
+  {
+    icon: Palette,
+    text: 'Padronização das principais áreas do site',
   },
 ];
 
 const daitanHomeImage: CaseImageItem = {
-  src: '/assets/projeto-05-daitan.webp',
-  alt: 'Imagem de apresentação do projeto Daitan',
-  caption: 'Imagem geral do projeto Daitan reaproveitada da listagem de projetos.',
+  src: '/assets/projects/daitan/home.webp',
+  alt: 'Página inicial desktop do site Honda Daitan',
+  caption: 'A home apresenta modelos, ofertas, serviços e caminhos de atendimento logo na entrada do site.',
 };
 
-const daitanChallengeImages: CaseImageItem[] = [
-  {
-    alt: 'Página de modelos ou ofertas do site Honda Daitan',
-    caption: 'Espaço reservado para uma captura da página de modelos, ofertas ou navegação principal.',
-    placeholder: '[INSERIR IMAGEM - Página de modelos, ofertas ou navegação principal]',
-  },
-  {
-    alt: 'Detalhe de modelo ou oferta no site Honda Daitan',
-    caption: 'Detalhes de modelos e ofertas ajudam o usuário a compreender melhor as opções.',
-    placeholder: '[INSERIR IMAGEM - Detalhe de modelo ou oferta]',
-  },
-  {
-    alt: 'Navegação principal do site Honda Daitan',
-    caption: 'A navegação precisa acomodar modelos, seminovos, serviços e canais de atendimento.',
-    placeholder: '[INSERIR IMAGEM - Navegação principal]',
-  },
-];
-
-const daitanResponsiveCompositionImage: CaseImageItem = {
-  alt: 'Composição com telas desktop e mobile do site Honda Daitan',
-  caption: 'Espaço reservado para uma composição com telas desktop e mobile do projeto.',
-  placeholder: '[INSERIR IMAGEM - Composição com telas desktop e mobile]',
+const daitanMobileHomeImage: CaseImageItem = {
+  src: '/assets/projects/daitan/mobile/mob-home.webp',
+  alt: 'Página inicial mobile do site Honda Daitan',
+  caption: 'A experiência mobile organiza os principais caminhos da concessionária desde a entrada no site.',
 };
 
-const daitanExperienceImages: CaseImageItem[] = [
-  {
-    alt: 'Banners responsivos do site Honda Daitan',
-    caption: 'Banners responsivos e áreas de destaque orientam diferentes caminhos de navegação.',
-    placeholder: '[INSERIR IMAGEM - Banners responsivos]',
-  },
-  {
-    alt: 'Páginas de veículos ou chamadas para formulários no site Honda Daitan',
-    caption: 'Chamadas distribuídas pelas páginas direcionam o usuário para o formulário adequado.',
-    placeholder: '[INSERIR IMAGEM - Páginas de veículos ou chamadas para formulários]',
-  },
-];
-
-const daitanContentManagementImage: CaseImageItem = {
-  alt: 'Composição da listagem de modelos, ofertas e seminovos do site Honda Daitan',
-  caption: 'Espaço reservado para mostrar listagem de modelos, ofertas e veículos seminovos.',
-  placeholder: '[INSERIR IMAGEM - Listagem de modelos, ofertas e seminovos]',
+const daitanModelDetailImage: CaseImageItem = {
+  src: '/assets/projects/daitan/modelo-detalhe.webp',
+  alt: 'Página de detalhe de modelo no site Honda Daitan',
+  caption: 'A página de modelo reúne imagem do veículo, versões, cores, ficha técnica e chamadas de conversão.',
 };
 
-const daitanPerformanceImage: CaseImageItem = {
-  alt: 'Comparação entre desktop e mobile com banners responsivos do site Honda Daitan',
-  caption: 'Espaço reservado para destacar o comportamento responsivo dos banners e áreas principais.',
-  placeholder: '[INSERIR IMAGEM - Comparação desktop e mobile dos banners responsivos]',
+const daitanModelTechnologyImage: CaseImageItem = {
+  src: '/assets/projects/daitan/modelo-evidencia-tecnologica.webp',
+  alt: 'Blocos de tecnologia, segurança e conectividade em uma página de modelo da Honda Daitan',
+  caption: 'Tecnologias e diferenciais foram organizados em blocos para facilitar a exploração.',
 };
 
-const daitanLearningImage: CaseImageItem = {
-  alt: 'Composição de telas representativas do projeto Honda Daitan',
-  caption: 'Espaço reservado para uma composição ampla com telas representativas da experiência.',
-  placeholder: '[INSERIR IMAGEM - Composição de telas representativas do projeto]',
+const daitanModelMobileImage: CaseImageItem = {
+  src: '/assets/projects/daitan/mobile/mob-hrv-touring(iPhone%20SE).webp',
+  alt: 'Página mobile de um modelo Honda HR-V Touring no site Honda Daitan',
+  caption: 'No mobile, a página mantém apresentação visual, botões de cotação e test drive em evidência.',
 };
 
-// Para inserir as imagens finais do Consórcio Remaza, preencha o campo `src` em cada item mantendo o `alt` descritivo.
+const daitanModelMobileDetailsImage: CaseImageItem = {
+  src: '/assets/projects/daitan/mobile/mob-hrv-touring(iPhone%20SE)-2.webp',
+  alt: 'Continuação mobile da página de modelo Honda HR-V Touring com versões e diferenciais',
+  caption: 'Versões, diferenciais e informações do modelo continuam acessíveis em telas menores.',
+};
+
+const daitanUsedListingImage: CaseImageItem = {
+  src: '/assets/projects/daitan/seminovos.webp',
+  alt: 'Listagem desktop de seminovos no site Honda Daitan',
+  caption: 'Listagem desktop com busca, filtros e informações principais dos seminovos.',
+};
+
+const daitanUsedMobileFilterImage: CaseImageItem = {
+  src: '/assets/projects/daitan/mobile/seminovos.webp',
+  alt: 'Busca e filtros de seminovos no mobile do site Honda Daitan',
+  caption: 'Filtros mobile ajudam o usuário a reduzir opções antes do contato.',
+};
+
+const daitanUsedMobileDetailImage: CaseImageItem = {
+  src: '/assets/projects/daitan/mobile/seminos-detalhe.webp',
+  alt: 'Detalhe mobile de veículo seminovo no site Honda Daitan',
+  caption: 'Detalhe do seminovo com fotos e informações para apoiar a continuidade da jornada.',
+};
+
+const daitanPartsImage: CaseImageItem = {
+  src: '/assets/projects/daitan/pecas-e-acessorios.webp',
+  alt: 'Página de peças e acessórios no site Honda Daitan',
+  caption: 'Seleção de modelo e exploração de peças e acessórios compatíveis.',
+};
+
+const daitanPartsMobileImage: CaseImageItem = {
+  src: '/assets/projects/daitan/mobile/pecas-e-acessorios(iPhone%20SE).webp',
+  alt: 'Seleção mobile de modelo na área de peças e acessórios da Honda Daitan',
+  caption: 'Seleção do veículo no mobile.',
+};
+
+const daitanPartsMobileListImage: CaseImageItem = {
+  src: '/assets/projects/daitan/mobile/pecas-e-acessorios(iPhone%20SE)-2.webp',
+  alt: 'Listagem mobile de acessórios compatíveis na Honda Daitan',
+  caption: 'Listagem de acessórios compatíveis no mobile.',
+};
+
+const daitanReviewImage: CaseImageItem = {
+  src: '/assets/projects/daitan/revisao-programada-detalhe.webp',
+  alt: 'Página de revisão programada com serviços, quilometragem e valores no site Honda Daitan',
+  caption: 'Revisão programada com serviços previstos, quilometragem e valores de manutenção.',
+};
+
+const daitanCorporateConditionsImage: CaseImageItem = {
+  src: '/assets/projects/daitan/condicoes+especiais-pessoajuridica.webp',
+  alt: 'Página de condições especiais para pessoa jurídica no site Honda Daitan',
+  caption: 'Condições especiais aproximam públicos corporativos da concessionária.',
+};
+
+const daitanDirectLineImage: CaseImageItem = {
+  src: '/assets/projects/daitan/linha-direta.webp',
+  alt: 'Página Linha Direta no site Honda Daitan para dúvidas, sugestões, críticas e elogios',
+  caption: 'Linha Direta cria um canal aberto de comunicação com a empresa.',
+};
+
+const daitanFooterImage: CaseImageItem = {
+  src: '/assets/projects/daitan/footer.webp',
+  alt: 'Footer do site Honda Daitan com unidades, canais de contato e caminhos de navegação',
+  caption: 'Detalhe final com unidades, contatos e navegação complementar.',
+};
+
 const consorcioRemazaHeroPlaceholder: CaseImageItem = {
   src: '/assets/projects/hero-consorcio-remaza.webp',
   alt: 'Imagem principal do case Consórcio Remaza',
   caption: 'Imagem principal do case Consórcio Remaza.',
-  placeholder: '[INSERIR IMAGEM — Hero do Consórcio Remaza]',
 };
 
 const consorcioRemazaContextImage: CaseImageItem = {
-  alt: 'Composição mostrando a presença digital do Consórcio Remaza',
-  caption: 'Espaço reservado para imagem do site ou composição da presença digital do projeto.',
-  placeholder: '[INSERIR IMAGEM — Site ou presença digital do Consórcio Remaza]',
+  src: '/assets/projects/consorcio-remaza/home.webp',
+  alt: 'Página inicial do site Consórcio Remaza com chamadas para imóveis, automóveis e motocicletas',
+  caption: 'A página inicial conecta produtos, simulação e principais caminhos comerciais.',
+};
+
+const consorcioRemazaHomeSimulationImage: CaseImageItem = {
+  src: '/assets/projects/consorcio-remaza/home-simuleaqui.webp',
+  alt: 'Continuação da página inicial do Consórcio Remaza com chamada para simulação',
+  caption: 'A simulação aparece como caminho central da jornada comercial.',
 };
 
 const consorcioRemazaChallengeImage: CaseImageItem = {
-  alt: 'Jornada explicativa para escolha de um consórcio no site Consórcio Remaza',
-  caption: 'Espaço reservado para jornada, página explicativa ou tela relacionada à escolha do consórcio.',
-  placeholder: '[INSERIR IMAGEM — Jornada, página explicativa ou escolha do consórcio]',
+  src: '/assets/projects/consorcio-remaza/simulador-imovel-2.webp',
+  alt: 'Etapa de definição de valor no simulador de imóvel do Consórcio Remaza',
+  caption: 'Campos, seletores e etapas ajudam o usuário a transformar uma escolha complexa em possibilidades mais concretas.',
 };
 
 const consorcioRemazaSimulatorImages: CaseImageItem[] = [
   {
-    alt: 'Tela desktop do simulador de consórcio do Consórcio Remaza',
-    caption: 'Simulador em desktop para apoiar a visualização de possibilidades de pagamento.',
-    placeholder: '[INSERIR IMAGEM — Simulador de consórcio em desktop]',
+    src: '/assets/projects/consorcio-remaza/simulador-imovel-1.webp',
+    alt: 'Primeira etapa do simulador de imóvel do Consórcio Remaza',
+    caption: 'Conte-nos o que você procura',
   },
   {
-    alt: 'Tela mobile do simulador de consórcio do Consórcio Remaza',
-    caption: 'Experiência mobile preparada para conversão e contato com o time comercial.',
-    placeholder: '[INSERIR IMAGEM — Simulador de consórcio em mobile]',
+    src: '/assets/projects/consorcio-remaza/simulador-imovel-2.webp',
+    alt: 'Etapa de definição de valor no simulador de imóvel do Consórcio Remaza',
+    caption: 'Defina uma faixa de investimento',
+  },
+  {
+    src: '/assets/projects/consorcio-remaza/simulador-imovel-3.webp',
+    alt: 'Opções de planos apresentadas no simulador de imóvel do Consórcio Remaza',
+    caption: 'Compare as opções disponíveis',
+  },
+];
+
+const consorcioRemazaMobileSimulatorImages: CaseImageItem[] = [
+  {
+    src: '/assets/projects/consorcio-remaza/simulador-imovel(iPhone%2016%20Pro%20Max)-1.webp',
+    alt: 'Início da simulação de imóvel no mobile do Consórcio Remaza',
+    caption: 'Dados para iniciar a simulação',
+  },
+  {
+    src: '/assets/projects/consorcio-remaza/simulador-imovel(iPhone%2016%20Pro%20Max)-2.webp',
+    alt: 'Planos apresentados no mobile do simulador de imóvel do Consórcio Remaza',
+    caption: 'Planos apresentados de forma objetiva',
   },
 ];
 
 const consorcioRemazaCommercialImages: CaseImageItem[] = [
   {
-    alt: 'Central comercial ou ferramenta interna do Consórcio Remaza',
-    caption: 'Espaço reservado para uma central comercial ou ferramenta de apoio ao time de vendas.',
-    placeholder: '[INSERIR IMAGEM — Central comercial ou ferramenta interna]',
+    src: '/assets/projects/consorcio-remaza/Landing%20Page-1.webp',
+    alt: 'Landing page individual de representante do Consórcio Remaza',
+    caption: 'Landing pages individuais conectavam divulgação, interesse e geração do contato.',
   },
   {
-    alt: 'Tela de apoio comercial conectada à jornada digital do Consórcio Remaza',
-    caption: 'Ferramentas internas ajudavam a conectar a jornada digital ao atendimento comercial.',
-    placeholder: '[INSERIR IMAGEM — Tela de apoio comercial conectada aos leads]',
+    src: '/assets/projects/consorcio-remaza/Perfil%20Vendas.webp',
+    alt: 'Perfil de vendas com dados e materiais de apoio para representantes do Consórcio Remaza',
+    caption: 'A interface complementar reunia dados, documentos e materiais de apoio ao representante.',
   },
 ];
 
-const consorcioRemazaTrustImages: CaseImageItem[] = [
-  {
-    alt: 'Fotografias profissionais dos vendedores do Consórcio Remaza',
-    caption: 'Fotografias profissionais dos consultores como parte da percepção de confiança.',
-    placeholder: '[INSERIR IMAGEM — Fotografias profissionais dos vendedores]',
-  },
-  {
-    alt: 'Tela do Consórcio Remaza em que consultores aparecem no atendimento digital',
-    caption: 'A presença dos vendedores ajudava a tornar o atendimento mais humano e confiável.',
-    placeholder: '[INSERIR IMAGEM — Tela com consultores no atendimento digital]',
-  },
-];
+const consorcioRemazaTrustImage: CaseImageItem = {
+  src: '/assets/projects/consorcio-remaza/Perfil%20Vendas.webp',
+  alt: 'Recorte do perfil de vendas com fotografia, nome, contato e página individual da representante',
+  caption: 'A identificação clara do profissional aproxima a experiência digital do atendimento real.',
+};
 
 const consorcioRemazaContentImages: CaseImageItem[] = [
   {
-    alt: 'Blog ou notícias do Consórcio Remaza com conteúdo sobre consórcio',
-    caption: 'Conteúdos publicados de forma recorrente por uma empresa parceira.',
-    placeholder: '[INSERIR IMAGEM — Blog ou notícias sobre consórcio]',
+    src: '/assets/projects/consorcio-remaza/central-noticias.webp',
+    alt: 'Central de Notícias do Consórcio Remaza com conteúdos sobre consórcio e assuntos relacionados',
+    caption: 'Conteúdos para descoberta e orientação ampliam o papel informativo do site.',
   },
   {
-    alt: 'Resultado de busca ou presença orgânica do Consórcio Remaza',
-    caption: 'Espaço reservado para presença orgânica ou resultado de busca, sem métricas numéricas.',
-    placeholder: '[INSERIR IMAGEM — Presença orgânica ou resultado de busca]',
+    src: '/assets/projects/consorcio-remaza/duvidas-frequentes.webp',
+    alt: 'Página de dúvidas frequentes do Consórcio Remaza',
+    caption: 'Respostas rápidas apoiam quem ainda está entendendo como o consórcio funciona.',
   },
 ];
 
-const consorcioRemazaConclusionImage: CaseImageItem = {
-  alt: 'Composição final com telas do Consórcio Remaza na etapa do projeto apresentada no case',
-  caption: 'Composição final com telas da etapa do projeto apresentada neste case.',
-  placeholder: '[INSERIR IMAGEM — Composição final do Consórcio Remaza]',
-};
+const consorcioRemazaRelationshipImages: CaseImageItem[] = [
+  {
+    src: '/assets/projects/consorcio-remaza/area-cliente.webp',
+    alt: 'Área do cliente do Consórcio Remaza',
+    caption: 'Acessar serviços',
+  },
+  {
+    src: '/assets/projects/consorcio-remaza/linha-direta.webp',
+    alt: 'Linha Direta do Consórcio Remaza para dúvidas e solicitações',
+    caption: 'Falar com a empresa',
+  },
+  {
+    src: '/assets/projects/consorcio-remaza/unidades-e-filiais.webp',
+    alt: 'Página de unidades e filiais do Consórcio Remaza',
+    caption: 'Encontrar uma unidade',
+  },
+];
+
+const consorcioRemazaOpportunityImages: CaseImageItem[] = [
+  {
+    src: '/assets/projects/consorcio-remaza/seja-um-representante.webp',
+    alt: 'Página Seja um representante do Consórcio Remaza',
+    caption: 'Seja um representante apresenta a oportunidade e os recursos para atuação comercial.',
+  },
+  {
+    src: '/assets/projects/consorcio-remaza/trabalhe-conosco.webp',
+    alt: 'Página Trabalhe conosco do Consórcio Remaza',
+    caption: 'Trabalhe conosco amplia os caminhos para candidatos interessados na organização.',
+  },
+];
 
 const contextOverviewImage: CaseImageItem = {
   src: '/assets/projects/app-remaza/01-app.webp',
@@ -1270,28 +1459,28 @@ const usabilityFlowPlaceholders: CaseImageItem[] = [
 
 const designSystemImages: CaseImageItem[] = [
   {
-    src: '/assets/projects/app-remaza/01-cores.jpg',
+    src: '/assets/projects/app-remaza/01-cores.webp',
     alt: 'Paleta de cores do Design System do APP Remaza com escalas primárias, secundárias e neutras',
     caption: 'Paleta de cores estruturada para estados, superfícies e hierarquia visual.',
     placeholder: 'Elementos fundamentais',
     fit: 'contain',
   },
   {
-    src: '/assets/projects/app-remaza/01-cores-variantes.jpg',
+    src: '/assets/projects/app-remaza/01-cores-variantes.webp',
     alt: 'Variantes de cores do Design System do APP Remaza com tokens primários, secundários e estados',
     caption: 'Variantes principais para padronizar feedbacks, contrastes e aplicações recorrentes.',
     placeholder: 'Componentes do produto',
     fit: 'contain',
   },
   {
-    src: '/assets/projects/app-remaza/01-componentes.jpg',
+    src: '/assets/projects/app-remaza/01-componentes.webp',
     alt: 'Tipografia e estilos de texto do Design System do APP Remaza',
     caption: 'Escala tipográfica definida para títulos, textos de apoio e leitura em telas móveis.',
     placeholder: 'Componentes aplicados',
     fit: 'contain',
   },
   {
-    src: '/assets/projects/app-remaza/01-botoes.jpg',
+    src: '/assets/projects/app-remaza/01-botoes.webp',
     alt: 'Estados e variações de botões do Design System do APP Remaza',
     caption: 'Botões e estados reutilizáveis para ações primárias, secundárias e contornos.',
     placeholder: 'Botões e estados',
@@ -1580,9 +1769,7 @@ function CaseImageSlot({
       src={image.src}
       alt={image.alt}
       loading="lazy"
-      className={`h-full w-full transition duration-500 group-hover:scale-[1.015] ${
-        image.fit === 'contain' ? 'object-contain' : 'object-cover'
-      }`}
+      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
     />
   ) : (
     // Substitua o placeholder pelo caminho da imagem final deste bloco quando o material estiver pronto.
@@ -2199,6 +2386,216 @@ function MotoRemazaImagePairBlock({ images, titles }: { images: CaseImageItem[];
   );
 }
 
+function Gamp21ResponsiveVisualBlock() {
+  return (
+    <div className="mt-12 grid gap-8 md:grid-cols-[minmax(0,1fr)_13rem] md:items-end lg:grid-cols-[minmax(0,1fr)_15rem]">
+      <CaseImageSlot image={gamp21HomeImage} aspectClass="aspect-[16/9]" />
+      <CaseImageSlot image={gamp21MobileHomeImage} aspectClass="aspect-[9/16]" />
+    </div>
+  );
+}
+
+function CaseCropCard({
+  image,
+  title,
+  className = '',
+  imageClassName = '',
+}: {
+  image: CaseImageItem;
+  title: string;
+  className?: string;
+  imageClassName?: string;
+}) {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  return (
+    <figure className={`overflow-hidden rounded-md bg-[#edf4fb] shadow-soft dark:bg-[rgba(20,51,79,0.42)] ${className}`}>
+      <button
+        type="button"
+        className="group relative block h-full min-h-[14rem] w-full overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:focus-visible:ring-offset-[var(--fundo)]"
+        onClick={() => setIsLightboxOpen(true)}
+        aria-label={`Ampliar imagem: ${image.alt}`}
+      >
+        <img
+          src={image.src ?? ''}
+          alt={image.alt}
+          loading="lazy"
+          className={`h-full w-full object-cover transition duration-500 group-hover:scale-[1.015] ${imageClassName}`}
+        />
+        <span className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)]">
+          <ZoomIn size={24} strokeWidth={2.6} aria-hidden="true" />
+        </span>
+      </button>
+      <figcaption className="border-t border-white/70 bg-white px-5 py-4 font-display text-sm font-extrabold text-[var(--blue-padrao)] dark:border-white/10 dark:bg-[rgba(8,31,51,0.62)] dark:text-white">
+        {title}
+      </figcaption>
+
+      {image.src && (
+        <CaseImageLightbox image={image} isOpen={isLightboxOpen} onClose={() => setIsLightboxOpen(false)} />
+      )}
+    </figure>
+  );
+}
+
+function Gamp21ScopeVisualBlock() {
+  return (
+    <div className="grid gap-10">
+      <ScopeBlock title="Escopo de atuação" items={gamp21Participation} />
+      <div className="grid gap-[30px] md:grid-cols-[1.15fr_0.85fr]">
+        <CaseCropCard
+          image={gamp21HomeImage}
+          title="Home e caminhos principais"
+          className="md:min-h-[24rem]"
+          imageClassName="object-top"
+        />
+        <div className="grid gap-[30px]">
+          <CaseCropCard
+            image={gamp21ServicesImage}
+            title="Serviços"
+            className="min-h-[13rem]"
+            imageClassName="object-top"
+          />
+          <CaseCropCard
+            image={gamp21BlogImage}
+            title="Conteúdo"
+            className="min-h-[13rem]"
+            imageClassName="object-top"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Gamp21BlogVisualBlock() {
+  return (
+    <div className="mt-12 grid gap-[30px] md:grid-cols-[1fr_0.72fr] md:items-end">
+      <CaseImageSlot image={gamp21BlogImage} aspectClass="aspect-[16/10]" />
+      <CaseImageSlot image={gamp21HomeContentImage} aspectClass="aspect-[4/3]" />
+    </div>
+  );
+}
+
+function DaitanContextVisualBlock() {
+  return (
+    <div className="mt-14 grid gap-10">
+      <div className="grid gap-10 border-y border-[var(--cinza-claro)] py-10 dark:border-[var(--blue-padrao)] md:grid-cols-2 md:gap-14 md:py-12">
+        <ContextList title="Minha participação" items={daitanParticipation} />
+        <ContextList title="Características do projeto" items={daitanProjectCharacteristics} />
+      </div>
+      <div className="grid gap-[30px]">
+        <CaseImageSlot image={daitanHomeImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
+        <div className="grid items-start gap-[30px] sm:grid-cols-3">
+          <CaseCropCard image={daitanModelDetailImage} title="Modelos" className="min-h-[15rem]" imageClassName="object-top" />
+          <CaseCropCard image={daitanUsedListingImage} title="Seminovos" className="min-h-[15rem]" imageClassName="object-top" />
+          <CaseCropCard image={daitanPartsImage} title="Pós-venda" className="min-h-[15rem]" imageClassName="object-top" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DaitanScopeVisualBlock() {
+  return (
+    <ScopeBlock title="Escopo de atuação" items={daitanParticipation} />
+  );
+}
+
+function DaitanNewCarsVisualBlock() {
+  return (
+    <div className="mt-12 grid gap-12">
+      <CaseImageSlot image={daitanModelDetailImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
+    </div>
+  );
+}
+
+function DaitanTechnologyVisualBlock() {
+  return (
+    <div className="mt-12">
+      <CaseCropCard
+        image={daitanModelTechnologyImage}
+        title="Tecnologia, segurança e conectividade"
+        className="min-h-[24rem] md:min-h-[30rem]"
+        imageClassName="object-center"
+      />
+    </div>
+  );
+}
+
+function DaitanUsedCarsVisualBlock() {
+  return (
+    <div className="mt-12 grid gap-10">
+      <div className="grid gap-3 border-y border-[var(--cinza-claro)] py-6 dark:border-[var(--blue-padrao)] sm:grid-cols-3">
+        {['Buscar', 'Filtrar', 'Conhecer o veículo'].map((step, index) => (
+          <div key={step} className="flex items-center gap-3">
+            <span className="caption font-extrabold text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{step}</p>
+          </div>
+        ))}
+      </div>
+      <div className="grid items-start gap-[30px] md:grid-cols-[1fr_0.72fr]">
+        <CaseImageSlot image={daitanUsedListingImage} aspectClass="aspect-[16/10]" />
+        <CaseImageSlot image={daitanUsedMobileDetailImage} aspectClass="aspect-[9/16]" />
+      </div>
+    </div>
+  );
+}
+
+function DaitanAfterSalesVisualBlock() {
+  return (
+    <div className="mt-12 grid gap-12">
+      <div>
+        <div className="mb-6">
+          <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">Seleção do veículo e acessórios</h3>
+        </div>
+        <div className="grid items-start gap-[30px] md:grid-cols-[1fr_0.78fr]">
+          <CaseImageSlot image={daitanPartsImage} aspectClass="aspect-[16/10]" />
+          <CaseImageSlot image={daitanPartsMobileListImage} aspectClass="aspect-[9/16]" />
+        </div>
+      </div>
+      <div>
+        <div className="mb-6">
+          <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">Revisão programada</h3>
+        </div>
+        <CaseImageSlot image={daitanReviewImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
+      </div>
+    </div>
+  );
+}
+
+function DaitanRelationshipVisualBlock() {
+  return (
+    <div className="mt-12 grid items-start gap-[30px] md:grid-cols-2">
+      <CaseImageSlot image={daitanCorporateConditionsImage} aspectClass="aspect-[16/10]" />
+      <CaseImageSlot image={daitanDirectLineImage} aspectClass="aspect-[16/10]" />
+    </div>
+  );
+}
+
+function DaitanResponsiveVisualBlock() {
+  const mobileImages = [
+    daitanMobileHomeImage,
+    daitanModelMobileImage,
+    daitanModelMobileDetailsImage,
+    daitanUsedMobileFilterImage,
+    daitanUsedMobileDetailImage,
+    daitanPartsMobileImage,
+    daitanPartsMobileListImage,
+  ];
+
+  return (
+    <div className="mt-12 grid items-start gap-[18px] sm:grid-cols-2 lg:grid-cols-4">
+      {mobileImages.map((image, index) => (
+        <div key={image.caption} className={index % 2 === 0 ? 'lg:pt-10' : ''}>
+          <CaseImageSlot image={image} aspectClass="aspect-[9/16]" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function MotoRemazaServicesVisualBlock() {
   return (
     <div className="mt-12 grid gap-[30px]">
@@ -2221,54 +2618,142 @@ function MotoRemazaResearchVisualBlock() {
   );
 }
 
-function DaitanChallengeVisualBlock() {
+function ConsorcioRemazaContextBlock() {
   return (
-    <div className="mt-12 grid gap-[30px]">
-      <CaseImageSlot image={daitanChallengeImages[0]} aspectClass="aspect-[16/8]" />
-      <div className="grid gap-[30px] md:grid-cols-2">
-        {daitanChallengeImages.slice(1).map((image) => (
-          <CaseImageSlot key={image.caption} image={image} aspectClass="aspect-[4/3]" />
+    <div className="mt-14 grid gap-10">
+      <div className="grid gap-10 border-y border-[var(--cinza-claro)] py-10 dark:border-[var(--blue-padrao)] md:grid-cols-2 md:gap-14 md:py-12">
+        <ContextList title="Minha participação" items={consorcioRemazaParticipation} />
+        <ContextList title="Características do projeto" items={consorcioRemazaProjectCharacteristics} />
+      </div>
+      <div className="grid gap-[30px]">
+        <CaseImageSlot image={consorcioRemazaContextImage} aspectClass="aspect-[16/9] min-h-[24rem]" />
+        <CaseCropCard
+          image={consorcioRemazaHomeSimulationImage}
+          title="Simule aqui como continuidade da home"
+          className="min-h-[20rem]"
+          imageClassName="object-top"
+        />
+      </div>
+    </div>
+  );
+}
+
+function ConsorcioRemazaScopeVisualBlock() {
+  return (
+    <ScopeBlock title="Escopo de atuação" items={consorcioRemazaScope} />
+  );
+}
+
+function ConsorcioRemazaChallengeVisualBlock() {
+  return (
+    <div className="mt-12 grid items-start gap-[18px] sm:grid-cols-3">
+      {[
+        { image: consorcioRemazaSimulatorImages[0], title: 'Etapas da simulação' },
+        { image: consorcioRemazaSimulatorImages[1], title: 'Faixa de investimento' },
+        { image: consorcioRemazaSimulatorImages[2], title: 'Cards de planos' },
+      ].map(({ image, title }) => (
+        <CaseCropCard key={title} image={image} title={title} className="min-h-[13rem]" imageClassName="object-center" />
+      ))}
+    </div>
+  );
+}
+
+function ConsorcioRemazaSimulationVisualBlock() {
+  return (
+    <div className="mt-12 grid gap-10">
+      <div className="grid gap-3 border-y border-[var(--cinza-claro)] py-6 dark:border-[var(--blue-padrao)] sm:grid-cols-3">
+        {consorcioRemazaSimulatorImages.map((image, index) => (
+          <div key={image.caption} className="flex items-center gap-3">
+            <span className="caption font-extrabold text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{image.caption}</p>
+          </div>
+        ))}
+      </div>
+      <div className="grid items-start gap-[30px] lg:grid-cols-3">
+        {consorcioRemazaSimulatorImages.map((image) => (
+          <CaseImageSlot key={image.caption} image={image} aspectClass="aspect-[16/10] min-h-[19rem]" />
         ))}
       </div>
     </div>
   );
 }
 
-function ConsorcioRemazaContextBlock() {
+function ConsorcioRemazaMobileVisualBlock() {
   return (
-    <CaseContextBlock
-      leftTitle="Minha participação"
-      leftItems={consorcioRemazaParticipation}
-      rightTitle="Características do projeto"
-      rightItems={consorcioRemazaProjectCharacteristics}
-      image={consorcioRemazaContextImage}
-    />
+    <div className="mt-12 grid gap-[30px] sm:grid-cols-2 sm:items-start md:max-w-3xl">
+      {consorcioRemazaMobileSimulatorImages.map((image) => (
+        <CaseImageSlot key={image.caption} image={image} aspectClass="aspect-[9/16]" />
+      ))}
+    </div>
   );
 }
 
-function ConsorcioRemazaScopeVisualBlock() {
+function ConsorcioRemazaCommercialVisualBlock() {
   return (
-    <div className="grid gap-10">
-      <ScopeBlock title="Escopo de atuação" items={consorcioRemazaScope} />
-      <div className="mt-2 grid gap-[30px] md:grid-cols-[1.12fr_0.88fr] md:items-end">
-        <CaseImageSlot image={consorcioRemazaSimulatorImages[0]} aspectClass="aspect-[16/9]" />
-        <CaseImageSlot image={consorcioRemazaSimulatorImages[1]} aspectClass="aspect-[4/5]" />
+    <div className="mt-12 grid gap-10">
+      <div className="grid gap-3 border-y border-[var(--cinza-claro)] py-6 dark:border-[var(--blue-padrao)] sm:grid-cols-3">
+        {['Divulgação individual', 'Geração do contato', 'Apoio ao representante'].map((step, index) => (
+          <div key={step} className="flex items-center gap-3">
+            <span className="caption font-extrabold text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{step}</p>
+          </div>
+        ))}
+      </div>
+      <div>
+        <CaseCropCard
+          image={consorcioRemazaCommercialImages[0]}
+          title="Landing page individual"
+          className="min-h-[30rem]"
+          imageClassName="object-top"
+        />
       </div>
     </div>
   );
 }
 
-function ConsorcioRemazaImagePairBlock({ images, titles }: { images: CaseImageItem[]; titles: string[] }) {
+function ConsorcioRemazaTrustVisualBlock() {
   return (
-    <div className="mt-12 grid gap-12">
-      {images.map((image, index) => (
-        <div key={image.caption}>
-          <div className="mb-6">
-            <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{titles[index]}</h3>
-          </div>
-          <CaseImageSlot image={image} aspectClass="aspect-[16/8]" />
-        </div>
-      ))}
+    <div className="mt-12">
+      <CaseCropCard
+        image={consorcioRemazaTrustImage}
+        title="Fotografia, nome, contato e acesso à página individual"
+        className="min-h-[24rem] md:min-h-[30rem]"
+        imageClassName="object-center"
+      />
+    </div>
+  );
+}
+
+function ConsorcioRemazaContentVisualBlock() {
+  return (
+    <div className="mt-12 grid items-start gap-[30px] md:grid-cols-2">
+      <CaseImageSlot image={consorcioRemazaContentImages[0]} aspectClass="aspect-[16/10] min-h-[22rem]" />
+      <CaseCropCard image={consorcioRemazaContentImages[1]} title="Dúvidas frequentes" className="min-h-[22rem]" imageClassName="object-top" />
+    </div>
+  );
+}
+
+function ConsorcioRemazaRelationshipVisualBlock() {
+  return (
+    <div className="mt-12 grid items-start gap-[30px] md:grid-cols-[1fr_0.72fr]">
+      <CaseImageSlot image={consorcioRemazaRelationshipImages[0]} aspectClass="aspect-[16/10] min-h-[22rem]" />
+      <div className="grid gap-[30px]">
+        <CaseCropCard image={consorcioRemazaRelationshipImages[1]} title="Falar com a empresa" className="min-h-[12rem]" imageClassName="object-top" />
+        <CaseCropCard image={consorcioRemazaRelationshipImages[2]} title="Encontrar uma unidade" className="min-h-[12rem]" imageClassName="object-top" />
+      </div>
+    </div>
+  );
+}
+
+function ConsorcioRemazaOpportunitiesVisualBlock() {
+  return (
+    <div className="mt-12 grid items-start gap-[30px] md:grid-cols-[1fr_0.72fr]">
+      <CaseImageSlot image={consorcioRemazaOpportunityImages[0]} aspectClass="aspect-[16/10] min-h-[22rem]" />
+      <CaseCropCard image={consorcioRemazaOpportunityImages[1]} title="Trabalhe conosco" className="min-h-[22rem]" imageClassName="object-top" />
     </div>
   );
 }
@@ -2399,116 +2884,57 @@ function CaseVisualBlock({ variant }: { variant: string }) {
           <ContextList title="Minha participação" items={gamp21Participation} />
           <ContextList title="Características do projeto" items={gamp21ProjectCharacteristics} />
         </div>
-        <CaseImageSlot image={gamp21HomeImage} aspectClass="aspect-[16/8] min-h-[22rem]" />
-      </div>
-    );
-  }
-
-  if (variant === 'gamp-audiences') {
-    return (
-      <div className="mt-12 grid gap-[30px]">
-        <CaseImageSlot image={gamp21HeroImage} aspectClass="aspect-[16/8]" />
-        <CaseImageSlot image={gamp21AudienceImage} aspectClass="aspect-[16/8]" />
+        <Gamp21ResponsiveVisualBlock />
       </div>
     );
   }
 
   if (variant === 'gamp-scope') {
-    return (
-      <div className="grid gap-10">
-        <ScopeBlock title="Escopo de atuação" items={gamp21Participation} />
-        <CaseImageSlot image={gamp21ScreenSequenceImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
-  }
-
-  if (variant === 'gamp-care') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={gamp21CareImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+    return <Gamp21ScopeVisualBlock />;
   }
 
   if (variant === 'gamp-services') {
     return (
       <div className="mt-12">
-        <CaseImageSlot image={gamp21ServicesImage} aspectClass="aspect-[16/8]" />
+        <CaseImageSlot image={gamp21ServicesImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
       </div>
     );
   }
 
   if (variant === 'gamp-blog') {
-    return <MotoRemazaImagePairBlock images={gamp21BlogImages} titles={['Blog “Para mães e pais”', 'Artigo interno']} />;
-  }
-
-  if (variant === 'gamp-balance') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={gamp21BalanceImage} aspectClass="aspect-[16/7]" />
-      </div>
-    );
-  }
-
-  if (variant === 'gamp-conclusion') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={gamp21ConclusionImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+    return <Gamp21BlogVisualBlock />;
   }
 
   if (variant === 'daitan-context') {
-    return (
-      <div className="mt-14 grid gap-10">
-        <div className="grid gap-10 border-y border-[var(--cinza-claro)] py-10 dark:border-[var(--blue-padrao)] md:grid-cols-2 md:gap-14 md:py-12">
-          <ContextList title="Minha participação" items={daitanParticipation} />
-          <ContextList title="Características do projeto" items={daitanProjectCharacteristics} />
-        </div>
-        <CaseImageSlot image={daitanHomeImage} aspectClass="aspect-[16/8] min-h-[22rem]" />
-      </div>
-    );
-  }
-
-  if (variant === 'daitan-challenge') {
-    return <DaitanChallengeVisualBlock />;
+    return <DaitanContextVisualBlock />;
   }
 
   if (variant === 'daitan-scope') {
-    return (
-      <div className="grid gap-10">
-        <ScopeBlock title="Escopo de atuação" items={daitanParticipation} />
-        <CaseImageSlot image={daitanResponsiveCompositionImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+    return <DaitanScopeVisualBlock />;
   }
 
-  if (variant === 'daitan-experience') {
-    return <MotoRemazaImagePairBlock images={daitanExperienceImages} titles={['Banners responsivos', 'Chamadas para formulários']} />;
+  if (variant === 'daitan-new-cars') {
+    return <DaitanNewCarsVisualBlock />;
   }
 
-  if (variant === 'daitan-content') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={daitanContentManagementImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+  if (variant === 'daitan-technology') {
+    return <DaitanTechnologyVisualBlock />;
   }
 
-  if (variant === 'daitan-performance') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={daitanPerformanceImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+  if (variant === 'daitan-used-cars') {
+    return <DaitanUsedCarsVisualBlock />;
   }
 
-  if (variant === 'daitan-learning') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={daitanLearningImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+  if (variant === 'daitan-after-sales') {
+    return <DaitanAfterSalesVisualBlock />;
+  }
+
+  if (variant === 'daitan-relationship') {
+    return <DaitanRelationshipVisualBlock />;
+  }
+
+  if (variant === 'daitan-responsive') {
+    return <DaitanResponsiveVisualBlock />;
   }
 
   if (variant === 'consorcio-context') {
@@ -2516,50 +2942,39 @@ function CaseVisualBlock({ variant }: { variant: string }) {
   }
 
   if (variant === 'consorcio-challenge') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={consorcioRemazaChallengeImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+    return <ConsorcioRemazaChallengeVisualBlock />;
   }
 
   if (variant === 'consorcio-scope') {
     return <ConsorcioRemazaScopeVisualBlock />;
   }
 
+  if (variant === 'consorcio-simulation') {
+    return <ConsorcioRemazaSimulationVisualBlock />;
+  }
+
+  if (variant === 'consorcio-mobile') {
+    return <ConsorcioRemazaMobileVisualBlock />;
+  }
+
   if (variant === 'consorcio-commercial') {
-    return (
-      <ConsorcioRemazaImagePairBlock
-        images={consorcioRemazaCommercialImages}
-        titles={['Central comercial', 'Ferramenta de apoio']}
-      />
-    );
+    return <ConsorcioRemazaCommercialVisualBlock />;
   }
 
   if (variant === 'consorcio-trust') {
-    return (
-      <ConsorcioRemazaImagePairBlock
-        images={consorcioRemazaTrustImages}
-        titles={['Fotografias dos consultores', 'Presença no atendimento']}
-      />
-    );
+    return <ConsorcioRemazaTrustVisualBlock />;
   }
 
   if (variant === 'consorcio-content') {
-    return (
-      <ConsorcioRemazaImagePairBlock
-        images={consorcioRemazaContentImages}
-        titles={['Blog e notícias', 'Presença orgânica']}
-      />
-    );
+    return <ConsorcioRemazaContentVisualBlock />;
   }
 
-  if (variant === 'consorcio-conclusion') {
-    return (
-      <div className="mt-12">
-        <CaseImageSlot image={consorcioRemazaConclusionImage} aspectClass="aspect-[16/8]" />
-      </div>
-    );
+  if (variant === 'consorcio-relationship') {
+    return <ConsorcioRemazaRelationshipVisualBlock />;
+  }
+
+  if (variant === 'consorcio-opportunities') {
+    return <ConsorcioRemazaOpportunitiesVisualBlock />;
   }
 
   if (variant === 'none') {
@@ -3164,13 +3579,13 @@ function Gamp21CasePage() {
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
-                Conteúdo, educação e acolhimento
+                Uma experiência digital para acolher famílias e aproximar empresas
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Gamp21 — Parentalidade nas empresas
+                Gamp21
               </h1>
               <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Uma experiência digital para aproximar mães, pais e empresas de conteúdos, cursos e orientações sobre parentalidade.
+                Projeto de organização de conteúdo e criação de interfaces para uma rede de apoio à maternidade e à paternidade.
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
@@ -3309,13 +3724,13 @@ function DaitanCasePage() {
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
-                Redesign de site automotivo · 2023
+                Uma experiência digital para acompanhar toda a jornada do cliente
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Concessionária Honda
+                Honda Daitan
               </h1>
               <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Projeto desenvolvido para a Honda Daitan, criando uma experiência mais rápida, responsiva e fácil de utilizar.
+                Redesign de um ecossistema digital que conecta veículos, serviços e atendimento em uma experiência mais organizada e responsiva.
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
@@ -3476,25 +3891,25 @@ function ConsorcioRemazaCasePage() {
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
               <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
-                UX/UI Design · Plataforma digital
+                Uma experiência digital para transformar planos em possibilidades
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
                 Consórcio Remaza
               </h1>
               <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Uma experiência digital criada para aproximar pessoas, possibilidades e o time comercial.
+                Projeto de UX/UI que conectou informação, simulação e atendimento em uma jornada mais clara para clientes e equipes comerciais.
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
                   <p className="caption font-bold uppercase text-white/56">Atuação</p>
                   <p className="mt-2 font-display text-lg font-extrabold text-white">UX/UI Design</p>
                   <p className="font-display text-lg font-extrabold text-white">Simuladores</p>
-                  <p className="font-display text-lg font-extrabold text-white">Jornadas comerciais</p>
+                  <p className="font-display text-lg font-extrabold text-white">Ferramentas comerciais</p>
                 </div>
                 <div>
                   <p className="caption font-bold uppercase text-white/56">Entrega</p>
                   <p className="mt-2 font-display text-lg font-extrabold text-white">Site institucional</p>
-                  <p className="font-display text-lg font-extrabold text-white">Ferramentas comerciais</p>
+                  <p className="font-display text-lg font-extrabold text-white">Jornadas de geração de leads</p>
                 </div>
               </div>
             </div>
