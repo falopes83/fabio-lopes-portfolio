@@ -24,7 +24,7 @@ function Portrait({ alt }: { alt: string }) {
   return (
     <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-[32px] bg-[var(--tradewind-padrao)] md:mx-0 md:max-w-none dark:bg-[var(--blue-background)]">
       <img
-        src="/assets/fabiolopes.webp"
+        src="/assets/fabiolopes-real.webp"
         alt={alt}
         className="h-auto w-full"
         loading="lazy"
