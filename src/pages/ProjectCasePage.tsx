@@ -159,7 +159,7 @@ const caseImpactContent: Record<string, CaseImpactContent> = {
   },
   'impact-gamp21': {
     intro:
-      'Nos últimos seis meses, o site apareceu mais de 103 mil vezes nos resultados do Google e recebeu 847 acessos orgânicos. Grande parte dessa descoberta aconteceu por meio de artigos e materiais educativos sobre amamentação, cuidados com o bebê e pós-parto, fortalecendo o Gamp21 como fonte de orientação para mães e pais.',
+      'Em seis meses, o Gamp21 apareceu mais de 103 mil vezes no Google e recebeu 847 acessos orgânicos. Artigos e materiais educativos se destacaram como portas de entrada para pessoas procurando orientações sobre amamentação, pós-parto e cuidados com o bebê.',
     items: [
       {
         category: 'Aparições no Google',
@@ -186,8 +186,6 @@ const caseImpactContent: Record<string, CaseImpactContent> = {
         icon: FileText,
       },
     ],
-    note:
-      'Os conteúdos educativos se tornaram uma importante porta de entrada para pessoas que procuram informações sobre gestação, amamentação, pós-parto e cuidados com o bebê.',
   },
   'impact-consorcio-remaza': {
     intro:
