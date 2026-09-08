@@ -43,6 +43,169 @@ type CaseSection = {
   visual: string;
 };
 
+type CaseImpactContent = {
+  intro: string;
+  items: {
+    category: 'Para o usuário' | 'Para o negócio' | 'Para a operação';
+    title: string;
+    text: string;
+    icon: LucideIcon;
+  }[];
+  testimonial?: {
+    text?: string;
+    name?: string;
+    role?: string;
+    company?: string;
+  };
+};
+
+const caseImpactContent: Record<string, CaseImpactContent> = {
+  'impact-app-remaza': {
+    intro:
+      'A solução reuniu tarefas importantes da jornada do consorciado em uma experiência única, tornando o acesso aos serviços mais simples e previsível.',
+    items: [
+      {
+        category: 'Para o usuário',
+        title: 'Mais autonomia',
+        text: 'Pagamentos, assembleias, lances, documentos e informações da cota passaram a ser encontrados em caminhos mais claros e centralizados.',
+        icon: Users,
+      },
+      {
+        category: 'Para o negócio',
+        title: 'Relacionamento mais próximo',
+        text: 'O aplicativo criou um canal digital contínuo entre a administradora e o consorciado durante diferentes momentos da jornada.',
+        icon: BadgeDollarSign,
+      },
+      {
+        category: 'Para a operação',
+        title: 'Serviços centralizados',
+        text: 'A organização dos principais serviços ajudou a diminuir a dependência dos canais de atendimento para atividades recorrentes.',
+        icon: Component,
+      },
+    ],
+  },
+  'impact-fresto': {
+    intro:
+      'O projeto transformou o site em uma extensão da experiência dos restaurantes, conectando desejo, descoberta e informações práticas.',
+    items: [
+      {
+        category: 'Para o usuário',
+        title: 'Escolha mais convidativa',
+        text: 'Imagens mais humanas e apetitosas ajudaram o visitante a conhecer a proposta dos restaurantes e encontrar a unidade mais adequada.',
+        icon: Users,
+      },
+      {
+        category: 'Para o negócio',
+        title: 'Presença digital mais atrativa',
+        text: 'O destaque dado aos pratos, às unidades e às redes sociais fortaleceu a apresentação da marca no ambiente digital.',
+        icon: BadgeDollarSign,
+      },
+      {
+        category: 'Para a operação',
+        title: 'Conteúdo sempre vivo',
+        text: 'A integração com o Instagram permitiu apresentar novidades mesmo sem uma equipe dedicada à atualização frequente do site.',
+        icon: Component,
+      },
+    ],
+  },
+  'impact-moto-remaza': {
+    intro:
+      'A nova experiência organizou um universo amplo de motos, serviços e conteúdos para diferentes perfis de motociclistas.',
+    items: [
+      {
+        category: 'Para o usuário',
+        title: 'Caminhos para diferentes perfis',
+        text: 'Quem utiliza a moto para trabalhar, viajar ou viver uma paixão passou a encontrar modelos e serviços de forma mais orientada.',
+        icon: Users,
+      },
+      {
+        category: 'Para o negócio',
+        title: 'Jornada mais completa',
+        text: 'A solução aproximou descoberta, comparação, atendimento e intenção de compra dentro do mesmo ecossistema digital.',
+        icon: BadgeDollarSign,
+      },
+      {
+        category: 'Para a operação',
+        title: 'Estrutura preparada para evoluir',
+        text: 'A organização das páginas facilitou a inclusão de modelos, campanhas, peças, acessórios e novos serviços.',
+        icon: Component,
+      },
+    ],
+  },
+  'impact-daitan': {
+    intro:
+      'O projeto equilibrou a experiência premium esperada de uma concessionária Honda com a agilidade necessária para sua rotina comercial.',
+    items: [
+      {
+        category: 'Para o usuário',
+        title: 'Decisão mais segura',
+        text: 'Modelos, versões, diferenciais e formas de contato foram organizados para facilitar a pesquisa antes da visita à concessionária.',
+        icon: Users,
+      },
+      {
+        category: 'Para o negócio',
+        title: 'Mais oportunidades de contato',
+        text: 'Test-drive, ofertas e atendimento foram incorporados às jornadas de navegação como pontos naturais de conversão.',
+        icon: BadgeDollarSign,
+      },
+      {
+        category: 'Para a operação',
+        title: 'Atualizações mais ágeis',
+        text: 'A estrutura foi preparada para acompanhar a entrada frequente de veículos, seminovos, banners e campanhas comerciais.',
+        icon: Component,
+      },
+    ],
+  },
+  'impact-gamp21': {
+    intro:
+      'A experiência digital aproximou acolhimento, orientação e serviços especializados para famílias e empresas.',
+    items: [
+      {
+        category: 'Para o usuário',
+        title: 'Conteúdo mais acolhedor',
+        text: 'A organização das informações ajudou mães, pais e responsáveis a encontrar apoio e orientação em momentos de dúvida.',
+        icon: Users,
+      },
+      {
+        category: 'Para o negócio',
+        title: 'Serviços mais compreensíveis',
+        text: 'A apresentação das soluções tornou mais clara a atuação da Gamp21 tanto para famílias quanto para empresas.',
+        icon: BadgeDollarSign,
+      },
+      {
+        category: 'Para a operação',
+        title: 'Conteúdo como ponto de contato',
+        text: 'O blog e as páginas de serviço criaram caminhos permanentes de descoberta, orientação e relacionamento com o público.',
+        icon: Component,
+      },
+    ],
+  },
+  'impact-consorcio-remaza': {
+    intro:
+      'O projeto aproximou informação, planejamento e atendimento comercial em uma jornada digital de grande escala.',
+    items: [
+      {
+        category: 'Para o usuário',
+        title: 'Planejamento mais concreto',
+        text: 'Os simuladores permitiram explorar possibilidades de crédito e pagamento antes do contato com a equipe comercial.',
+        icon: Users,
+      },
+      {
+        category: 'Para o negócio',
+        title: 'Leads mais contextualizados',
+        text: 'As escolhas realizadas durante a simulação ajudaram a iniciar conversas comerciais com informações mais relevantes.',
+        icon: BadgeDollarSign,
+      },
+      {
+        category: 'Para a operação',
+        title: 'Experiência integrada',
+        text: 'Site, centrais de vendas, conteúdos e orientações para os vendedores passaram a trabalhar de maneira mais consistente.',
+        icon: Component,
+      },
+    ],
+  },
+};
+
 const appRemazaSections = [
   {
     id: 'contexto',
@@ -93,6 +256,13 @@ const appRemazaSections = [
     complement:
       'O Design System reuniu componentes, estados e padrões de interface reutilizáveis, facilitando a evolução do produto e a comunicação com o desenvolvimento.',
     visual: 'design-system',
+  },
+  {
+    id: 'impacto',
+    label: 'Impacto',
+    title: 'Impacto da solução',
+    intro: caseImpactContent['impact-app-remaza'].intro,
+    visual: 'impact-app-remaza',
   },
   {
     id: 'aprendizado',
@@ -166,6 +336,13 @@ const frestoSections: CaseSection[] = [
     complement:
       'As fotografias dos pratos ganharam protagonismo, enquanto cores, tipografia e componentes ajudaram a organizar o conteúdo sem competir com a comida. A criação de padrões visuais também permitiu manter consistência entre páginas com necessidades diferentes, como unidades, eventos, contato e oportunidades de trabalho.',
     visual: 'fresto-design-system',
+  },
+  {
+    id: 'impacto',
+    label: 'Impacto',
+    title: 'Impacto da solução',
+    intro: caseImpactContent['impact-fresto'].intro,
+    visual: 'impact-fresto',
   },
   {
     id: 'aprendizado',
@@ -305,6 +482,13 @@ const motoRemazaSections: CaseSection[] = [
     complement:
       'Outro destaque é o canal de comunicação com a diretoria, preservando uma prática valorizada nas empresas do Grupo Remaza: manter a empresa aberta para ouvir pessoas, dúvidas e sugestões.',
     visual: 'moto-relationship',
+  },
+  {
+    id: 'impacto',
+    label: 'Impacto',
+    title: 'Impacto da solução',
+    intro: caseImpactContent['impact-moto-remaza'].intro,
+    visual: 'impact-moto-remaza',
   },
   {
     id: 'aprendizado',
@@ -474,6 +658,13 @@ const gamp21Sections: CaseSection[] = [
     visual: 'gamp-blog',
   },
   {
+    id: 'impacto',
+    label: 'Impacto',
+    title: 'Impacto da solução',
+    intro: caseImpactContent['impact-gamp21'].intro,
+    visual: 'impact-gamp21',
+  },
+  {
     id: 'aprendizado',
     label: 'Aprendizado',
     title: 'Equilibrar acolhimento e posicionamento profissional',
@@ -608,6 +799,13 @@ const daitanSections: CaseSection[] = [
     complement:
       'Banners, páginas de modelos, filtros, detalhes de seminovos e catálogos de acessórios foram reorganizados para preservar a leitura e manter as principais ações sempre acessíveis.',
     visual: 'daitan-responsive',
+  },
+  {
+    id: 'impacto',
+    label: 'Impacto',
+    title: 'Impacto da solução',
+    intro: caseImpactContent['impact-daitan'].intro,
+    visual: 'impact-daitan',
   },
   {
     id: 'aprendizado',
@@ -761,6 +959,13 @@ const consorcioRemazaSections: CaseSection[] = [
     complement:
       'A página “Seja um representante” apresenta a oportunidade e organiza os benefícios e recursos disponíveis para o profissional. A área “Trabalhe conosco” amplia os caminhos para quem deseja fazer parte da organização.',
     visual: 'consorcio-opportunities',
+  },
+  {
+    id: 'impacto',
+    label: 'Impacto',
+    title: 'Impacto da solução',
+    intro: caseImpactContent['impact-consorcio-remaza'].intro,
+    visual: 'impact-consorcio-remaza',
   },
   {
     id: 'aprendizado',
@@ -2185,6 +2390,53 @@ function ProjectCaseContentHeader({ currentTitle, currentHref }: { currentTitle:
   );
 }
 
+function CaseImpactBlock({ content }: { content: CaseImpactContent }) {
+  const testimonial =
+    content.testimonial?.text &&
+    content.testimonial.name &&
+    content.testimonial.role &&
+    content.testimonial.company
+      ? content.testimonial
+      : null;
+
+  return (
+    <div className="mt-12 grid gap-6">
+      <div className="grid gap-5 md:grid-cols-3">
+        {content.items.map(({ category, title, text, icon: Icon }) => (
+          <article
+            key={category}
+            className="rounded-md border border-[var(--cinza-claro)] bg-white p-6 shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[rgba(20,51,79,0.42)]"
+          >
+            <div className="flex items-center gap-3">
+              <Icon className="h-5 w-5 shrink-0 text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]" strokeWidth={2.2} aria-hidden="true" />
+              <p className="caption font-bold uppercase text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
+                {category}
+              </p>
+            </div>
+            <h3 className="mt-5 font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">
+              {title}
+            </h3>
+            <p className="mt-3 font-sans text-sm leading-6 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
+              {text}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      {testimonial && (
+        <blockquote className="rounded-md border border-[var(--cinza-claro)] bg-[var(--off-white)] p-6 shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[rgba(20,51,79,0.42)]">
+          <p className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
+            {testimonial.text}
+          </p>
+          <footer className="mt-4 font-display text-sm font-extrabold text-[var(--blue-padrao)] dark:text-white">
+            {testimonial.name} · {testimonial.role} · {testimonial.company}
+          </footer>
+        </blockquote>
+      )}
+    </div>
+  );
+}
+
 function CaseContextBlock({
   leftTitle = 'Público principal',
   leftItems = appRemazaPrimaryAudience,
@@ -2759,6 +3011,10 @@ function ConsorcioRemazaOpportunitiesVisualBlock() {
 }
 
 function CaseVisualBlock({ variant }: { variant: string }) {
+  if (variant.startsWith('impact-')) {
+    return <CaseImpactBlock content={caseImpactContent[variant]} />;
+  }
+
   if (variant === 'context') {
     return <CaseContextBlock />;
   }
