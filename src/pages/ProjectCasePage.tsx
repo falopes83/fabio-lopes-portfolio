@@ -3164,6 +3164,10 @@ function CaseImageSlot({
 }) {
   const { language } = useI18n();
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const imageSurfaceClass =
+    image.fit === 'contain'
+      ? 'bg-white dark:bg-white'
+      : 'bg-[#edf4fb] dark:bg-[rgba(20,51,79,0.42)]';
   const openZoom = () => {
     if (onZoom) {
       onZoom();
@@ -3196,7 +3200,7 @@ function CaseImageSlot({
       {image.src ? (
         <button
           type="button"
-          className={`group relative block w-full overflow-hidden rounded-md bg-[#edf4fb] text-left shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:bg-[rgba(20,51,79,0.42)] dark:focus-visible:ring-offset-[var(--fundo)] ${aspectClass}`}
+          className={`group relative block w-full overflow-hidden rounded-md text-left shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:focus-visible:ring-offset-[var(--fundo)] ${imageSurfaceClass} ${aspectClass}`}
           onClick={openZoom}
           aria-label={`${translateCaseText('Ampliar imagem', language)}: ${translateCaseText(image.alt, language)}`}
         >
