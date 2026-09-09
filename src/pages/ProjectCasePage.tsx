@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useRef, useState, type PointerEvent, type WheelEvent } from 'react';
 import { createPortal } from 'react-dom';
-import { projectSlugs } from '../data/content';
+import { projectSlugs, type Language } from '../data/content';
 import { useI18n } from '../i18n';
 import { Button } from '../components/Button';
 
@@ -58,6 +58,660 @@ type CaseImpactContent = {
     role?: string;
     company?: string;
   };
+};
+
+const caseTextTranslations: Record<Exclude<Language, 'pt'>, Record<string, string>> = {
+  en: {
+    Projetos: 'Projects',
+    Voltar: 'Back',
+    Contexto: 'Context',
+    Desafio: 'Challenge',
+    Usabilidade: 'Usability',
+    'Design System': 'Design System',
+    Impacto: 'Impact',
+    Aprendizado: 'Learning',
+    'Conclusão': 'Conclusion',
+    Pesquisa: 'Research',
+    'Experiência': 'Experience',
+    Modelos: 'Models',
+    Seminovos: 'Pre-owned',
+    'Serviços': 'Services',
+    'Próximos passos': 'Next steps',
+    'Pós-venda': 'After-sales',
+    Responsividade: 'Responsiveness',
+    'Simulação': 'Simulation',
+    Comercial: 'Commercial',
+    Confiança: 'Trust',
+    Conteúdo: 'Content',
+    Relacionamento: 'Relationship',
+    Oportunidades: 'Opportunities',
+    'Atuação': 'Role',
+    Entrega: 'Delivery',
+    Ano: 'Year',
+    Plataformas: 'Platforms',
+    'Minha participação': 'My role',
+    Necessidades: 'Needs',
+    'Público principal': 'Main audience',
+    'Características do projeto': 'Project characteristics',
+    'Principais entregas': 'Main deliverables',
+    'Escopo de atuação': 'Scope of work',
+    'Direcionamentos identificados': 'Directions identified',
+    'Para o usuário': 'For users',
+    'Para o negócio': 'For the business',
+    'Para a operação': 'For operations',
+    'Mais autonomia': 'More autonomy',
+    'Relacionamento mais próximo': 'Closer relationship',
+    'Serviços centralizados': 'Centralized services',
+    'Escolha mais convidativa': 'A more inviting choice',
+    'Presença digital mais atrativa': 'A more attractive digital presence',
+    'Conteúdo sempre vivo': 'Always-current content',
+    'Caminhos para diferentes perfis': 'Paths for different profiles',
+    'Jornada mais completa': 'A more complete journey',
+    'Estrutura preparada para evoluir': 'A structure ready to evolve',
+    'Decisão mais segura': 'More confident decisions',
+    'Mais oportunidades de contato': 'More contact opportunities',
+    'Atualizações mais ágeis': 'Faster updates',
+    'Aparições no Google': 'Google impressions',
+    'Acessos orgânicos': 'Organic visits',
+    'Cliques no celular': 'Mobile clicks',
+    'Materiais educativos': 'Educational materials',
+    'Planejamento mais concreto': 'More concrete planning',
+    'Leads mais contextualizados': 'More contextualized leads',
+    'Experiência integrada': 'Integrated experience',
+    'Product Design para consórcio': 'Product Design for consortium management',
+    'Aplicativo para gestão de consórcio': 'Consortium management app',
+    'Projeto desenvolvido para o App Remaza, redesenhando a experiência da Área do Cliente.':
+      'Project developed for the Remaza app, redesigning the Customer Area experience.',
+    'UX/UI para gastronomia': 'UX/UI for food and hospitality',
+    'Fresto — Rede de restaurantes': 'Fresto — Restaurant network',
+    'UX e Web Design para uma rede de restaurantes presente em clubes de São Paulo.':
+      'UX and Web Design for a restaurant network located in clubs across São Paulo.',
+    'Automotivo e e-commerce': 'Automotive and e-commerce',
+    'Concessionárias de motos Honda': 'Honda motorcycle dealerships',
+    'Projeto desenvolvido para a Moto Remaza, criando uma experiência digital para acompanhar diferentes jornadas sobre duas rodas.':
+      'Project developed for Moto Remaza, creating a digital experience for different journeys on two wheels.',
+    'Uma experiência digital para acolher famílias e aproximar empresas':
+      'A digital experience to support families and bring companies closer',
+    'Projeto de organização de conteúdo e criação de interfaces para uma rede de apoio à maternidade e à paternidade.':
+      'Content organization and interface design for a support network focused on motherhood and fatherhood.',
+    'Direção visual': 'Visual direction',
+    'Blog “Para mães e pais”': '“For mothers and fathers” blog',
+    'Uma experiência digital para acompanhar toda a jornada do cliente':
+      'A digital experience for the whole customer journey',
+    'Honda Daitan': 'Honda Daitan',
+    'Redesign de um ecossistema digital que conecta veículos, serviços e atendimento em uma experiência mais organizada e responsiva.':
+      'Redesign of a digital ecosystem connecting vehicles, services and support in a more organized, responsive experience.',
+    'Site Honda Daitan': 'Honda Daitan website',
+    'Concessionária Honda': 'Honda dealership',
+    'Uma experiência digital para transformar planos em possibilidades':
+      'A digital experience to turn plans into possibilities',
+    'Consórcio Remaza': 'Consórcio Remaza',
+    'Projeto de UX/UI que conectou informação, simulação e atendimento em uma jornada mais clara para clientes e equipes comerciais.':
+      'UX/UI project that connected information, simulation and service into a clearer journey for customers and sales teams.',
+    'UX/UI Design': 'UX/UI Design',
+    'Product Design': 'Product Design',
+    'UX e Web Design': 'UX and Web Design',
+    'Prototipação no Figma': 'Figma prototyping',
+    'Site institucional': 'Institutional website',
+    'Planejamento WordPress': 'WordPress planning',
+    'UX Strategy': 'UX Strategy',
+    'Arquitetura da Informação': 'Information Architecture',
+    Desktop: 'Desktop',
+    Mobile: 'Mobile',
+    'Cursos e conteúdos': 'Courses and content',
+    'Experiência responsiva': 'Responsive experience',
+    Simuladores: 'Simulators',
+    'Ferramentas comerciais': 'Commercial tools',
+    'Jornadas de geração de leads': 'Lead generation journeys',
+    'Interfaces responsivas': 'Responsive interfaces',
+    'Gestão de conteúdo': 'Content management',
+    'Ampliar imagem': 'Enlarge image',
+    'Diminuir zoom': 'Zoom out',
+    'Resetar zoom': 'Reset zoom',
+    'Aumentar zoom': 'Zoom in',
+    'Fechar imagem ampliada': 'Close enlarged image',
+  },
+  es: {
+    Projetos: 'Proyectos',
+    Voltar: 'Volver',
+    Contexto: 'Contexto',
+    Desafio: 'Desafío',
+    'Atuação': 'Rol',
+    Usabilidade: 'Usabilidad',
+    'Design System': 'Sistema de diseño',
+    Impacto: 'Impacto',
+    Aprendizado: 'Aprendizaje',
+    'Conclusão': 'Conclusión',
+    Pesquisa: 'Investigación',
+    'Experiência': 'Experiencia',
+    Modelos: 'Modelos',
+    Seminovos: 'Seminuevos',
+    'Serviços': 'Servicios',
+    'Próximos passos': 'Próximos pasos',
+    'Pós-venda': 'Posventa',
+    Responsividade: 'Responsividad',
+    'Simulação': 'Simulación',
+    Comercial: 'Comercial',
+    Confiança: 'Confianza',
+    Conteúdo: 'Contenido',
+    Relacionamento: 'Relación',
+    Oportunidades: 'Oportunidades',
+    Entrega: 'Entrega',
+    Ano: 'Año',
+    Plataformas: 'Plataformas',
+    'Minha participação': 'Mi participación',
+    Necessidades: 'Necesidades',
+    'Público principal': 'Público principal',
+    'Características do projeto': 'Características del proyecto',
+    'Principais entregas': 'Principales entregas',
+    'Escopo de atuação': 'Alcance de actuación',
+    'Direcionamentos identificados': 'Direcciones identificadas',
+    'Para o usuário': 'Para el usuario',
+    'Para o negócio': 'Para el negocio',
+    'Para a operação': 'Para la operación',
+    'Mais autonomia': 'Más autonomía',
+    'Relacionamento mais próximo': 'Relación más cercana',
+    'Serviços centralizados': 'Servicios centralizados',
+    'Escolha mais convidativa': 'Elección más atractiva',
+    'Presença digital mais atrativa': 'Presencia digital más atractiva',
+    'Conteúdo sempre vivo': 'Contenido siempre vivo',
+    'Caminhos para diferentes perfis': 'Caminos para distintos perfiles',
+    'Jornada mais completa': 'Jornada más completa',
+    'Estrutura preparada para evoluir': 'Estructura preparada para evolucionar',
+    'Decisão mais segura': 'Decisión más segura',
+    'Mais oportunidades de contato': 'Más oportunidades de contacto',
+    'Atualizações mais ágeis': 'Actualizaciones más ágiles',
+    'Aparições no Google': 'Apariciones en Google',
+    'Acessos orgânicos': 'Accesos orgánicos',
+    'Cliques no celular': 'Clics en celular',
+    'Materiais educativos': 'Materiales educativos',
+    'Planejamento mais concreto': 'Planificación más concreta',
+    'Leads mais contextualizados': 'Leads más contextualizados',
+    'Experiência integrada': 'Experiencia integrada',
+    'Product Design para consórcio': 'Product Design para consorcio',
+    'Aplicativo para gestão de consórcio': 'Aplicación para gestión de consorcio',
+    'Projeto desenvolvido para o App Remaza, redesenhando a experiência da Área do Cliente.':
+      'Proyecto desarrollado para la app Remaza, rediseñando la experiencia del Área del Cliente.',
+    'UX/UI para gastronomia': 'UX/UI para gastronomía',
+    'Fresto — Rede de restaurantes': 'Fresto — Red de restaurantes',
+    'UX e Web Design para uma rede de restaurantes presente em clubes de São Paulo.':
+      'UX y Web Design para una red de restaurantes presente en clubes de São Paulo.',
+    'Automotivo e e-commerce': 'Automotriz y e-commerce',
+    'Concessionárias de motos Honda': 'Concesionarias de motos Honda',
+    'Projeto desenvolvido para a Moto Remaza, criando uma experiência digital para acompanhar diferentes jornadas sobre duas rodas.':
+      'Proyecto desarrollado para Moto Remaza, creando una experiencia digital para acompañar diferentes jornadas sobre dos ruedas.',
+    'Uma experiência digital para acolher famílias e aproximar empresas':
+      'Una experiencia digital para acoger familias y acercar empresas',
+    'Projeto de organização de conteúdo e criação de interfaces para uma rede de apoio à maternidade e à paternidade.':
+      'Proyecto de organización de contenido y creación de interfaces para una red de apoyo a la maternidad y la paternidad.',
+    'Direção visual': 'Dirección visual',
+    'Blog “Para mães e pais”': 'Blog “Para madres y padres”',
+    'Uma experiência digital para acompanhar toda a jornada do cliente':
+      'Una experiencia digital para acompañar toda la jornada del cliente',
+    'Honda Daitan': 'Honda Daitan',
+    'Redesign de um ecossistema digital que conecta veículos, serviços e atendimento em uma experiência mais organizada e responsiva.':
+      'Rediseño de un ecosistema digital que conecta vehículos, servicios y atención en una experiencia más organizada y responsiva.',
+    'Site Honda Daitan': 'Sitio Honda Daitan',
+    'Concessionária Honda': 'Concesionaria Honda',
+    'Uma experiência digital para transformar planos em possibilidades':
+      'Una experiencia digital para transformar planes en posibilidades',
+    'Consórcio Remaza': 'Consórcio Remaza',
+    'Projeto de UX/UI que conectou informação, simulação e atendimento em uma jornada mais clara para clientes e equipes comerciais.':
+      'Proyecto de UX/UI que conectó información, simulación y atención en una jornada más clara para clientes y equipos comerciales.',
+    'UX/UI Design': 'UX/UI Design',
+    'Product Design': 'Product Design',
+    'UX e Web Design': 'UX y Web Design',
+    'Prototipação no Figma': 'Prototipado en Figma',
+    'Site institucional': 'Sitio institucional',
+    'Planejamento WordPress': 'Planificación WordPress',
+    'UX Strategy': 'UX Strategy',
+    'Arquitetura da Informação': 'Arquitectura de Información',
+    Desktop: 'Desktop',
+    Mobile: 'Mobile',
+    'Cursos e conteúdos': 'Cursos y contenidos',
+    'Experiência responsiva': 'Experiencia responsiva',
+    Simuladores: 'Simuladores',
+    'Ferramentas comerciais': 'Herramientas comerciales',
+    'Jornadas de geração de leads': 'Jornadas de generación de leads',
+    'Interfaces responsivas': 'Interfaces responsivas',
+    'Gestão de conteúdo': 'Gestión de contenido',
+    'Ampliar imagem': 'Ampliar imagen',
+    'Diminuir zoom': 'Reducir zoom',
+    'Resetar zoom': 'Restablecer zoom',
+    'Aumentar zoom': 'Aumentar zoom',
+    'Fechar imagem ampliada': 'Cerrar imagen ampliada',
+  },
+};
+
+function translateCaseText(text: string, language: Language) {
+  if (language === 'pt') {
+    return text;
+  }
+
+  return caseTextTranslations[language][text] ?? text;
+}
+
+type CaseSectionTranslation = Pick<CaseSection, 'label' | 'title' | 'intro'> & {
+  complement?: string;
+};
+
+const caseSectionFallbackTranslations: Record<Exclude<Language, 'pt'>, Record<string, CaseSectionTranslation>> = {
+  en: {
+    contexto: {
+      label: 'Context',
+      title: 'Understanding the project context and the people involved.',
+      intro:
+        'This section presents the product, the audience and the business environment that shaped the work.',
+      complement:
+        'The goal was to organize information, services and decision points into a clearer digital experience.',
+    },
+    desafio: {
+      label: 'Challenge',
+      title: 'Turning complexity into a simpler, more useful journey.',
+      intro:
+        'The main challenge was to reduce friction without hiding important information or weakening the business goals.',
+      complement:
+        'Each decision balanced clarity, content hierarchy, conversion paths and the real needs of people using the product.',
+    },
+    atuacao: {
+      label: 'Role',
+      title: 'From strategy and information architecture to interface design.',
+      intro:
+        'My work connected UX strategy, journey organization, information architecture, UI design and high-fidelity prototyping.',
+      complement:
+        'The process also included alignment with stakeholders and preparation for implementation and future product evolution.',
+    },
+    usabilidade: {
+      label: 'Usability',
+      title: 'Designing paths that are easier to understand and follow.',
+      intro:
+        'The experience was organized around clearer navigation, visible actions and content that supports decision-making.',
+      complement:
+        'The goal was to help users understand where they are, what they can do and what happens next.',
+    },
+    'design-system': {
+      label: 'Design System',
+      title: 'Creating consistency for a product that needs to evolve.',
+      intro:
+        'Reusable components, visual patterns and interaction states helped make the interface more coherent.',
+      complement:
+        'This foundation supports future improvements while keeping the experience familiar across different screens.',
+    },
+    pesquisa: {
+      label: 'Research',
+      title: 'Listening to people and turning signals into design direction.',
+      intro:
+        'Research and stakeholder conversations helped reveal expectations, friction points and priorities for the experience.',
+      complement:
+        'These insights guided navigation, content and interface decisions throughout the project.',
+    },
+    'experiencia-navegacao': {
+      label: 'Experience',
+      title: 'Making key paths easier to find and use.',
+      intro:
+        'Navigation was structured so different user profiles could reach products, services and information with fewer doubts.',
+      complement:
+        'The interface connects discovery, comparison, contact and service moments in a more continuous journey.',
+    },
+    modelos: {
+      label: 'Models',
+      title: 'Organizing the catalog around real decision needs.',
+      intro:
+        'Product information was structured to support exploration, comparison and contact across different profiles.',
+      complement:
+        'Instead of only listing options, the experience helps users understand what fits their context.',
+    },
+    seminovos: {
+      label: 'Pre-owned',
+      title: 'Creating a more practical search and evaluation flow.',
+      intro:
+        'Listings, filters and detail pages were organized to make evaluation easier before contacting the business.',
+      complement:
+        'The journey gives more visibility to information that supports confidence and continuity.',
+    },
+    servicos: {
+      label: 'Services',
+      title: 'Connecting services, information and contact in one experience.',
+      intro:
+        'Service pages were organized to clarify options, reduce doubts and create more direct paths to action.',
+      complement:
+        'The structure supports both discovery and recurring needs after the first contact.',
+    },
+    'proximos-passos': {
+      label: 'Next steps',
+      title: 'Preparing the experience for future evolution.',
+      intro:
+        'The project left a clearer foundation for new content, services and product improvements.',
+      complement:
+        'The next evolution can build on the same architecture without restarting the experience from zero.',
+    },
+    'pessoas-relacionamento': {
+      label: 'Relationship',
+      title: 'Designing for different relationships with the product.',
+      intro:
+        'The experience considers people with different motivations, levels of knowledge and moments in the journey.',
+      complement:
+        'This helped create communication that feels more useful and less generic.',
+    },
+    conteudo: {
+      label: 'Content',
+      title: 'Using content as part of the product experience.',
+      intro:
+        'Content was treated as a path for discovery, education and trust before direct contact or conversion.',
+      complement:
+        'The structure helps users understand the offer and continue the journey with more confidence.',
+    },
+    'veiculos-novos': {
+      label: 'New vehicles',
+      title: 'Presenting models with clarity and commercial purpose.',
+      intro:
+        'Model pages bring together visual presentation, versions, features and conversion points.',
+      complement:
+        'The goal was to support both desire and practical evaluation before visiting or contacting the dealership.',
+    },
+    'tecnologia-diferenciais': {
+      label: 'Technology',
+      title: 'Highlighting features without making the page heavy.',
+      intro:
+        'Technology, safety and connectivity details were grouped into clearer blocks for exploration.',
+      complement:
+        'This makes the product easier to scan while preserving relevant details.',
+    },
+    'pos-venda': {
+      label: 'After-sales',
+      title: 'Extending the digital journey beyond the sale.',
+      intro:
+        'After-sales areas connect maintenance, parts, accessories and service information in a more accessible flow.',
+      complement:
+        'The experience supports recurring needs and keeps the relationship active.',
+    },
+    relacionamento: {
+      label: 'Relationship',
+      title: 'Opening clearer paths for contact and support.',
+      intro:
+        'Contact channels were positioned as natural parts of the journey, not isolated destinations.',
+      complement:
+        'This helps connect digital discovery with real service moments.',
+    },
+    'experiencia-responsiva': {
+      label: 'Responsiveness',
+      title: 'Adapting the journey for smaller screens.',
+      intro:
+        'Mobile screens were planned to keep priority actions, reading and navigation accessible.',
+      complement:
+        'The responsive structure preserves hierarchy without forcing desktop behavior into a narrow viewport.',
+    },
+    simulacao: {
+      label: 'Simulation',
+      title: 'Making planning more concrete through guided steps.',
+      intro:
+        'The simulator breaks a complex financial choice into smaller, clearer decisions.',
+      complement:
+        'Each step helps users understand possibilities before starting a commercial conversation.',
+    },
+    'experiencia-mobile': {
+      label: 'Mobile',
+      title: 'Creating a mobile journey that keeps the task moving.',
+      intro:
+        'The mobile experience prioritizes readable steps, objective choices and clear continuation points.',
+      complement:
+        'This keeps the experience useful even when decisions happen on smaller screens.',
+    },
+    'estrutura-comercial': {
+      label: 'Commercial',
+      title: 'Supporting the sales journey with better context.',
+      intro:
+        'Commercial tools and landing pages helped connect interest, representative identity and lead generation.',
+      complement:
+        'The goal was to make the first contact more informed and more trustworthy.',
+    },
+    confianca: {
+      label: 'Trust',
+      title: 'Bringing the human side of sales into the interface.',
+      intro:
+        'Clear identification, contact information and supporting materials helped make the digital journey feel closer.',
+      complement:
+        'This reinforces trust before the user continues to a conversation.',
+    },
+    'novas-oportunidades': {
+      label: 'Opportunities',
+      title: 'Opening new paths for people interested in the organization.',
+      intro:
+        'Opportunity pages were structured to present the offer, expectations and next steps more clearly.',
+      complement:
+        'They expand the role of the site beyond conversion and support the broader business ecosystem.',
+    },
+    impacto: {
+      label: 'Impact',
+      title: 'Impact of the solution',
+      intro:
+        'The solution improved clarity, organization and continuity across key moments of the digital journey.',
+    },
+    aprendizado: {
+      label: 'Learning',
+      title: 'What the project reinforced about product experience.',
+      intro:
+        'The work reinforced that design decisions affect journeys, content, operations and future evolution.',
+      complement:
+        'A strong experience is built by connecting individual screens to the wider product system.',
+    },
+    conclusao: {
+      label: 'Conclusion',
+      title: 'A clearer foundation for a product that can keep evolving.',
+      intro:
+        'The project organized information, flows and interface patterns into a more coherent experience.',
+      complement:
+        'Beyond the visual layer, it created structure for ongoing improvements and new business needs.',
+    },
+  },
+  es: {
+    contexto: {
+      label: 'Contexto',
+      title: 'Entender el contexto del proyecto y las personas involucradas.',
+      intro:
+        'Esta sección presenta el producto, el público y el ambiente de negocio que orientaron el trabajo.',
+      complement:
+        'El objetivo fue organizar información, servicios y puntos de decisión en una experiencia digital más clara.',
+    },
+    desafio: {
+      label: 'Desafío',
+      title: 'Transformar complejidad en una jornada más simple y útil.',
+      intro:
+        'El principal desafío fue reducir fricción sin ocultar información importante ni debilitar los objetivos del negocio.',
+      complement:
+        'Cada decisión equilibró claridad, jerarquía de contenido, caminos de conversión y necesidades reales de las personas usuarias.',
+    },
+    atuacao: {
+      label: 'Rol',
+      title: 'De la estrategia y arquitectura de información al diseño de interfaces.',
+      intro:
+        'Mi trabajo conectó estrategia de UX, organización de jornadas, arquitectura de información, UI design y prototipado de alta fidelidad.',
+      complement:
+        'El proceso también incluyó alineación con stakeholders y preparación para implementación y evolución futura del producto.',
+    },
+    usabilidade: {
+      label: 'Usabilidad',
+      title: 'Diseñar caminos más fáciles de entender y seguir.',
+      intro:
+        'La experiencia se organizó alrededor de navegación más clara, acciones visibles y contenido que apoya la decisión.',
+      complement:
+        'El objetivo fue ayudar al usuario a entender dónde está, qué puede hacer y qué ocurre después.',
+    },
+    'design-system': {
+      label: 'Sistema de diseño',
+      title: 'Crear consistencia para un producto que necesita evolucionar.',
+      intro:
+        'Componentes reutilizables, patrones visuales y estados de interacción ayudaron a hacer la interfaz más coherente.',
+      complement:
+        'Esta base apoya mejoras futuras y mantiene la experiencia familiar entre diferentes pantallas.',
+    },
+    pesquisa: {
+      label: 'Investigación',
+      title: 'Escuchar a las personas y convertir señales en dirección de diseño.',
+      intro:
+        'La investigación y las conversaciones con stakeholders revelaron expectativas, fricciones y prioridades para la experiencia.',
+      complement:
+        'Estos insights guiaron decisiones de navegación, contenido e interfaz durante el proyecto.',
+    },
+    'experiencia-navegacao': {
+      label: 'Experiencia',
+      title: 'Hacer que los caminos principales sean más fáciles de encontrar y usar.',
+      intro:
+        'La navegación fue estructurada para que distintos perfiles llegaran a productos, servicios e información con menos dudas.',
+      complement:
+        'La interfaz conecta descubrimiento, comparación, contacto y servicios en una jornada más continua.',
+    },
+    modelos: {
+      label: 'Modelos',
+      title: 'Organizar el catálogo alrededor de necesidades reales de decisión.',
+      intro:
+        'La información de producto fue estructurada para apoyar exploración, comparación y contacto entre distintos perfiles.',
+      complement:
+        'En lugar de solo listar opciones, la experiencia ayuda al usuario a entender qué encaja con su contexto.',
+    },
+    seminovos: {
+      label: 'Seminuevos',
+      title: 'Crear un flujo de búsqueda y evaluación más práctico.',
+      intro:
+        'Listados, filtros y páginas de detalle fueron organizados para facilitar la evaluación antes del contacto.',
+      complement:
+        'La jornada da más visibilidad a la información que apoya confianza y continuidad.',
+    },
+    servicos: {
+      label: 'Servicios',
+      title: 'Conectar servicios, información y contacto en una sola experiencia.',
+      intro:
+        'Las páginas de servicio fueron organizadas para aclarar opciones, reducir dudas y crear caminos más directos hacia la acción.',
+      complement:
+        'La estructura apoya tanto el descubrimiento como necesidades recurrentes después del primer contacto.',
+    },
+    'proximos-passos': {
+      label: 'Próximos pasos',
+      title: 'Preparar la experiencia para futuras evoluciones.',
+      intro:
+        'El proyecto dejó una base más clara para nuevos contenidos, servicios y mejoras del producto.',
+      complement:
+        'La próxima evolución puede partir de la misma arquitectura sin reconstruir la experiencia desde cero.',
+    },
+    'pessoas-relacionamento': {
+      label: 'Relación',
+      title: 'Diseñar para diferentes relaciones con el producto.',
+      intro:
+        'La experiencia considera personas con distintas motivaciones, niveles de conocimiento y momentos de jornada.',
+      complement:
+        'Esto ayudó a crear una comunicación más útil y menos genérica.',
+    },
+    conteudo: {
+      label: 'Contenido',
+      title: 'Usar el contenido como parte de la experiencia del producto.',
+      intro:
+        'El contenido fue tratado como camino para descubrimiento, educación y confianza antes del contacto directo.',
+      complement:
+        'La estructura ayuda al usuario a entender la oferta y continuar la jornada con más seguridad.',
+    },
+    'veiculos-novos': {
+      label: 'Vehículos nuevos',
+      title: 'Presentar modelos con claridad y propósito comercial.',
+      intro:
+        'Las páginas de modelo reúnen presentación visual, versiones, características y puntos de conversión.',
+      complement:
+        'El objetivo fue apoyar tanto el deseo como la evaluación práctica antes de visitar o contactar la concesionaria.',
+    },
+    'tecnologia-diferenciais': {
+      label: 'Tecnología',
+      title: 'Destacar diferenciales sin volver pesada la página.',
+      intro:
+        'Detalles de tecnología, seguridad y conectividad fueron agrupados en bloques más claros para exploración.',
+      complement:
+        'Esto hace que el producto sea más fácil de escanear sin perder información relevante.',
+    },
+    'pos-venda': {
+      label: 'Posventa',
+      title: 'Extender la jornada digital más allá de la venta.',
+      intro:
+        'Las áreas de posventa conectan mantenimiento, piezas, accesorios e información de servicio en un flujo más accesible.',
+      complement:
+        'La experiencia apoya necesidades recurrentes y mantiene la relación activa.',
+    },
+    relacionamento: {
+      label: 'Relación',
+      title: 'Abrir caminos más claros para contacto y soporte.',
+      intro:
+        'Los canales de contacto fueron posicionados como partes naturales de la jornada, no como destinos aislados.',
+      complement:
+        'Esto conecta el descubrimiento digital con momentos reales de atención.',
+    },
+    'experiencia-responsiva': {
+      label: 'Responsividad',
+      title: 'Adaptar la jornada para pantallas más pequeñas.',
+      intro:
+        'Las pantallas móviles fueron pensadas para mantener accesibles acciones prioritarias, lectura y navegación.',
+      complement:
+        'La estructura responsiva preserva la jerarquía sin forzar el comportamiento desktop en un viewport estrecho.',
+    },
+    simulacao: {
+      label: 'Simulación',
+      title: 'Hacer la planificación más concreta mediante pasos guiados.',
+      intro:
+        'El simulador divide una elección financiera compleja en decisiones menores y más claras.',
+      complement:
+        'Cada etapa ayuda al usuario a entender posibilidades antes de iniciar una conversación comercial.',
+    },
+    'experiencia-mobile': {
+      label: 'Mobile',
+      title: 'Crear una jornada mobile que mantiene la tarea en movimiento.',
+      intro:
+        'La experiencia mobile prioriza pasos legibles, elecciones objetivas y puntos claros de continuidad.',
+      complement:
+        'Esto mantiene la experiencia útil incluso cuando las decisiones ocurren en pantallas pequeñas.',
+    },
+    'estrutura-comercial': {
+      label: 'Comercial',
+      title: 'Apoyar la jornada comercial con mejor contexto.',
+      intro:
+        'Herramientas comerciales y landing pages conectaron interés, identidad del representante y generación de leads.',
+      complement:
+        'El objetivo fue hacer el primer contacto más informado y confiable.',
+    },
+    confianca: {
+      label: 'Confianza',
+      title: 'Llevar el lado humano de ventas a la interfaz.',
+      intro:
+        'Identificación clara, datos de contacto y materiales de apoyo hicieron que la jornada digital se sintiera más cercana.',
+      complement:
+        'Esto refuerza confianza antes de que el usuario continúe hacia una conversación.',
+    },
+    'novas-oportunidades': {
+      label: 'Oportunidades',
+      title: 'Abrir nuevos caminos para personas interesadas en la organización.',
+      intro:
+        'Las páginas de oportunidad fueron estructuradas para presentar la oferta, expectativas y próximos pasos con más claridad.',
+      complement:
+        'Amplían el papel del sitio más allá de la conversión y apoyan el ecosistema de negocio.',
+    },
+    impacto: {
+      label: 'Impacto',
+      title: 'Impacto de la solución',
+      intro:
+        'La solución mejoró claridad, organización y continuidad en momentos clave de la jornada digital.',
+    },
+    aprendizado: {
+      label: 'Aprendizaje',
+      title: 'Lo que el proyecto reforzó sobre experiencia de producto.',
+      intro:
+        'El trabajo reforzó que las decisiones de diseño afectan jornadas, contenido, operación y evolución futura.',
+      complement:
+        'Una buena experiencia se construye conectando pantallas individuales al sistema más amplio del producto.',
+    },
+    conclusao: {
+      label: 'Conclusión',
+      title: 'Una base más clara para un producto que puede seguir evolucionando.',
+      intro:
+        'El proyecto organizó información, flujos y patrones de interfaz en una experiencia más coherente.',
+      complement:
+        'Más allá de la capa visual, creó estructura para mejoras continuas y nuevas necesidades del negocio.',
+    },
+  },
 };
 
 const caseImpactContent: Record<string, CaseImpactContent> = {
@@ -1926,14 +2580,16 @@ const motoRemazaDirectionItems = [
 ];
 
 function ContextList({ title, items }: { title: string; items: IconListItem[] }) {
+  const { language } = useI18n();
+
   return (
     <div>
-      <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{title}</h3>
+      <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{translateCaseText(title, language)}</h3>
       <ul className="mt-6 grid gap-4">
         {items.map(({ icon: Icon, text }) => (
           <li key={text} className="flex items-start gap-3">
             <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]" strokeWidth={2.2} />
-            <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{text}</span>
+            <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{translateCaseText(text, language)}</span>
           </li>
         ))}
       </ul>
@@ -1942,14 +2598,16 @@ function ContextList({ title, items }: { title: string; items: IconListItem[] })
 }
 
 function ScopeBlock({ title = 'Principais entregas', items = appRemazaScope }: { title?: string; items?: IconListItem[] }) {
+  const { language } = useI18n();
+
   return (
     <div className="mt-14 border-y border-[var(--cinza-claro)] py-10 dark:border-[var(--blue-padrao)] md:py-12">
-      <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{title}</h3>
+      <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{translateCaseText(title, language)}</h3>
       <ul className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-x-10">
         {items.map(({ icon: Icon, text }) => (
           <li key={text} className="flex items-start gap-3">
             <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]" strokeWidth={2.2} aria-hidden="true" />
-            <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{text}</span>
+            <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{translateCaseText(text, language)}</span>
           </li>
         ))}
       </ul>
@@ -1966,6 +2624,7 @@ function CaseImageSlot({
   aspectClass?: string;
   onZoom?: () => void;
 }) {
+  const { language } = useI18n();
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const openZoom = () => {
     if (onZoom) {
@@ -1981,7 +2640,9 @@ function CaseImageSlot({
       src={image.src}
       alt={image.alt}
       loading="lazy"
-      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
+      className={`h-full w-full transition duration-500 group-hover:scale-[1.015] ${
+        image.fit === 'contain' ? 'object-contain' : 'object-cover'
+      }`}
     />
   ) : (
     // Substitua o placeholder pelo caminho da imagem final deste bloco quando o material estiver pronto.
@@ -1999,11 +2660,11 @@ function CaseImageSlot({
           type="button"
           className={`group relative block w-full overflow-hidden rounded-md bg-[#edf4fb] text-left shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:bg-[rgba(20,51,79,0.42)] dark:focus-visible:ring-offset-[var(--fundo)] ${aspectClass}`}
           onClick={openZoom}
-          aria-label={`Ampliar imagem: ${image.alt}`}
+          aria-label={`${translateCaseText('Ampliar imagem', language)}: ${translateCaseText(image.alt, language)}`}
         >
           {imageContent}
-          <span className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)]">
-            <ZoomIn size={26} strokeWidth={2.6} aria-hidden="true" />
+          <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)] sm:right-4 sm:top-4 sm:h-12 sm:w-12">
+            <ZoomIn size={22} strokeWidth={2.6} aria-hidden="true" />
           </span>
         </button>
       ) : (
@@ -2011,8 +2672,8 @@ function CaseImageSlot({
           {imageContent}
         </div>
       )}
-      <figcaption className="mt-4 font-sans text-sm leading-6 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
-        {image.caption}
+      <figcaption className="mt-4 break-words font-sans text-sm leading-6 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
+        {translateCaseText(image.caption, language)}
       </figcaption>
 
       {image.src && !onZoom && (
@@ -2031,6 +2692,7 @@ function CaseImageLightbox({
   isOpen: boolean;
   onClose: () => void;
 }) {
+  const { language } = useI18n();
   const [canUsePortal, setCanUsePortal] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [zoom, setZoom] = useState(1);
@@ -2185,7 +2847,7 @@ function CaseImageLightbox({
 
   const lightbox = (
     <div
-      className={`fixed inset-0 z-[999] grid bg-[rgba(8,31,51,0.92)] p-4 text-white backdrop-blur-sm md:p-6 ${
+      className={`fixed inset-0 z-[999] grid bg-[rgba(8,31,51,0.92)] p-3 pt-20 text-white backdrop-blur-sm sm:p-4 sm:pt-20 md:p-6 ${
         isClosing ? 'case-lightbox-out' : 'case-lightbox-in'
       }`}
       role="dialog"
@@ -2193,40 +2855,40 @@ function CaseImageLightbox({
       aria-label={image.alt}
       onClick={closeLightbox}
     >
-      <div className="absolute right-4 top-4 z-10 flex items-center gap-2 md:right-6 md:top-6">
+      <div className="absolute left-3 right-3 top-3 z-10 flex items-center justify-end gap-2 sm:left-auto sm:right-4 md:right-6 md:top-6">
         <div className="flex items-center overflow-hidden rounded-md border border-white/20 bg-white text-[var(--blue-padrao)] shadow-soft">
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)]"
+            className="flex h-10 w-10 items-center justify-center transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] sm:h-11 sm:w-11"
             onClick={(event) => {
               event.stopPropagation();
               decreaseZoom();
             }}
             disabled={zoom <= minZoom}
-            aria-label="Diminuir zoom"
+            aria-label={translateCaseText('Diminuir zoom', language)}
           >
             <Minus size={20} strokeWidth={2.5} />
           </button>
           <button
             type="button"
-            className="min-w-14 border-x border-[var(--cinza-claro)] px-3 py-3 text-center font-display text-xs font-extrabold transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)]"
+            className="min-w-12 border-x border-[var(--cinza-claro)] px-2 py-3 text-center font-display text-xs font-extrabold transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] sm:min-w-14 sm:px-3"
             onClick={(event) => {
               event.stopPropagation();
               resetZoom();
             }}
-            aria-label="Resetar zoom"
+            aria-label={translateCaseText('Resetar zoom', language)}
           >
             {Math.round(zoom * 100)}%
           </button>
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)]"
+            className="flex h-10 w-10 items-center justify-center transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] sm:h-11 sm:w-11"
             onClick={(event) => {
               event.stopPropagation();
               increaseZoom();
             }}
             disabled={zoom >= maxZoom}
-            aria-label="Aumentar zoom"
+            aria-label={translateCaseText('Aumentar zoom', language)}
           >
             <Plus size={20} strokeWidth={2.5} />
           </button>
@@ -2234,19 +2896,19 @@ function CaseImageLightbox({
 
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-md bg-white text-[var(--blue-padrao)] shadow-soft transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)]"
+          className="flex h-10 w-10 items-center justify-center rounded-md bg-white text-[var(--blue-padrao)] shadow-soft transition hover:bg-[var(--tradewind-claro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--blue-escuro)] sm:h-11 sm:w-11"
           onClick={(event) => {
             event.stopPropagation();
             closeLightbox();
           }}
-          aria-label="Fechar imagem ampliada"
+          aria-label={translateCaseText('Fechar imagem ampliada', language)}
         >
           <X size={22} strokeWidth={2.4} />
         </button>
       </div>
 
       <figure
-        className={`grid h-full min-h-0 grid-rows-[minmax(0,1fr)_auto] gap-4 pt-16 ${isClosing ? 'case-lightbox-figure-out' : 'case-lightbox-figure-in'}`}
+        className={`grid h-full min-h-0 grid-rows-[minmax(0,1fr)_auto] gap-3 ${isClosing ? 'case-lightbox-figure-out' : 'case-lightbox-figure-in'}`}
         onClick={(event) => event.stopPropagation()}
       >
         <div
@@ -2276,8 +2938,8 @@ function CaseImageLightbox({
             }}
           />
         </div>
-        <figcaption className="font-sans text-sm leading-6 text-white/86">
-          {image.caption}
+        <figcaption className="max-h-24 overflow-auto break-words font-sans text-sm leading-6 text-white/86">
+          {translateCaseText(image.caption, language)}
         </figcaption>
       </figure>
     </div>
@@ -2287,6 +2949,13 @@ function CaseImageLightbox({
 }
 
 function CaseSectionText({ section, index }: { section: CaseSection; index: number }) {
+  const { language } = useI18n();
+  const fallback = language === 'pt' ? undefined : caseSectionFallbackTranslations[language][section.id];
+  const label = fallback?.label ?? translateCaseText(section.label, language);
+  const title = fallback?.title ?? translateCaseText(section.title, language);
+  const intro = fallback?.intro ?? translateCaseText(section.intro, language);
+  const complement = fallback?.complement ?? (section.complement ? translateCaseText(section.complement, language) : undefined);
+
   return (
     <div className="max-w-4xl">
       <div className="flex items-center gap-3">
@@ -2295,36 +2964,36 @@ function CaseSectionText({ section, index }: { section: CaseSection; index: numb
         </span>
         <span className="h-px w-8 bg-[var(--tradewind-padrao)] dark:bg-[var(--blue-border)]" aria-hidden="true" />
         <p className="caption font-semibold uppercase text-[var(--cinza-escuro)] dark:text-white">
-          {section.label}
+          {label}
         </p>
       </div>
 
       <h2 className="mt-6 max-w-3xl font-display text-[clamp(1.9rem,4vw,2.2rem)] font-extrabold leading-[1.08] tracking-[0.02em] text-[var(--blue-padrao)] dark:text-white">
-        {section.title}
+        {title}
       </h2>
 
       <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
-        {section.intro}
+        {intro}
       </p>
 
-      {section.complement && (
+      {complement && (
         <p className="mt-5 max-w-2xl font-sans text-lg leading-8 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
-          {section.complement}
+          {complement}
         </p>
       )}
 
-      {section.extraParagraphs?.map((paragraph) => (
+      {language === 'pt' && section.extraParagraphs?.map((paragraph) => (
         <p key={paragraph} className="mt-5 max-w-2xl font-sans text-lg leading-8 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
-          {paragraph}
+          {translateCaseText(paragraph, language)}
         </p>
       ))}
 
-      {section.bullets && (
+      {language === 'pt' && section.bullets && (
         <ul className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-2">
           {section.bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-3">
               <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--tradewind-padrao)]" aria-hidden="true" />
-              <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{bullet}</span>
+              <span className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">{translateCaseText(bullet, language)}</span>
             </li>
           ))}
         </ul>
@@ -2334,6 +3003,7 @@ function CaseSectionText({ section, index }: { section: CaseSection; index: numb
 }
 
 function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { currentTitle: string; currentHref: string; inverted?: boolean }) {
+  const { language } = useI18n();
   const linkColor = 'rgb(70 177 153 / var(--tw-bg-opacity, 1))';
   const linkClass = inverted
     ? 'focus-visible:ring-white'
@@ -2370,7 +3040,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
         } ${linkClass}`}
         style={{ color: linkColor }}
       >
-        Projetos
+        {translateCaseText('Projetos', language)}
       </a>
       <span className={separatorClass} aria-hidden="true">
         &gt;
@@ -2383,7 +3053,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
         style={{ color: linkColor }}
         aria-current="page"
       >
-        {currentTitle}
+        {translateCaseText(currentTitle, language)}
       </a>
     </nav>
   );
@@ -2398,6 +3068,7 @@ function ProjectCaseContentHeader({ currentTitle, currentHref }: { currentTitle:
 }
 
 function CaseImpactBlock({ content }: { content: CaseImpactContent }) {
+  const { language } = useI18n();
   const testimonial =
     content.testimonial?.text &&
     content.testimonial.name &&
@@ -2418,14 +3089,14 @@ function CaseImpactBlock({ content }: { content: CaseImpactContent }) {
             <div className="flex items-center gap-3">
               <Icon className="h-5 w-5 shrink-0 text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]" strokeWidth={2.2} aria-hidden="true" />
               <p className="caption font-bold uppercase text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
-                {category}
+                {translateCaseText(category, language)}
               </p>
             </div>
             <h3 className="mt-5 font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">
-              {title}
+              {translateCaseText(title, language)}
             </h3>
             <p className="mt-3 font-sans text-sm leading-6 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
-              {text}
+              {translateCaseText(text, language)}
             </p>
           </article>
         ))}
@@ -2433,14 +3104,14 @@ function CaseImpactBlock({ content }: { content: CaseImpactContent }) {
 
       {content.note && (
         <p className="max-w-3xl rounded-md border border-[var(--cinza-claro)] bg-[var(--off-white)] px-6 py-5 font-sans text-base leading-7 text-[var(--cinza-escuro)] shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[rgba(20,51,79,0.42)] dark:text-[var(--cinza-claro)]">
-          {content.note}
+          {translateCaseText(content.note, language)}
         </p>
       )}
 
       {testimonial && (
         <blockquote className="rounded-md border border-[var(--cinza-claro)] bg-[var(--off-white)] p-6 shadow-soft dark:border-[var(--blue-padrao)] dark:bg-[rgba(20,51,79,0.42)]">
           <p className="font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-[var(--cinza-claro)]">
-            {testimonial.text}
+            {translateCaseText(testimonial.text!, language)}
           </p>
           <footer className="mt-4 font-display text-sm font-extrabold text-[var(--blue-padrao)] dark:text-white">
             {testimonial.name} · {testimonial.role} · {testimonial.company}
@@ -2471,7 +3142,7 @@ function CaseContextBlock({
         <ContextList title={rightTitle} items={rightItems} />
       </div>
 
-      <CaseImageSlot image={image} aspectClass="aspect-[16/8] min-h-[22rem]" />
+      <CaseImageSlot image={image} aspectClass="aspect-[16/10] md:aspect-[16/8] md:min-h-[22rem]" />
     </div>
   );
 }
@@ -2672,6 +3343,7 @@ function CaseCropCard({
   className?: string;
   imageClassName?: string;
 }) {
+  const { language } = useI18n();
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   return (
@@ -2680,7 +3352,7 @@ function CaseCropCard({
         type="button"
         className="group relative block min-h-[14rem] w-full flex-1 overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:focus-visible:ring-offset-[var(--fundo)]"
         onClick={() => setIsLightboxOpen(true)}
-        aria-label={`Ampliar imagem: ${image.alt}`}
+        aria-label={`${translateCaseText('Ampliar imagem', language)}: ${translateCaseText(image.alt, language)}`}
       >
         <img
           src={image.src ?? ''}
@@ -2688,12 +3360,12 @@ function CaseCropCard({
           loading="lazy"
           className={`absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.015] ${imageClassName}`}
         />
-        <span className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)]">
-          <ZoomIn size={24} strokeWidth={2.6} aria-hidden="true" />
+        <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[var(--blue-padrao)] shadow-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-[var(--tradewind-claro)] sm:right-4 sm:top-4 sm:h-11 sm:w-11">
+          <ZoomIn size={22} strokeWidth={2.6} aria-hidden="true" />
         </span>
       </button>
-      <figcaption className="border-t border-white/70 bg-white px-5 py-4 font-display text-sm font-extrabold text-[var(--blue-padrao)] dark:border-white/10 dark:bg-[rgba(8,31,51,0.62)] dark:text-white">
-        {title}
+      <figcaption className="break-words border-t border-white/70 bg-white px-5 py-4 font-display text-sm font-extrabold text-[var(--blue-padrao)] dark:border-white/10 dark:bg-[rgba(8,31,51,0.62)] dark:text-white">
+        {translateCaseText(title, language)}
       </figcaption>
 
       {image.src && (
@@ -2750,7 +3422,7 @@ function DaitanContextVisualBlock() {
         <ContextList title="Características do projeto" items={daitanProjectCharacteristics} />
       </div>
       <div className="grid gap-[30px]">
-        <CaseImageSlot image={daitanHomeImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
+        <CaseImageSlot image={daitanHomeImage} aspectClass="aspect-[4/3] md:aspect-[16/10] md:min-h-[24rem]" />
         <div className="grid items-start gap-[30px] sm:grid-cols-3">
           <CaseCropCard image={daitanModelDetailImage} title="Modelos" className="min-h-[15rem]" imageClassName="object-top" />
           <CaseCropCard image={daitanUsedListingImage} title="Seminovos" className="min-h-[15rem]" imageClassName="object-top" />
@@ -2770,7 +3442,7 @@ function DaitanScopeVisualBlock() {
 function DaitanNewCarsVisualBlock() {
   return (
     <div className="mt-12 grid gap-12">
-      <CaseImageSlot image={daitanModelDetailImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
+      <CaseImageSlot image={daitanModelDetailImage} aspectClass="aspect-[4/3] md:aspect-[16/10] md:min-h-[24rem]" />
     </div>
   );
 }
@@ -2781,7 +3453,7 @@ function DaitanTechnologyVisualBlock() {
       <CaseCropCard
         image={daitanModelTechnologyImage}
         title="Tecnologia, segurança e conectividade"
-        className="min-h-[24rem] md:min-h-[30rem]"
+        className="min-h-[16rem] md:min-h-[30rem]"
         imageClassName="object-center"
       />
     </div>
@@ -2825,7 +3497,7 @@ function DaitanAfterSalesVisualBlock() {
         <div className="mb-6">
           <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">Revisão programada</h3>
         </div>
-        <CaseImageSlot image={daitanReviewImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
+        <CaseImageSlot image={daitanReviewImage} aspectClass="aspect-[4/3] md:aspect-[16/10] md:min-h-[24rem]" />
       </div>
     </div>
   );
@@ -2892,11 +3564,11 @@ function ConsorcioRemazaContextBlock() {
         <ContextList title="Características do projeto" items={consorcioRemazaProjectCharacteristics} />
       </div>
       <div className="grid gap-[30px]">
-        <CaseImageSlot image={consorcioRemazaContextImage} aspectClass="aspect-[16/9] min-h-[24rem]" />
+        <CaseImageSlot image={consorcioRemazaContextImage} aspectClass="aspect-[4/3] md:aspect-[16/9] md:min-h-[24rem]" />
         <CaseCropCard
           image={consorcioRemazaHomeSimulationImage}
           title="Simule aqui como continuidade da home"
-          className="min-h-[20rem]"
+          className="min-h-[16rem] md:min-h-[20rem]"
           imageClassName="object-top"
         />
       </div>
@@ -2939,7 +3611,7 @@ function ConsorcioRemazaSimulationVisualBlock() {
       </div>
       <div className="grid items-start gap-[30px] lg:grid-cols-3">
         {consorcioRemazaSimulatorImages.map((image) => (
-          <CaseImageSlot key={image.caption} image={image} aspectClass="aspect-[16/10] min-h-[19rem]" />
+          <CaseImageSlot key={image.caption} image={image} aspectClass="aspect-[4/3] md:aspect-[16/10] md:min-h-[19rem]" />
         ))}
       </div>
     </div>
@@ -2973,7 +3645,7 @@ function ConsorcioRemazaCommercialVisualBlock() {
         <CaseCropCard
           image={consorcioRemazaCommercialImages[0]}
           title="Landing page individual"
-          className="min-h-[30rem]"
+          className="min-h-[18rem] md:min-h-[30rem]"
           imageClassName="object-top"
         />
       </div>
@@ -2987,7 +3659,7 @@ function ConsorcioRemazaTrustVisualBlock() {
       <CaseCropCard
         image={consorcioRemazaTrustImage}
         title="Fotografia, nome, contato e acesso à página individual"
-        className="min-h-[24rem] md:min-h-[30rem]"
+        className="min-h-[16rem] md:min-h-[30rem]"
         imageClassName="object-center"
       />
     </div>
@@ -2997,8 +3669,8 @@ function ConsorcioRemazaTrustVisualBlock() {
 function ConsorcioRemazaContentVisualBlock() {
   return (
     <div className="mt-12 grid items-start gap-[30px] md:grid-cols-2">
-      <CaseCropCard image={consorcioRemazaContentImages[0]} title="Central de notícias" className="min-h-[22rem]" imageClassName="object-top" />
-      <CaseCropCard image={consorcioRemazaContentImages[1]} title="Dúvidas frequentes" className="min-h-[22rem]" imageClassName="object-top" />
+      <CaseCropCard image={consorcioRemazaContentImages[0]} title="Central de notícias" className="min-h-[16rem] md:min-h-[22rem]" imageClassName="object-top" />
+      <CaseCropCard image={consorcioRemazaContentImages[1]} title="Dúvidas frequentes" className="min-h-[16rem] md:min-h-[22rem]" imageClassName="object-top" />
     </div>
   );
 }
@@ -3006,7 +3678,7 @@ function ConsorcioRemazaContentVisualBlock() {
 function ConsorcioRemazaRelationshipVisualBlock() {
   return (
     <div className="mt-12 grid gap-[30px]">
-      <CaseImageSlot image={consorcioRemazaRelationshipImages[0]} aspectClass="aspect-[16/10] min-h-[22rem]" />
+      <CaseImageSlot image={consorcioRemazaRelationshipImages[0]} aspectClass="aspect-[4/3] md:aspect-[16/10] md:min-h-[22rem]" />
       <div className="grid items-start gap-[30px] md:grid-cols-2">
         <CaseCropCard image={consorcioRemazaRelationshipImages[1]} title="Falar com a empresa" className="min-h-[16rem]" imageClassName="object-top" />
         <CaseCropCard image={consorcioRemazaRelationshipImages[2]} title="Encontrar uma unidade" className="min-h-[16rem]" imageClassName="object-top" />
@@ -3018,8 +3690,8 @@ function ConsorcioRemazaRelationshipVisualBlock() {
 function ConsorcioRemazaOpportunitiesVisualBlock() {
   return (
     <div className="mt-12 grid items-start gap-[30px] md:grid-cols-2">
-      <CaseCropCard image={consorcioRemazaOpportunityImages[0]} title="Seja um representante" className="min-h-[22rem]" imageClassName="object-top" />
-      <CaseCropCard image={consorcioRemazaOpportunityImages[1]} title="Trabalhe conosco" className="min-h-[22rem]" imageClassName="object-top" />
+      <CaseCropCard image={consorcioRemazaOpportunityImages[0]} title="Seja um representante" className="min-h-[16rem] md:min-h-[22rem]" imageClassName="object-top" />
+      <CaseCropCard image={consorcioRemazaOpportunityImages[1]} title="Trabalhe conosco" className="min-h-[16rem] md:min-h-[22rem]" imageClassName="object-top" />
     </div>
   );
 }
@@ -3166,7 +3838,7 @@ function CaseVisualBlock({ variant }: { variant: string }) {
   if (variant === 'gamp-services') {
     return (
       <div className="mt-12">
-        <CaseImageSlot image={gamp21ServicesImage} aspectClass="aspect-[16/10] min-h-[24rem]" />
+        <CaseImageSlot image={gamp21ServicesImage} aspectClass="aspect-[4/3] md:aspect-[16/10] md:min-h-[24rem]" />
       </div>
     );
   }
@@ -3370,6 +4042,7 @@ function GenericProjectCasePage({ slug }: ProjectCasePageProps) {
 }
 
 function AppRemazaCasePage() {
+  const { language } = useI18n();
   const [activeSection, setActiveSection] = useState(appRemazaSections[0].id);
 
   useEffect(() => {
@@ -3415,22 +4088,22 @@ function AppRemazaCasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">Product Design para consórcio</p>
+              <p className="font-display text-base font-extrabold tracking-[0.02em] text-white sm:text-lg md:text-xl">{translateCaseText('Product Design para consórcio', language)}</p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.5rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Aplicativo para gestão de consórcio
+                {translateCaseText('Aplicativo para gestão de consórcio', language)}
               </h1>
-              <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Projeto desenvolvido para o App Remaza, redesenhando a experiência da Área do Cliente.
+              <p className="mt-6 max-w-2xl font-sans text-base leading-7 text-white/82 sm:mt-7 sm:text-lg sm:leading-8">
+                {translateCaseText('Projeto desenvolvido para o App Remaza, redesenhando a experiência da Área do Cliente.', language)}
               </p>
               <div className="mt-8 flex flex-wrap items-end gap-x-10 gap-y-5">
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Atuação</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">UX/UI Design</p>
-                  <p className="font-display text-lg font-extrabold text-white">Product Design</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Atuação', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('UX/UI Design', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Product Design', language)}</p>
                 </div>
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Ano</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">2026</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Ano', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">2026</p>
                 </div>
               </div>
             </div>
@@ -3450,7 +4123,7 @@ function AppRemazaCasePage() {
                   : 'border-[var(--cinza-claro)] text-[var(--blue-padrao)] dark:border-[var(--blue-padrao)] dark:text-[var(--blue-border)]'
               }`}
             >
-              {section.label}
+              {translateCaseText(section.label, language)}
             </a>
           ))}
         </nav>
@@ -3466,7 +4139,7 @@ function AppRemazaCasePage() {
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
-                Voltar
+                {translateCaseText('Voltar', language)}
               </a>
 
               <nav className="grid gap-1 border-l border-[var(--cinza-claro)] pl-4 dark:border-[var(--blue-padrao)]" aria-label="Navegação do case APP Remaza">
@@ -3481,7 +4154,7 @@ function AppRemazaCasePage() {
                     }`}
                     aria-current={activeSection === section.id ? 'true' : undefined}
                   >
-                    {section.label}
+                    {translateCaseText(section.label, language)}
                   </a>
                 ))}
               </nav>
@@ -3511,6 +4184,7 @@ function AppRemazaCasePage() {
 }
 
 function FrestoCasePage() {
+  const { language } = useI18n();
   const [activeSection, setActiveSection] = useState(frestoSections[0].id);
 
   useEffect(() => {
@@ -3556,23 +4230,23 @@ function FrestoCasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">UX/UI para gastronomia</p>
+              <p className="font-display text-base font-extrabold tracking-[0.02em] text-white sm:text-lg md:text-xl">{translateCaseText('UX/UI para gastronomia', language)}</p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Fresto — Rede de restaurantes
+                {translateCaseText('Fresto — Rede de restaurantes', language)}
               </h1>
-              <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                UX e Web Design para uma rede de restaurantes presente em clubes de São Paulo.
+              <p className="mt-6 max-w-2xl font-sans text-base leading-7 text-white/82 sm:mt-7 sm:text-lg sm:leading-8">
+                {translateCaseText('UX e Web Design para uma rede de restaurantes presente em clubes de São Paulo.', language)}
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Atuação</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">UX e Web Design</p>
-                  <p className="font-display text-lg font-extrabold text-white">Prototipação no Figma</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Atuação', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('UX e Web Design', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Prototipação no Figma', language)}</p>
                 </div>
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Entrega</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">Site institucional</p>
-                  <p className="font-display text-lg font-extrabold text-white">Planejamento WordPress</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Entrega', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Site institucional', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Planejamento WordPress', language)}</p>
                 </div>
               </div>
             </div>
@@ -3592,7 +4266,7 @@ function FrestoCasePage() {
                   : 'border-[var(--cinza-claro)] text-[var(--blue-padrao)] dark:border-[var(--blue-padrao)] dark:text-[var(--blue-border)]'
               }`}
             >
-              {section.label}
+              {translateCaseText(section.label, language)}
             </a>
           ))}
         </nav>
@@ -3608,7 +4282,7 @@ function FrestoCasePage() {
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
-                Voltar
+                {translateCaseText('Voltar', language)}
               </a>
 
               <nav className="grid gap-1 border-l border-[var(--cinza-claro)] pl-4 dark:border-[var(--blue-padrao)]" aria-label="Navegação do case Fresto">
@@ -3623,7 +4297,7 @@ function FrestoCasePage() {
                     }`}
                     aria-current={activeSection === section.id ? 'true' : undefined}
                   >
-                    {section.label}
+                    {translateCaseText(section.label, language)}
                   </a>
                 ))}
               </nav>
@@ -3653,6 +4327,7 @@ function FrestoCasePage() {
 }
 
 function MotoRemazaCasePage() {
+  const { language } = useI18n();
   const [activeSection, setActiveSection] = useState(motoRemazaSections[0].id);
 
   useEffect(() => {
@@ -3698,26 +4373,26 @@ function MotoRemazaCasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
-                Automotivo e e-commerce
+              <p className="font-display text-base font-extrabold tracking-[0.02em] text-white sm:text-lg md:text-xl">
+                {translateCaseText('Automotivo e e-commerce', language)}
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Concessionárias de motos Honda
+                {translateCaseText('Concessionárias de motos Honda', language)}
               </h1>
-              <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Projeto desenvolvido para a Moto Remaza, criando uma experiência digital para acompanhar diferentes jornadas sobre duas rodas.
+              <p className="mt-6 max-w-2xl font-sans text-base leading-7 text-white/82 sm:mt-7 sm:text-lg sm:leading-8">
+                {translateCaseText('Projeto desenvolvido para a Moto Remaza, criando uma experiência digital para acompanhar diferentes jornadas sobre duas rodas.', language)}
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Atuação</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">UX Strategy</p>
-                  <p className="font-display text-lg font-extrabold text-white">UX/UI Design</p>
-                  <p className="font-display text-lg font-extrabold text-white">Arquitetura da Informação</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Atuação', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('UX Strategy', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('UX/UI Design', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Arquitetura da Informação', language)}</p>
                 </div>
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Plataformas</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">Desktop</p>
-                  <p className="font-display text-lg font-extrabold text-white">Mobile</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Plataformas', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Desktop', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Mobile', language)}</p>
                 </div>
                 <div>
                   <p className="caption font-bold uppercase text-white/56">Status</p>
@@ -3742,7 +4417,7 @@ function MotoRemazaCasePage() {
                   : 'border-[var(--cinza-claro)] text-[var(--blue-padrao)] dark:border-[var(--blue-padrao)] dark:text-[var(--blue-border)]'
               }`}
             >
-              {section.label}
+              {translateCaseText(section.label, language)}
             </a>
           ))}
         </nav>
@@ -3758,7 +4433,7 @@ function MotoRemazaCasePage() {
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
-                Voltar
+                {translateCaseText('Voltar', language)}
               </a>
 
               <nav className="grid gap-1 border-l border-[var(--cinza-claro)] pl-4 dark:border-[var(--blue-padrao)]" aria-label="Navegação do case Moto Remaza">
@@ -3773,7 +4448,7 @@ function MotoRemazaCasePage() {
                     }`}
                     aria-current={activeSection === section.id ? 'true' : undefined}
                   >
-                    {section.label}
+                    {translateCaseText(section.label, language)}
                   </a>
                 ))}
               </nav>
@@ -3803,6 +4478,7 @@ function MotoRemazaCasePage() {
 }
 
 function Gamp21CasePage() {
+  const { language } = useI18n();
   const [activeSection, setActiveSection] = useState(gamp21Sections[0].id);
 
   useEffect(() => {
@@ -3848,26 +4524,26 @@ function Gamp21CasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
-                Uma experiência digital para acolher famílias e aproximar empresas
+              <p className="font-display text-base font-extrabold tracking-[0.02em] text-white sm:text-lg md:text-xl">
+                {translateCaseText('Uma experiência digital para acolher famílias e aproximar empresas', language)}
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Gamp21
+                {translateCaseText('Gamp21', language)}
               </h1>
-              <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Projeto de organização de conteúdo e criação de interfaces para uma rede de apoio à maternidade e à paternidade.
+              <p className="mt-6 max-w-2xl font-sans text-base leading-7 text-white/82 sm:mt-7 sm:text-lg sm:leading-8">
+                {translateCaseText('Projeto de organização de conteúdo e criação de interfaces para uma rede de apoio à maternidade e à paternidade.', language)}
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Atuação</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">Arquitetura da Informação</p>
-                  <p className="font-display text-lg font-extrabold text-white">UX/UI Design</p>
-                  <p className="font-display text-lg font-extrabold text-white">Direção visual</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Atuação', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Arquitetura da Informação', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('UX/UI Design', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Direção visual', language)}</p>
                 </div>
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Entrega</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">Site institucional</p>
-                  <p className="font-display text-lg font-extrabold text-white">Blog “Para mães e pais”</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Entrega', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Site institucional', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Blog “Para mães e pais”', language)}</p>
                 </div>
               </div>
             </div>
@@ -3887,7 +4563,7 @@ function Gamp21CasePage() {
                   : 'border-[var(--cinza-claro)] text-[var(--blue-padrao)] dark:border-[var(--blue-padrao)] dark:text-[var(--blue-border)]'
               }`}
             >
-              {section.label}
+              {translateCaseText(section.label, language)}
             </a>
           ))}
         </nav>
@@ -3903,7 +4579,7 @@ function Gamp21CasePage() {
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
-                Voltar
+                {translateCaseText('Voltar', language)}
               </a>
 
               <nav className="grid gap-1 border-l border-[var(--cinza-claro)] pl-4 dark:border-[var(--blue-padrao)]" aria-label="Navegação do case Gamp21">
@@ -3918,7 +4594,7 @@ function Gamp21CasePage() {
                     }`}
                     aria-current={activeSection === section.id ? 'true' : undefined}
                   >
-                    {section.label}
+                    {translateCaseText(section.label, language)}
                   </a>
                 ))}
               </nav>
@@ -3948,6 +4624,7 @@ function Gamp21CasePage() {
 }
 
 function DaitanCasePage() {
+  const { language } = useI18n();
   const [activeSection, setActiveSection] = useState(daitanSections[0].id);
 
   useEffect(() => {
@@ -3993,26 +4670,26 @@ function DaitanCasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
-                Uma experiência digital para acompanhar toda a jornada do cliente
+              <p className="font-display text-base font-extrabold tracking-[0.02em] text-white sm:text-lg md:text-xl">
+                {translateCaseText('Uma experiência digital para acompanhar toda a jornada do cliente', language)}
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Honda Daitan
+                {translateCaseText('Honda Daitan', language)}
               </h1>
-              <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Redesign de um ecossistema digital que conecta veículos, serviços e atendimento em uma experiência mais organizada e responsiva.
+              <p className="mt-6 max-w-2xl font-sans text-base leading-7 text-white/82 sm:mt-7 sm:text-lg sm:leading-8">
+                {translateCaseText('Redesign de um ecossistema digital que conecta veículos, serviços e atendimento em uma experiência mais organizada e responsiva.', language)}
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Atuação</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">Arquitetura da Informação</p>
-                  <p className="font-display text-lg font-extrabold text-white">UX/UI Design</p>
-                  <p className="font-display text-lg font-extrabold text-white">Interfaces responsivas</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Atuação', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Arquitetura da Informação', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('UX/UI Design', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Interfaces responsivas', language)}</p>
                 </div>
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Entrega</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">Site Honda Daitan</p>
-                  <p className="font-display text-lg font-extrabold text-white">Gestão de conteúdo</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Entrega', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Site Honda Daitan', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Gestão de conteúdo', language)}</p>
                 </div>
               </div>
             </div>
@@ -4032,7 +4709,7 @@ function DaitanCasePage() {
                   : 'border-[var(--cinza-claro)] text-[var(--blue-padrao)] dark:border-[var(--blue-padrao)] dark:text-[var(--blue-border)]'
               }`}
             >
-              {section.label}
+              {translateCaseText(section.label, language)}
             </a>
           ))}
         </nav>
@@ -4048,7 +4725,7 @@ function DaitanCasePage() {
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
-                Voltar
+                {translateCaseText('Voltar', language)}
               </a>
 
               <nav className="grid gap-1 border-l border-[var(--cinza-claro)] pl-4 dark:border-[var(--blue-padrao)]" aria-label="Navegação do case Daitan">
@@ -4063,7 +4740,7 @@ function DaitanCasePage() {
                     }`}
                     aria-current={activeSection === section.id ? 'true' : undefined}
                   >
-                    {section.label}
+                    {translateCaseText(section.label, language)}
                   </a>
                 ))}
               </nav>
@@ -4093,6 +4770,7 @@ function DaitanCasePage() {
 }
 
 function ConsorcioRemazaCasePage() {
+  const { language } = useI18n();
   const [activeSection, setActiveSection] = useState(consorcioRemazaSections[0].id);
 
   useEffect(() => {
@@ -4160,26 +4838,26 @@ function ConsorcioRemazaCasePage() {
         <div className="relative z-10 -mt-[100svh] h-[100svh]">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-end px-5 pb-12 pt-10 md:pb-16">
             <div className="max-w-4xl">
-              <p className="font-display text-lg font-extrabold tracking-[0.02em] text-white md:text-xl">
-                Uma experiência digital para transformar planos em possibilidades
+              <p className="font-display text-base font-extrabold tracking-[0.02em] text-white sm:text-lg md:text-xl">
+                {translateCaseText('Uma experiência digital para transformar planos em possibilidades', language)}
               </p>
               <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.18rem,6.8vw,4.2rem)] font-extrabold leading-[0.96] tracking-[0.02em] text-white">
-                Consórcio Remaza
+                {translateCaseText('Consórcio Remaza', language)}
               </h1>
-              <p className="mt-7 max-w-2xl font-sans text-lg leading-8 text-white/82">
-                Projeto de UX/UI que conectou informação, simulação e atendimento em uma jornada mais clara para clientes e equipes comerciais.
+              <p className="mt-6 max-w-2xl font-sans text-base leading-7 text-white/82 sm:mt-7 sm:text-lg sm:leading-8">
+                {translateCaseText('Projeto de UX/UI que conectou informação, simulação e atendimento em uma jornada mais clara para clientes e equipes comerciais.', language)}
               </p>
               <div className="mt-8 grid gap-5 sm:flex sm:flex-wrap sm:items-end sm:gap-x-10">
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Atuação</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">UX/UI Design</p>
-                  <p className="font-display text-lg font-extrabold text-white">Simuladores</p>
-                  <p className="font-display text-lg font-extrabold text-white">Ferramentas comerciais</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Atuação', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('UX/UI Design', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Simuladores', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Ferramentas comerciais', language)}</p>
                 </div>
                 <div>
-                  <p className="caption font-bold uppercase text-white/56">Entrega</p>
-                  <p className="mt-2 font-display text-lg font-extrabold text-white">Site institucional</p>
-                  <p className="font-display text-lg font-extrabold text-white">Jornadas de geração de leads</p>
+                  <p className="caption font-bold uppercase text-white/56">{translateCaseText('Entrega', language)}</p>
+                  <p className="mt-2 font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Site institucional', language)}</p>
+                  <p className="font-display text-base font-extrabold text-white sm:text-lg">{translateCaseText('Jornadas de geração de leads', language)}</p>
                 </div>
               </div>
             </div>
@@ -4199,7 +4877,7 @@ function ConsorcioRemazaCasePage() {
                   : 'border-[var(--cinza-claro)] text-[var(--blue-padrao)] dark:border-[var(--blue-padrao)] dark:text-[var(--blue-border)]'
               }`}
             >
-              {section.label}
+              {translateCaseText(section.label, language)}
             </a>
           ))}
         </nav>
@@ -4215,7 +4893,7 @@ function ConsorcioRemazaCasePage() {
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
-                Voltar
+                {translateCaseText('Voltar', language)}
               </a>
 
               <nav className="grid gap-1 border-l border-[var(--cinza-claro)] pl-4 dark:border-[var(--blue-padrao)]" aria-label="Navegação do case Consórcio Remaza">
@@ -4230,7 +4908,7 @@ function ConsorcioRemazaCasePage() {
                     }`}
                     aria-current={activeSection === section.id ? 'true' : undefined}
                   >
-                    {section.label}
+                    {translateCaseText(section.label, language)}
                   </a>
                 ))}
               </nav>
