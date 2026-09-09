@@ -170,6 +170,275 @@ const caseTextTranslations: Record<Exclude<Language, 'pt'>, Record<string, strin
     'Resetar zoom': 'Reset zoom',
     'Aumentar zoom': 'Zoom in',
     'Fechar imagem ampliada': 'Close enlarged image',
+    'Pagamentos, assembleias, lances, documentos e informações da cota passaram a ser encontrados em caminhos mais claros e centralizados.':
+      'Payments, assemblies, bids, documents and quota information became easier to find through clearer, centralized paths.',
+    'O aplicativo criou um canal digital contínuo entre a administradora e o consorciado durante diferentes momentos da jornada.':
+      'The app created an ongoing digital channel between the administrator and the consortium member across different moments of the journey.',
+    'A organização dos principais serviços ajudou a diminuir a dependência dos canais de atendimento para atividades recorrentes.':
+      'Organizing the main services helped reduce dependence on support channels for recurring tasks.',
+    'Imagens mais humanas e apetitosas ajudaram o visitante a conhecer a proposta dos restaurantes e encontrar a unidade mais adequada.':
+      'More human and appetizing images helped visitors understand the restaurants and find the most suitable location.',
+    'O destaque dado aos pratos, às unidades e às redes sociais fortaleceu a apresentação da marca no ambiente digital.':
+      'Highlighting dishes, locations and social media strengthened the brand presentation in the digital environment.',
+    'A integração com o Instagram permitiu apresentar novidades mesmo sem uma equipe dedicada à atualização frequente do site.':
+      'The Instagram integration made it possible to show updates even without a team dedicated to frequent website maintenance.',
+    'Quem utiliza a moto para trabalhar, viajar ou viver uma paixão passou a encontrar modelos e serviços de forma mais orientada.':
+      'People who use motorcycles for work, travel or passion could find models and services in a more guided way.',
+    'A solução aproximou descoberta, comparação, atendimento e intenção de compra dentro do mesmo ecossistema digital.':
+      'The solution brought discovery, comparison, service and purchase intent closer together inside the same digital ecosystem.',
+    'A organização das páginas facilitou a inclusão de modelos, campanhas, peças, acessórios e novos serviços.':
+      'The page structure made it easier to add models, campaigns, parts, accessories and new services.',
+    'Modelos, versões, diferenciais e formas de contato foram organizados para facilitar a pesquisa antes da visita à concessionária.':
+      'Models, versions, features and contact options were organized to support research before visiting the dealership.',
+    'Test-drive, ofertas e atendimento foram incorporados às jornadas de navegação como pontos naturais de conversão.':
+      'Test drives, offers and support were incorporated into the browsing journeys as natural conversion points.',
+    'A estrutura foi preparada para acompanhar a entrada frequente de veículos, seminovos, banners e campanhas comerciais.':
+      'The structure was prepared to handle frequent updates to vehicles, pre-owned inventory, banners and commercial campaigns.',
+    'aparições registradas nos resultados de busca do Google nos últimos seis meses.':
+      'impressions recorded in Google search results over the last six months.',
+    'acessos vindos de busca orgânica no mesmo período.': 'visits from organic search in the same period.',
+    'dos cliques realizados por pessoas acessando pelo celular.': 'of clicks came from people accessing on mobile.',
+    'impressões dos materiais educativos em PDF nos últimos seis meses.':
+      'impressions for educational PDF materials over the last six months.',
+    'Os simuladores permitiram explorar possibilidades de crédito e pagamento antes do contato com a equipe comercial.':
+      'The simulators allowed users to explore credit and payment possibilities before contacting the sales team.',
+    'As escolhas realizadas durante a simulação ajudaram a iniciar conversas comerciais com informações mais relevantes.':
+      'Choices made during the simulation helped start sales conversations with more relevant information.',
+    'Site, centrais de vendas, conteúdos e orientações para os vendedores passaram a trabalhar de maneira mais consistente.':
+      'The website, sales centers, content and seller guidance began working together more consistently.',
+    Consorciados: 'Consortium members',
+    Investidores: 'Investors',
+    'Clientes das classes C e D': 'Class C and D customers',
+    'Usuários com diferentes níveis de familiaridade digital': 'Users with different levels of digital familiarity',
+    'Consultar rapidamente informações da cota': 'Quickly check quota information',
+    'Emitir boletos': 'Issue payment slips',
+    'Acompanhar assembleias': 'Follow assemblies',
+    'Acessar documentos': 'Access documents',
+    'Atualizar cadastro': 'Update registration data',
+    'Resolver tarefas sem precisar ligar para a central': 'Resolve tasks without calling the support center',
+    'Organização da arquitetura da informação': 'Information architecture organization',
+    'Revisão dos fluxos principais': 'Main flow review',
+    'Criação de interfaces em alta fidelidade': 'High-fidelity interface design',
+    'Padronização de componentes': 'Component standardization',
+    'Evolução do Design System': 'Design System evolution',
+    'Apoio à documentação para desenvolvimento': 'Support for development documentation',
+    'Pesquisa de referências': 'Reference research',
+    'Arquitetura das páginas': 'Page architecture',
+    'Planejamento para WordPress': 'Planning for WordPress',
+    'Apresentação das unidades': 'Location presentation',
+    'Integração com Instagram': 'Instagram integration',
+    'Área de oportunidades': 'Opportunities area',
+    'Análise da comunicação nas redes sociais': 'Social media communication analysis',
+    'Pesquisa de referências do segmento': 'Segment reference research',
+    'Organização da arquitetura das páginas': 'Page architecture organization',
+    'Definição das hierarquias de conteúdo': 'Content hierarchy definition',
+    'Planejamento da experiência responsiva': 'Responsive experience planning',
+    'Interface preparada para WordPress': 'Interface prepared for WordPress',
+    'Arquitetura da informação': 'Information architecture',
+    'Organização das jornadas': 'Journey organization',
+    'Padrões de interface': 'Interface patterns',
+    'Direção visual do site': 'Website visual direction',
+    'E-commerce e catálogo digital': 'E-commerce and digital catalog',
+    'Jornadas de pesquisa e compra': 'Research and purchase journeys',
+    'Contato com diferentes perfis de clientes': 'Contact with different customer profiles',
+    'Conteúdos de apoio à decisão': 'Decision-support content',
+    'Interfaces desktop e mobile': 'Desktop and mobile interfaces',
+    'Prototipação': 'Prototyping',
+    'Preparação para evolução do produto': 'Preparation for product evolution',
+    'Organização dos conteúdos': 'Content organization',
+    'Estruturação da jornada entre conteúdos e serviços': 'Structuring the journey between content and services',
+    'Conteúdo para mães e pais': 'Content for mothers and fathers',
+    'Cursos e orientações': 'Courses and guidance',
+    'Serviços para empresas': 'Services for companies',
+    'Experiência simples e acolhedora': 'Simple and welcoming experience',
+    'Estruturação das páginas de modelos': 'Model page structuring',
+    'Organização da experiência de seminovos': 'Pre-owned experience organization',
+    'Estruturação das áreas de pós-venda': 'After-sales area structuring',
+    'Criação de formulários e pontos de conversão': 'Form and conversion point creation',
+    'Padronização visual entre diferentes áreas do site': 'Visual standardization across website areas',
+    'Clientes interessados em modelos novos e sofisticados': 'Customers interested in new and sophisticated models',
+    'Busca por seminovos com segurança e procedência': 'Search for pre-owned vehicles with confidence and provenance',
+    'Tecnologias, acessórios e serviços de manutenção': 'Technologies, accessories and maintenance services',
+    'Condições corporativas e oportunidades comerciais': 'Corporate conditions and commercial opportunities',
+    'Canais de atendimento e relacionamento': 'Support and relationship channels',
+    'Atualizações frequentes de modelos, ofertas e serviços': 'Frequent updates to models, offers and services',
+    'Simuladores de consórcio': 'Consortium simulators',
+    'Jornadas de conversão': 'Conversion journeys',
+    'Ferramentas de apoio comercial': 'Sales support tools',
+    'Orientação para fotografias dos vendedores': 'Guidance for seller photos',
+    'Produto financeiro complexo': 'Complex financial product',
+    'Geração de leads para vendas': 'Sales lead generation',
+    'Centrais e ferramentas comerciais': 'Sales centers and tools',
+    'Conteúdo como parte do ecossistema': 'Content as part of the ecosystem',
+    'Estruturação dos simuladores': 'Simulator structuring',
+    'Criação de jornadas de geração de leads': 'Lead generation journey creation',
+    'Landing pages para representantes': 'Landing pages for representatives',
+    'Organização de canais de atendimento': 'Support channel organization',
+    'Apoio visual à estrutura comercial': 'Visual support for the commercial structure',
+    'Padronização das principais áreas do site': 'Standardization of the main website areas',
+    'Navegação mais direta': 'More direct navigation',
+    'Informações fáceis de encontrar': 'Easy-to-find information',
+    'Melhor acesso aos serviços': 'Better access to services',
+    'Canais de atendimento visíveis': 'Visible support channels',
+    'Experiência adequada a diferentes perfis': 'Experience suited to different profiles',
+    'Fluxo de primeiro acesso e login com identificação da conta, senha e estados de validação.':
+      'First-access and login flow with account identification, password and validation states.',
+    'Página inicial no desktop, apresentando a proposta do Gamp21 e seus principais caminhos.':
+      'Desktop homepage presenting Gamp21’s value proposition and main paths.',
+    'A mesma experiência adaptada para a navegação mobile.': 'The same experience adapted for mobile navigation.',
+    'Serviços organizados para famílias, empresas e diferentes momentos da parentalidade.':
+      'Services organized for families, companies and different moments of parenthood.',
+    'A área “Para mães e pais” organiza conteúdos acessíveis para as famílias.':
+      'The “For mothers and fathers” area organizes accessible content for families.',
+    'Os conteúdos também aparecem na home como ponto de entrada para novas leituras.':
+      'Content also appears on the homepage as an entry point to new readings.',
+    'A home apresenta modelos, ofertas, serviços e caminhos de atendimento logo na entrada do site.':
+      'The homepage presents models, offers, services and support paths right at the website entry point.',
+    'A experiência mobile organiza os principais caminhos da concessionária desde a entrada no site.':
+      'The mobile experience organizes the dealership’s main paths from the first screen.',
+    'A página de modelo reúne imagem do veículo, versões, cores, ficha técnica e chamadas de conversão.':
+      'The model page brings together vehicle imagery, versions, colors, specs and conversion calls.',
+    'Tecnologias e diferenciais foram organizados em blocos para facilitar a exploração.':
+      'Technologies and features were organized into blocks to make exploration easier.',
+    'No mobile, a página mantém apresentação visual, botões de cotação e test drive em evidência.':
+      'On mobile, the page keeps visual presentation, quote buttons and test drive actions visible.',
+    'Versões, diferenciais e informações do modelo continuam acessíveis em telas menores.':
+      'Versions, features and model information remain accessible on smaller screens.',
+    'Listagem desktop com busca, filtros e informações principais dos seminovos.':
+      'Desktop listing with search, filters and key pre-owned vehicle information.',
+    'Filtros mobile ajudam o usuário a reduzir opções antes do contato.':
+      'Mobile filters help users narrow options before contacting the dealership.',
+    'Detalhe do seminovo com fotos e informações para apoiar a continuidade da jornada.':
+      'Pre-owned vehicle detail with photos and information to support journey continuity.',
+    'Seleção de modelo e exploração de peças e acessórios compatíveis.':
+      'Model selection and exploration of compatible parts and accessories.',
+    'Seleção do veículo no mobile.': 'Vehicle selection on mobile.',
+    'Listagem de acessórios compatíveis no mobile.': 'Compatible accessory listing on mobile.',
+    'Revisão programada com serviços previstos, quilometragem e valores de manutenção.':
+      'Scheduled maintenance with expected services, mileage and maintenance prices.',
+    'Condições especiais aproximam públicos corporativos da concessionária.':
+      'Special conditions bring corporate audiences closer to the dealership.',
+    'Linha Direta cria um canal aberto de comunicação com a empresa.':
+      'Direct Line creates an open communication channel with the company.',
+    'Detalhe final com unidades, contatos e navegação complementar.':
+      'Final detail with locations, contacts and complementary navigation.',
+    'Imagem principal do case Consórcio Remaza.': 'Main image for the Consórcio Remaza case.',
+    'A página inicial conecta produtos, simulação e principais caminhos comerciais.':
+      'The homepage connects products, simulation and the main commercial paths.',
+    'A simulação aparece como caminho central da jornada comercial.':
+      'Simulation appears as the central path in the commercial journey.',
+    'Campos, seletores e etapas ajudam o usuário a transformar uma escolha complexa em possibilidades mais concretas.':
+      'Fields, selectors and steps help users turn a complex choice into more concrete possibilities.',
+    'Conte-nos o que você procura': 'Tell us what you are looking for',
+    'Defina uma faixa de investimento': 'Define an investment range',
+    'Compare as opções disponíveis': 'Compare the available options',
+    'Dados para iniciar a simulação': 'Information to start the simulation',
+    'Planos apresentados de forma objetiva': 'Plans presented objectively',
+    'Landing pages individuais conectavam divulgação, interesse e geração do contato.':
+      'Individual landing pages connected promotion, interest and contact generation.',
+    'A interface complementar reunia dados, documentos e materiais de apoio ao representante.':
+      'The complementary interface gathered data, documents and support materials for the representative.',
+    'A identificação clara do profissional aproxima a experiência digital do atendimento real.':
+      'Clear professional identification brings the digital experience closer to real service.',
+    'Conteúdos para descoberta e orientação ampliam o papel informativo do site.':
+      'Content for discovery and guidance expands the website’s informational role.',
+    'Respostas rápidas apoiam quem ainda está entendendo como o consórcio funciona.':
+      'Quick answers support people still learning how consortium plans work.',
+    'Acessar serviços': 'Access services',
+    'Falar com a empresa': 'Contact the company',
+    'Encontrar uma unidade': 'Find a location',
+    'Seja um representante apresenta a oportunidade e os recursos para atuação comercial.':
+      'The Become a Representative page presents the opportunity and resources for commercial work.',
+    'Trabalhe conosco amplia os caminhos para candidatos interessados na organização.':
+      'Work With Us expands the paths for candidates interested in the organization.',
+    'As principais informações e serviços do consórcio reunidos em um único aplicativo.':
+      'The main consortium information and services gathered in a single app.',
+    'Informações importantes visíveis logo no primeiro acesso.':
+      'Important information visible from the first access.',
+    'Diferentes serviços organizados para serem encontrados com facilidade.':
+      'Different services organized so they can be found easily.',
+    'Um caminho direto para consultar e pagar parcelas.': 'A direct path to check and pay installments.',
+    'Clareza em cada etapa para uma decisão financeira importante.':
+      'Clarity at each step for an important financial decision.',
+    'Paleta de cores estruturada para estados, superfícies e hierarquia visual.':
+      'Color palette structured for states, surfaces and visual hierarchy.',
+    'Variantes principais para padronizar feedbacks, contrastes e aplicações recorrentes.':
+      'Main variants to standardize feedback, contrast and recurring applications.',
+    'Escala tipográfica definida para títulos, textos de apoio e leitura em telas móveis.':
+      'Typographic scale defined for headings, support text and reading on mobile screens.',
+    'Botões e estados reutilizáveis para ações primárias, secundárias e contornos.':
+      'Reusable buttons and states for primary, secondary and outline actions.',
+    'Uma experiência digital criada para apresentar a marca e despertar o interesse pelo Fresto.':
+      'A digital experience created to present the brand and spark interest in Fresto.',
+    'Fotografias escolhidas para provocar desejo e aproximar o usuário da experiência do restaurante.':
+      'Photography selected to create appetite and bring users closer to the restaurant experience.',
+    'Informações de cada unidade organizadas para serem encontradas com facilidade.':
+      'Information for each location organized so it can be found easily.',
+    'Uma experiência visual que orienta quem deseja trabalhar no Fresto.':
+      'A visual experience that guides people who want to work at Fresto.',
+    'Elementos visuais que aproximam a interface da personalidade do Fresto.':
+      'Visual elements that bring the interface closer to Fresto’s personality.',
+    'O conteúdo das redes sociais também ajuda a manter o site conectado às novidades da marca.':
+      'Social media content also helps keep the website connected to brand updates.',
+    'Visão geral da nova home do Moto Remaza.': 'Overview of the new Moto Remaza homepage.',
+    'Pesquisa e comparação como parte central da jornada.': 'Research and comparison as a central part of the journey.',
+    'Informações importantes organizadas para apoiar a decisão.':
+      'Important information organized to support the decision.',
+    'Visão geral das interfaces e do fluxo principal do projeto.':
+      'Overview of the interfaces and main project flow.',
+    'Direcionamentos reais identificados a partir das conversas com stakeholders e motociclistas.':
+      'Real directions identified through conversations with stakeholders and motorcyclists.',
+    'Header e menus de navegação planejados para acesso direto às principais áreas.':
+      'Header and navigation menus planned for direct access to key areas.',
+    'Atalhos estratégicos conectam modelos, serviços e momentos da jornada.':
+      'Strategic shortcuts connect models, services and journey moments.',
+    'Catálogo de modelos organizado por categorias e necessidades de uso.':
+      'Model catalog organized by categories and usage needs.',
+    'Página de detalhes com versões, cores e informações do modelo.':
+      'Detail page with versions, colors and model information.',
+    'Filtros e informações organizadas para facilitar a busca por seminovos.':
+      'Filters and information organized to make pre-owned search easier.',
+    'Detalhes de uma moto seminova apresentados de forma prática e profissional.':
+      'Pre-owned motorcycle details presented in a practical, professional way.',
+    'Test-ride como parte da jornada de descoberta e decisão.':
+      'Test ride as part of the discovery and decision journey.',
+    'Serviços e revisão conectam o site à rotina de cuidado com a moto.':
+      'Services and maintenance connect the website to motorcycle care routines.',
+    'Peças, acessórios e assistência técnica reunidos no ecossistema digital.':
+      'Parts, accessories and technical assistance gathered in the digital ecosystem.',
+    'Evolução planejada: uma área personalizada por modelo de moto, ainda não disponível na versão atual.':
+      'Planned evolution: a personalized area by motorcycle model, not yet available in the current version.',
+    'Canal de comunicação com a diretoria como parte da cultura de escuta do Grupo Remaza.':
+      'Communication channel with leadership as part of Grupo Remaza’s listening culture.',
+    'Uma composição mais editorial sobre as diferentes relações das pessoas com a moto.':
+      'A more editorial composition about people’s different relationships with motorcycles.',
+    'Composição final com telas mobile do Moto Remaza.': 'Final composition with Moto Remaza mobile screens.',
+    'Conhecer uma unidade': 'Explore a location',
+    'Encontrar uma oportunidade': 'Find an opportunity',
+    'Header e menus': 'Header and menus',
+    'Atalhos para modelos e serviços': 'Shortcuts to models and services',
+    'Catálogo de modelos': 'Model catalog',
+    'Detalhes da motocicleta': 'Motorcycle details',
+    'Listagem de seminovos': 'Pre-owned listing',
+    'Detalhe do seminovo': 'Pre-owned detail',
+    'Canal com a diretoria': 'Leadership channel',
+    Buscar: 'Search',
+    Filtrar: 'Filter',
+    'Conhecer o veículo': 'Explore the vehicle',
+    'Divulgação individual': 'Individual promotion',
+    'Geração do contato': 'Contact generation',
+    'Apoio ao representante': 'Representative support',
+    'Landing page individual': 'Individual landing page',
+    'Fotografia, nome, contato e acesso à página individual':
+      'Photo, name, contact and access to the individual page',
+    'Central de notícias': 'News center',
+    'Dúvidas frequentes': 'Frequently asked questions',
+    'Seja um representante': 'Become a representative',
+    'Trabalhe conosco': 'Work with us',
+    'Simule aqui como continuidade da home': 'Simulation as a continuation of the homepage',
+    'Etapas da simulação': 'Simulation steps',
+    'Faixa de investimento': 'Investment range',
+    'Cards de planos': 'Plan cards',
   },
   es: {
     Projetos: 'Proyectos',
@@ -280,6 +549,275 @@ const caseTextTranslations: Record<Exclude<Language, 'pt'>, Record<string, strin
     'Resetar zoom': 'Restablecer zoom',
     'Aumentar zoom': 'Aumentar zoom',
     'Fechar imagem ampliada': 'Cerrar imagen ampliada',
+    'Pagamentos, assembleias, lances, documentos e informações da cota passaram a ser encontrados em caminhos mais claros e centralizados.':
+      'Pagos, asambleas, ofertas, documentos e información de la cuota pasaron a encontrarse en caminos más claros y centralizados.',
+    'O aplicativo criou um canal digital contínuo entre a administradora e o consorciado durante diferentes momentos da jornada.':
+      'La aplicación creó un canal digital continuo entre la administradora y el consorciado durante distintos momentos de la jornada.',
+    'A organização dos principais serviços ajudou a diminuir a dependência dos canais de atendimento para atividades recorrentes.':
+      'La organización de los principales servicios ayudó a reducir la dependencia de los canales de atención para tareas recurrentes.',
+    'Imagens mais humanas e apetitosas ajudaram o visitante a conhecer a proposta dos restaurantes e encontrar a unidade mais adequada.':
+      'Imágenes más humanas y apetitosas ayudaron al visitante a conocer la propuesta de los restaurantes y encontrar la unidad más adecuada.',
+    'O destaque dado aos pratos, às unidades e às redes sociais fortaleceu a apresentação da marca no ambiente digital.':
+      'El destaque dado a los platos, unidades y redes sociales fortaleció la presentación de la marca en el ambiente digital.',
+    'A integração com o Instagram permitiu apresentar novidades mesmo sem uma equipe dedicada à atualização frequente do site.':
+      'La integración con Instagram permitió presentar novedades incluso sin un equipo dedicado a actualizar frecuentemente el sitio.',
+    'Quem utiliza a moto para trabalhar, viajar ou viver uma paixão passou a encontrar modelos e serviços de forma mais orientada.':
+      'Quienes usan la moto para trabajar, viajar o vivir una pasión pasaron a encontrar modelos y servicios de forma más orientada.',
+    'A solução aproximou descoberta, comparação, atendimento e intenção de compra dentro do mesmo ecossistema digital.':
+      'La solución acercó descubrimiento, comparación, atención e intención de compra dentro del mismo ecosistema digital.',
+    'A organização das páginas facilitou a inclusão de modelos, campanhas, peças, acessórios e novos serviços.':
+      'La organización de las páginas facilitó la inclusión de modelos, campañas, piezas, accesorios y nuevos servicios.',
+    'Modelos, versões, diferenciais e formas de contato foram organizados para facilitar a pesquisa antes da visita à concessionária.':
+      'Modelos, versiones, diferenciales y formas de contacto se organizaron para facilitar la investigación antes de visitar la concesionaria.',
+    'Test-drive, ofertas e atendimento foram incorporados às jornadas de navegação como pontos naturais de conversão.':
+      'Test-drive, ofertas y atención se incorporaron a las jornadas de navegación como puntos naturales de conversión.',
+    'A estrutura foi preparada para acompanhar a entrada frequente de veículos, seminovos, banners e campanhas comerciais.':
+      'La estructura fue preparada para acompañar actualizaciones frecuentes de vehículos, seminuevos, banners y campañas comerciales.',
+    'aparições registradas nos resultados de busca do Google nos últimos seis meses.':
+      'apariciones registradas en los resultados de búsqueda de Google en los últimos seis meses.',
+    'acessos vindos de busca orgânica no mesmo período.': 'accesos provenientes de búsqueda orgánica en el mismo período.',
+    'dos cliques realizados por pessoas acessando pelo celular.': 'de los clics realizados por personas accediendo desde celular.',
+    'impressões dos materiais educativos em PDF nos últimos seis meses.':
+      'impresiones de los materiales educativos en PDF en los últimos seis meses.',
+    'Os simuladores permitiram explorar possibilidades de crédito e pagamento antes do contato com a equipe comercial.':
+      'Los simuladores permitieron explorar posibilidades de crédito y pago antes del contacto con el equipo comercial.',
+    'As escolhas realizadas durante a simulação ajudaram a iniciar conversas comerciais com informações mais relevantes.':
+      'Las elecciones realizadas durante la simulación ayudaron a iniciar conversaciones comerciales con información más relevante.',
+    'Site, centrais de vendas, conteúdos e orientações para os vendedores passaram a trabalhar de maneira mais consistente.':
+      'Sitio, centrales de ventas, contenidos y orientaciones para vendedores pasaron a trabajar de manera más consistente.',
+    Consorciados: 'Consorciados',
+    Investidores: 'Inversores',
+    'Clientes das classes C e D': 'Clientes de las clases C y D',
+    'Usuários com diferentes níveis de familiaridade digital': 'Usuarios con distintos niveles de familiaridad digital',
+    'Consultar rapidamente informações da cota': 'Consultar rápidamente información de la cuota',
+    'Emitir boletos': 'Emitir boletas',
+    'Acompanhar assembleias': 'Acompañar asambleas',
+    'Acessar documentos': 'Acceder a documentos',
+    'Atualizar cadastro': 'Actualizar cadastro',
+    'Resolver tarefas sem precisar ligar para a central': 'Resolver tareas sin llamar a la central',
+    'Organização da arquitetura da informação': 'Organización de la arquitectura de información',
+    'Revisão dos fluxos principais': 'Revisión de los flujos principales',
+    'Criação de interfaces em alta fidelidade': 'Creación de interfaces en alta fidelidad',
+    'Padronização de componentes': 'Estandarización de componentes',
+    'Evolução do Design System': 'Evolución del sistema de diseño',
+    'Apoio à documentação para desenvolvimento': 'Apoyo a la documentación para desarrollo',
+    'Pesquisa de referências': 'Investigación de referencias',
+    'Arquitetura das páginas': 'Arquitectura de las páginas',
+    'Planejamento para WordPress': 'Planificación para WordPress',
+    'Apresentação das unidades': 'Presentación de las unidades',
+    'Integração com Instagram': 'Integración con Instagram',
+    'Área de oportunidades': 'Área de oportunidades',
+    'Análise da comunicação nas redes sociais': 'Análisis de la comunicación en redes sociales',
+    'Pesquisa de referências do segmento': 'Investigación de referencias del segmento',
+    'Organização da arquitetura das páginas': 'Organización de la arquitectura de las páginas',
+    'Definição das hierarquias de conteúdo': 'Definición de jerarquías de contenido',
+    'Planejamento da experiência responsiva': 'Planificación de la experiencia responsiva',
+    'Interface preparada para WordPress': 'Interfaz preparada para WordPress',
+    'Arquitetura da informação': 'Arquitectura de información',
+    'Organização das jornadas': 'Organización de jornadas',
+    'Padrões de interface': 'Patrones de interfaz',
+    'Direção visual do site': 'Dirección visual del sitio',
+    'E-commerce e catálogo digital': 'E-commerce y catálogo digital',
+    'Jornadas de pesquisa e compra': 'Jornadas de investigación y compra',
+    'Contato com diferentes perfis de clientes': 'Contacto con distintos perfiles de clientes',
+    'Conteúdos de apoio à decisão': 'Contenidos de apoyo a la decisión',
+    'Interfaces desktop e mobile': 'Interfaces desktop y mobile',
+    'Prototipação': 'Prototipado',
+    'Preparação para evolução do produto': 'Preparación para evolución del producto',
+    'Organização dos conteúdos': 'Organización de contenidos',
+    'Estruturação da jornada entre conteúdos e serviços': 'Estructuración de la jornada entre contenidos y servicios',
+    'Conteúdo para mães e pais': 'Contenido para madres y padres',
+    'Cursos e orientações': 'Cursos y orientaciones',
+    'Serviços para empresas': 'Servicios para empresas',
+    'Experiência simples e acolhedora': 'Experiencia simple y acogedora',
+    'Estruturação das páginas de modelos': 'Estructuración de páginas de modelos',
+    'Organização da experiência de seminovos': 'Organización de la experiencia de seminuevos',
+    'Estruturação das áreas de pós-venda': 'Estructuración de áreas de posventa',
+    'Criação de formulários e pontos de conversão': 'Creación de formularios y puntos de conversión',
+    'Padronização visual entre diferentes áreas do site': 'Estandarización visual entre distintas áreas del sitio',
+    'Clientes interessados em modelos novos e sofisticados': 'Clientes interesados en modelos nuevos y sofisticados',
+    'Busca por seminovos com segurança e procedência': 'Búsqueda de seminuevos con seguridad y procedencia',
+    'Tecnologias, acessórios e serviços de manutenção': 'Tecnologías, accesorios y servicios de mantenimiento',
+    'Condições corporativas e oportunidades comerciais': 'Condiciones corporativas y oportunidades comerciales',
+    'Canais de atendimento e relacionamento': 'Canales de atención y relación',
+    'Atualizações frequentes de modelos, ofertas e serviços': 'Actualizaciones frecuentes de modelos, ofertas y servicios',
+    'Simuladores de consórcio': 'Simuladores de consorcio',
+    'Jornadas de conversão': 'Jornadas de conversión',
+    'Ferramentas de apoio comercial': 'Herramientas de apoyo comercial',
+    'Orientação para fotografias dos vendedores': 'Orientación para fotografías de vendedores',
+    'Produto financeiro complexo': 'Producto financiero complejo',
+    'Geração de leads para vendas': 'Generación de leads para ventas',
+    'Centrais e ferramentas comerciais': 'Centrales y herramientas comerciales',
+    'Conteúdo como parte do ecossistema': 'Contenido como parte del ecosistema',
+    'Estruturação dos simuladores': 'Estructuración de simuladores',
+    'Criação de jornadas de geração de leads': 'Creación de jornadas de generación de leads',
+    'Landing pages para representantes': 'Landing pages para representantes',
+    'Organização de canais de atendimento': 'Organización de canales de atención',
+    'Apoio visual à estrutura comercial': 'Apoyo visual a la estructura comercial',
+    'Padronização das principais áreas do site': 'Estandarización de las principales áreas del sitio',
+    'Navegação mais direta': 'Navegación más directa',
+    'Informações fáceis de encontrar': 'Información fácil de encontrar',
+    'Melhor acesso aos serviços': 'Mejor acceso a servicios',
+    'Canais de atendimento visíveis': 'Canales de atención visibles',
+    'Experiência adequada a diferentes perfis': 'Experiencia adecuada a distintos perfiles',
+    'Fluxo de primeiro acesso e login com identificação da conta, senha e estados de validação.':
+      'Flujo de primer acceso y login con identificación de cuenta, contraseña y estados de validación.',
+    'Página inicial no desktop, apresentando a proposta do Gamp21 e seus principais caminhos.':
+      'Página inicial en desktop, presentando la propuesta de Gamp21 y sus principales caminos.',
+    'A mesma experiência adaptada para a navegação mobile.': 'La misma experiencia adaptada a la navegación mobile.',
+    'Serviços organizados para famílias, empresas e diferentes momentos da parentalidade.':
+      'Servicios organizados para familias, empresas y diferentes momentos de la parentalidad.',
+    'A área “Para mães e pais” organiza conteúdos acessíveis para as famílias.':
+      'El área “Para madres y padres” organiza contenidos accesibles para las familias.',
+    'Os conteúdos também aparecem na home como ponto de entrada para novas leituras.':
+      'Los contenidos también aparecen en la home como punto de entrada para nuevas lecturas.',
+    'A home apresenta modelos, ofertas, serviços e caminhos de atendimento logo na entrada do site.':
+      'La home presenta modelos, ofertas, servicios y caminos de atención desde la entrada del sitio.',
+    'A experiência mobile organiza os principais caminhos da concessionária desde a entrada no site.':
+      'La experiencia mobile organiza los principales caminos de la concesionaria desde la entrada al sitio.',
+    'A página de modelo reúne imagem do veículo, versões, cores, ficha técnica e chamadas de conversão.':
+      'La página de modelo reúne imagen del vehículo, versiones, colores, ficha técnica y llamadas de conversión.',
+    'Tecnologias e diferenciais foram organizados em blocos para facilitar a exploração.':
+      'Tecnologías y diferenciales fueron organizados en bloques para facilitar la exploración.',
+    'No mobile, a página mantém apresentação visual, botões de cotação e test drive em evidência.':
+      'En mobile, la página mantiene presentación visual, botones de cotización y test drive en evidencia.',
+    'Versões, diferenciais e informações do modelo continuam acessíveis em telas menores.':
+      'Versiones, diferenciales e información del modelo siguen accesibles en pantallas menores.',
+    'Listagem desktop com busca, filtros e informações principais dos seminovos.':
+      'Listado desktop con búsqueda, filtros e información principal de los seminuevos.',
+    'Filtros mobile ajudam o usuário a reduzir opções antes do contato.':
+      'Los filtros mobile ayudan al usuario a reducir opciones antes del contacto.',
+    'Detalhe do seminovo com fotos e informações para apoiar a continuidade da jornada.':
+      'Detalle del seminuevo con fotos e información para apoyar la continuidad de la jornada.',
+    'Seleção de modelo e exploração de peças e acessórios compatíveis.':
+      'Selección de modelo y exploración de piezas y accesorios compatibles.',
+    'Seleção do veículo no mobile.': 'Selección del vehículo en mobile.',
+    'Listagem de acessórios compatíveis no mobile.': 'Listado de accesorios compatibles en mobile.',
+    'Revisão programada com serviços previstos, quilometragem e valores de manutenção.':
+      'Revisión programada con servicios previstos, kilometraje y valores de mantenimiento.',
+    'Condições especiais aproximam públicos corporativos da concessionária.':
+      'Condiciones especiales acercan públicos corporativos a la concesionaria.',
+    'Linha Direta cria um canal aberto de comunicação com a empresa.':
+      'Línea Directa crea un canal abierto de comunicación con la empresa.',
+    'Detalhe final com unidades, contatos e navegação complementar.':
+      'Detalle final con unidades, contactos y navegación complementaria.',
+    'Imagem principal do case Consórcio Remaza.': 'Imagen principal del case Consórcio Remaza.',
+    'A página inicial conecta produtos, simulação e principais caminhos comerciais.':
+      'La página inicial conecta productos, simulación y principales caminos comerciales.',
+    'A simulação aparece como caminho central da jornada comercial.':
+      'La simulación aparece como camino central de la jornada comercial.',
+    'Campos, seletores e etapas ajudam o usuário a transformar uma escolha complexa em possibilidades mais concretas.':
+      'Campos, selectores y etapas ayudan al usuario a transformar una elección compleja en posibilidades más concretas.',
+    'Conte-nos o que você procura': 'Cuéntanos qué buscas',
+    'Defina uma faixa de investimento': 'Define una franja de inversión',
+    'Compare as opções disponíveis': 'Compara las opciones disponibles',
+    'Dados para iniciar a simulação': 'Datos para iniciar la simulación',
+    'Planos apresentados de forma objetiva': 'Planes presentados de forma objetiva',
+    'Landing pages individuais conectavam divulgação, interesse e geração do contato.':
+      'Landing pages individuales conectaban divulgación, interés y generación del contacto.',
+    'A interface complementar reunia dados, documentos e materiais de apoio ao representante.':
+      'La interfaz complementaria reunía datos, documentos y materiales de apoyo al representante.',
+    'A identificação clara do profissional aproxima a experiência digital do atendimento real.':
+      'La identificación clara del profesional acerca la experiencia digital a la atención real.',
+    'Conteúdos para descoberta e orientação ampliam o papel informativo do site.':
+      'Contenidos para descubrimiento y orientación amplían el papel informativo del sitio.',
+    'Respostas rápidas apoiam quem ainda está entendendo como o consórcio funciona.':
+      'Respuestas rápidas apoyan a quien todavía está entendiendo cómo funciona el consorcio.',
+    'Acessar serviços': 'Acceder a servicios',
+    'Falar com a empresa': 'Hablar con la empresa',
+    'Encontrar uma unidade': 'Encontrar una unidad',
+    'Seja um representante apresenta a oportunidade e os recursos para atuação comercial.':
+      'Sea un representante presenta la oportunidad y los recursos para la actuación comercial.',
+    'Trabalhe conosco amplia os caminhos para candidatos interessados na organização.':
+      'Trabaja con nosotros amplía los caminos para candidatos interesados en la organización.',
+    'As principais informações e serviços do consórcio reunidos em um único aplicativo.':
+      'La información y los servicios principales del consorcio reunidos en una sola aplicación.',
+    'Informações importantes visíveis logo no primeiro acesso.':
+      'Información importante visible desde el primer acceso.',
+    'Diferentes serviços organizados para serem encontrados com facilidade.':
+      'Diferentes servicios organizados para encontrarse con facilidad.',
+    'Um caminho direto para consultar e pagar parcelas.': 'Un camino directo para consultar y pagar cuotas.',
+    'Clareza em cada etapa para uma decisão financeira importante.':
+      'Claridad en cada etapa para una decisión financiera importante.',
+    'Paleta de cores estruturada para estados, superfícies e hierarquia visual.':
+      'Paleta de colores estructurada para estados, superficies y jerarquía visual.',
+    'Variantes principais para padronizar feedbacks, contrastes e aplicações recorrentes.':
+      'Variantes principales para estandarizar feedbacks, contrastes y aplicaciones recurrentes.',
+    'Escala tipográfica definida para títulos, textos de apoio e leitura em telas móveis.':
+      'Escala tipográfica definida para títulos, textos de apoyo y lectura en pantallas móviles.',
+    'Botões e estados reutilizáveis para ações primárias, secundárias e contornos.':
+      'Botones y estados reutilizables para acciones primarias, secundarias y de contorno.',
+    'Uma experiência digital criada para apresentar a marca e despertar o interesse pelo Fresto.':
+      'Una experiencia digital creada para presentar la marca y despertar interés por Fresto.',
+    'Fotografias escolhidas para provocar desejo e aproximar o usuário da experiência do restaurante.':
+      'Fotografías elegidas para provocar deseo y acercar al usuario a la experiencia del restaurante.',
+    'Informações de cada unidade organizadas para serem encontradas com facilidade.':
+      'Información de cada unidad organizada para encontrarse con facilidad.',
+    'Uma experiência visual que orienta quem deseja trabalhar no Fresto.':
+      'Una experiencia visual que orienta a quien desea trabajar en Fresto.',
+    'Elementos visuais que aproximam a interface da personalidade do Fresto.':
+      'Elementos visuales que acercan la interfaz a la personalidad de Fresto.',
+    'O conteúdo das redes sociais também ajuda a manter o site conectado às novidades da marca.':
+      'El contenido de redes sociales también ayuda a mantener el sitio conectado a las novedades de la marca.',
+    'Visão geral da nova home do Moto Remaza.': 'Visión general de la nueva home de Moto Remaza.',
+    'Pesquisa e comparação como parte central da jornada.': 'Investigación y comparación como parte central de la jornada.',
+    'Informações importantes organizadas para apoiar a decisão.':
+      'Información importante organizada para apoyar la decisión.',
+    'Visão geral das interfaces e do fluxo principal do projeto.':
+      'Visión general de las interfaces y del flujo principal del proyecto.',
+    'Direcionamentos reais identificados a partir das conversas com stakeholders e motociclistas.':
+      'Direcciones reales identificadas a partir de conversaciones con stakeholders y motociclistas.',
+    'Header e menus de navegação planejados para acesso direto às principais áreas.':
+      'Header y menús de navegación pensados para acceso directo a las áreas principales.',
+    'Atalhos estratégicos conectam modelos, serviços e momentos da jornada.':
+      'Atajos estratégicos conectan modelos, servicios y momentos de la jornada.',
+    'Catálogo de modelos organizado por categorias e necessidades de uso.':
+      'Catálogo de modelos organizado por categorías y necesidades de uso.',
+    'Página de detalhes com versões, cores e informações do modelo.':
+      'Página de detalles con versiones, colores e información del modelo.',
+    'Filtros e informações organizadas para facilitar a busca por seminovos.':
+      'Filtros e información organizados para facilitar la búsqueda de seminuevos.',
+    'Detalhes de uma moto seminova apresentados de forma prática e profissional.':
+      'Detalles de una moto seminueva presentados de forma práctica y profesional.',
+    'Test-ride como parte da jornada de descoberta e decisão.':
+      'Test-ride como parte de la jornada de descubrimiento y decisión.',
+    'Serviços e revisão conectam o site à rotina de cuidado com a moto.':
+      'Servicios y revisión conectan el sitio con la rutina de cuidado de la moto.',
+    'Peças, acessórios e assistência técnica reunidos no ecossistema digital.':
+      'Piezas, accesorios y asistencia técnica reunidos en el ecosistema digital.',
+    'Evolução planejada: uma área personalizada por modelo de moto, ainda não disponível na versão atual.':
+      'Evolución planificada: un área personalizada por modelo de moto, aún no disponible en la versión actual.',
+    'Canal de comunicação com a diretoria como parte da cultura de escuta do Grupo Remaza.':
+      'Canal de comunicación con la dirección como parte de la cultura de escucha del Grupo Remaza.',
+    'Uma composição mais editorial sobre as diferentes relações das pessoas com a moto.':
+      'Una composición más editorial sobre las distintas relaciones de las personas con la moto.',
+    'Composição final com telas mobile do Moto Remaza.': 'Composición final con pantallas mobile de Moto Remaza.',
+    'Conhecer uma unidade': 'Conocer una unidad',
+    'Encontrar uma oportunidade': 'Encontrar una oportunidad',
+    'Header e menus': 'Header y menús',
+    'Atalhos para modelos e serviços': 'Atajos para modelos y servicios',
+    'Catálogo de modelos': 'Catálogo de modelos',
+    'Detalhes da motocicleta': 'Detalles de la motocicleta',
+    'Listagem de seminovos': 'Listado de seminuevos',
+    'Detalhe do seminovo': 'Detalle del seminuevo',
+    'Canal com a diretoria': 'Canal con la dirección',
+    Buscar: 'Buscar',
+    Filtrar: 'Filtrar',
+    'Conhecer o veículo': 'Conocer el vehículo',
+    'Divulgação individual': 'Divulgación individual',
+    'Geração do contato': 'Generación del contacto',
+    'Apoio ao representante': 'Apoyo al representante',
+    'Landing page individual': 'Landing page individual',
+    'Fotografia, nome, contato e acesso à página individual':
+      'Fotografía, nombre, contacto y acceso a la página individual',
+    'Central de notícias': 'Central de noticias',
+    'Dúvidas frequentes': 'Preguntas frecuentes',
+    'Seja um representante': 'Sea un representante',
+    'Trabalhe conosco': 'Trabaja con nosotros',
+    'Simule aqui como continuidade da home': 'Simulación como continuidad de la home',
+    'Etapas da simulação': 'Etapas de la simulación',
+    'Faixa de investimento': 'Franja de inversión',
+    'Cards de planos': 'Cards de planes',
   },
 };
 
@@ -3309,12 +3847,14 @@ function MotoRemazaUsabilityVisualBlock() {
 }
 
 function MotoRemazaImagePairBlock({ images, titles }: { images: CaseImageItem[]; titles: string[] }) {
+  const { language } = useI18n();
+
   return (
     <div className={`mt-12 grid gap-12 ${images.length > 1 ? 'md:grid-cols-2' : ''}`}>
       {images.map((image, index) => (
         <div key={image.caption}>
           <div className="mb-6">
-            <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{titles[index]}</h3>
+            <h3 className="font-display text-xl font-extrabold text-[var(--blue-padrao)] dark:text-white">{translateCaseText(titles[index], language)}</h3>
           </div>
           <CaseImageSlot image={image} aspectClass="aspect-[16/8]" />
         </div>
@@ -3461,6 +4001,8 @@ function DaitanTechnologyVisualBlock() {
 }
 
 function DaitanUsedCarsVisualBlock() {
+  const { language } = useI18n();
+
   return (
     <div className="mt-12 grid gap-10">
       <div className="grid gap-3 border-y border-[var(--cinza-claro)] py-6 dark:border-[var(--blue-padrao)] sm:grid-cols-3">
@@ -3469,7 +4011,7 @@ function DaitanUsedCarsVisualBlock() {
             <span className="caption font-extrabold text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{step}</p>
+            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{translateCaseText(step, language)}</p>
           </div>
         ))}
       </div>
@@ -3597,6 +4139,8 @@ function ConsorcioRemazaChallengeVisualBlock() {
 }
 
 function ConsorcioRemazaSimulationVisualBlock() {
+  const { language } = useI18n();
+
   return (
     <div className="mt-12 grid gap-10">
       <div className="grid gap-3 border-y border-[var(--cinza-claro)] py-6 dark:border-[var(--blue-padrao)] sm:grid-cols-3">
@@ -3605,7 +4149,7 @@ function ConsorcioRemazaSimulationVisualBlock() {
             <span className="caption font-extrabold text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{image.caption}</p>
+            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{translateCaseText(image.caption, language)}</p>
           </div>
         ))}
       </div>
@@ -3629,6 +4173,8 @@ function ConsorcioRemazaMobileVisualBlock() {
 }
 
 function ConsorcioRemazaCommercialVisualBlock() {
+  const { language } = useI18n();
+
   return (
     <div className="mt-12 grid gap-10">
       <div className="grid gap-3 border-y border-[var(--cinza-claro)] py-6 dark:border-[var(--blue-padrao)] sm:grid-cols-3">
@@ -3637,7 +4183,7 @@ function ConsorcioRemazaCommercialVisualBlock() {
             <span className="caption font-extrabold text-[var(--tradewind-escuro)] dark:text-[var(--blue-border)]">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{step}</p>
+            <p className="font-display text-base font-extrabold text-[var(--blue-padrao)] dark:text-white">{translateCaseText(step, language)}</p>
           </div>
         ))}
       </div>
@@ -4111,7 +4657,7 @@ function AppRemazaCasePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--cinza-claro)] bg-white md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]">
+      <section className="sticky top-16 z-40 border-b border-[var(--cinza-claro)] bg-white/95 backdrop-blur-xl md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/95">
         <nav className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-5 py-4" aria-label="Navegação do case APP Remaza">
           {appRemazaSections.map((section) => (
             <a
@@ -4254,7 +4800,7 @@ function FrestoCasePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--cinza-claro)] bg-white md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]">
+      <section className="sticky top-16 z-40 border-b border-[var(--cinza-claro)] bg-white/95 backdrop-blur-xl md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/95">
         <nav className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-5 py-4" aria-label="Navegação do case Fresto">
           {frestoSections.map((section) => (
             <a
@@ -4405,7 +4951,7 @@ function MotoRemazaCasePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--cinza-claro)] bg-white md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]">
+      <section className="sticky top-16 z-40 border-b border-[var(--cinza-claro)] bg-white/95 backdrop-blur-xl md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/95">
         <nav className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-5 py-4" aria-label="Navegação do case Moto Remaza">
           {motoRemazaSections.map((section) => (
             <a
@@ -4551,7 +5097,7 @@ function Gamp21CasePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--cinza-claro)] bg-white md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]">
+      <section className="sticky top-16 z-40 border-b border-[var(--cinza-claro)] bg-white/95 backdrop-blur-xl md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/95">
         <nav className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-5 py-4" aria-label="Navegação do case Gamp21">
           {gamp21Sections.map((section) => (
             <a
@@ -4697,7 +5243,7 @@ function DaitanCasePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--cinza-claro)] bg-white md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]">
+      <section className="sticky top-16 z-40 border-b border-[var(--cinza-claro)] bg-white/95 backdrop-blur-xl md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/95">
         <nav className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-5 py-4" aria-label="Navegação do case Daitan">
           {daitanSections.map((section) => (
             <a
@@ -4865,7 +5411,7 @@ function ConsorcioRemazaCasePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--cinza-claro)] bg-white md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]">
+      <section className="sticky top-16 z-40 border-b border-[var(--cinza-claro)] bg-white/95 backdrop-blur-xl md:hidden dark:border-[var(--blue-padrao)] dark:bg-[var(--fundo)]/95">
         <nav className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-5 py-4" aria-label="Navegação do case Consórcio Remaza">
           {consorcioRemazaSections.map((section) => (
             <a
