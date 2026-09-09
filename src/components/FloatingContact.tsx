@@ -220,7 +220,7 @@ export function FloatingContact() {
           onClick={() => {
             setIsOpen((value) => !value);
           }}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46b199] text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#348f7a] dark:bg-[#6795ca] dark:hover:bg-[#7da9db]"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46b199] text-white shadow-[0_14px_34px_rgba(8,31,51,0.28)] transition hover:-translate-y-0.5 hover:bg-[#348f7a] dark:bg-[#6795ca] dark:shadow-[0_14px_34px_rgba(0,0,0,0.48)] dark:hover:bg-[#7da9db]"
         >
           <MessageSquare size={20} />
         </button>
@@ -229,7 +229,7 @@ export function FloatingContact() {
           type="button"
           aria-label={t.contact.top}
           onClick={handleScrollToTop}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46b199] text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#348f7a] dark:bg-[#6795ca] dark:hover:bg-[#7da9db]"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46b199] text-white shadow-[0_14px_34px_rgba(8,31,51,0.28)] transition hover:-translate-y-0.5 hover:bg-[#348f7a] dark:bg-[#6795ca] dark:shadow-[0_14px_34px_rgba(0,0,0,0.48)] dark:hover:bg-[#7da9db]"
         >
           <ArrowUp size={22} />
         </button>
