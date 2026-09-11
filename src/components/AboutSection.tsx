@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n';
 import { openContactForm } from '../utils/contact';
+import { getCvDownload } from '../utils/cv';
 import { Button } from './Button';
 import { ScrollReveal } from './ScrollReveal';
 
@@ -37,7 +38,8 @@ function Portrait({ alt }: { alt: string }) {
 }
 
 export function AboutSection() {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
+  const cvDownload = getCvDownload(language);
 
   return (
     <section id="sobre" className="bg-white py-20 text-[var(--blue-escuro)] md:py-24 dark:bg-[var(--fundo)] dark:text-white">
@@ -63,7 +65,7 @@ export function AboutSection() {
             <Button type="button" onClick={openContactForm} variant="secondary" className="w-full sm:w-auto">
               {t.actions.letsTalk}
             </Button>
-            <Button href="/assets/CV-2026.pdf" variant="outlineSecondary" className="w-full sm:w-auto" download>
+            <Button href={cvDownload.href} variant="outlineSecondary" className="w-full sm:w-auto" download={cvDownload.download}>
               {t.actions.downloadCv}
             </Button>
           </div>

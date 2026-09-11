@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n';
 import { openContactForm } from '../utils/contact';
+import { getCvDownload } from '../utils/cv';
 import { Button } from './Button';
 import { Logo } from './Logo';
 
@@ -72,7 +73,8 @@ function SocialIcon({ type }: { type: SocialType }) {
 }
 
 export function Footer() {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
+  const cvDownload = getCvDownload(language);
 
   return (
     <footer className="bg-deep py-14 text-white">
@@ -91,10 +93,10 @@ export function Footer() {
               {t.actions.letsTalk}
             </Button>
             <Button
-              href="/assets/CV-2026.pdf"
+              href={cvDownload.href}
               variant="outlineSecondary"
               className="border-white/30 text-white hover:bg-white hover:text-ocean"
-              download
+              download={cvDownload.download}
             >
               {t.actions.downloadCv}
             </Button>
