@@ -6,12 +6,12 @@ const cvByLanguage: Record<Language, { href: string; download: string }> = {
     download: 'fabio-lopes-cv-2026-pt-br.pdf',
   },
   en: {
-    href: '/assets/CV-2026-EN.pdf',
+    href: '/assets/cv-falopes-2026-en.pdf',
     download: 'fabio-lopes-cv-2026-en.pdf',
   },
   es: {
-    href: '/assets/CV-2026-EN.pdf',
-    download: 'fabio-lopes-cv-2026-en.pdf',
+    href: '/assets/cv-falopes-2026-es.pdf',
+    download: 'fabio-lopes-cv-2026-es.pdf',
   },
 };
 
