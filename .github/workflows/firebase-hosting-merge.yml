@@ -6,15 +6,48 @@ on:
   push:
     branches:
       - main
+env:
+  FIREBASE_PROJECT_ID: falopes-66c1e
+  FIREBASE_SITE_ID: falopes-66c1e
+  # Set to "true" only for the first deployment of a newly-created Firebase project.
+  ENSURE_FIREBASE_HOSTING_SITE: "false"
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: npm ci && npm run build
+      - name: Ensure default Firebase Hosting site exists
+        if: ${{ env.ENSURE_FIREBASE_HOSTING_SITE == 'true' }}
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FALOPES_66C1E }}
+        run: |
+          set -euo pipefail
+
+          credentials_file="${RUNNER_TEMP}/firebase-service-account.json"
+          printf '%s' "${FIREBASE_SERVICE_ACCOUNT}" > "${credentials_file}"
+          export GOOGLE_APPLICATION_CREDENTIALS="${credentials_file}"
+
+          echo "Checking Firebase credentials for project '${FIREBASE_PROJECT_ID}'."
+          npx --yes firebase-tools@latest hosting:sites:list --project="${FIREBASE_PROJECT_ID}" >/dev/null
+
+          echo "Ensuring Firebase Hosting site '${FIREBASE_SITE_ID}' exists."
+          if npx --yes firebase-tools@latest hosting:sites:create "${FIREBASE_SITE_ID}" --project="${FIREBASE_PROJECT_ID}"; then
+            echo "Firebase Hosting site '${FIREBASE_SITE_ID}' is ready."
+            exit 0
+          fi
+
+          if npx --yes firebase-tools@latest hosting:sites:list --project="${FIREBASE_PROJECT_ID}" | grep -qE "(^|[[:space:]])${FIREBASE_SITE_ID}([[:space:]]|$)"; then
+            echo "Firebase Hosting site '${FIREBASE_SITE_ID}' already exists."
+            exit 0
+          fi
+
+          echo "Failed to create Firebase Hosting site '${FIREBASE_SITE_ID}'." >&2
+          echo "The pipeline credential needs permission to list and create Firebase Hosting sites for '${FIREBASE_PROJECT_ID}'." >&2
+          exit 1
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FALOPES_66C1E }}
           channelId: live
-          projectId: falopes-66c1e
+          projectId: ${{ env.FIREBASE_PROJECT_ID }}
