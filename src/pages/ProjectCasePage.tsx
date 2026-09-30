@@ -26,6 +26,7 @@ import { useEffect, useRef, useState, type PointerEvent, type WheelEvent } from 
 import { createPortal } from 'react-dom';
 import { projectSlugs, type Language } from '../data/content';
 import { useI18n } from '../i18n';
+import { getLocalizedHref } from '../languageRouting';
 import { Button } from '../components/Button';
 
 type ProjectCasePageProps = {
@@ -3546,6 +3547,7 @@ function CaseSectionText({ section, index }: { section: CaseSection; index: numb
 
 function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { currentTitle: string; currentHref: string; inverted?: boolean }) {
   const { language } = useI18n();
+  const localizedCurrentHref = getLocalizedHref(language, currentHref);
   const linkColor = 'rgb(70 177 153 / var(--tw-bg-opacity, 1))';
   const linkClass = inverted
     ? 'focus-visible:ring-white'
@@ -3563,7 +3565,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
       className="inline-flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-2 font-display text-base font-bold"
     >
       <a
-        href="/"
+        href={getLocalizedHref(language, '/')}
         className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           inverted ? 'focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
         } ${linkClass}`}
@@ -3576,7 +3578,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
         &gt;
       </span>
       <a
-        href="/#projetos"
+        href={getLocalizedHref(language, '/', '#projetos')}
         className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           inverted ? 'focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
         } ${linkClass}`}
@@ -3588,7 +3590,7 @@ function ProjectBreadcrumb({ currentTitle, currentHref, inverted = false }: { cu
         &gt;
       </span>
       <a
-        href={currentHref}
+        href={localizedCurrentHref}
         className={`rounded-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           inverted ? 'focus-visible:ring-white focus-visible:ring-offset-[var(--blue-escuro)]' : 'focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-white dark:focus-visible:ring-offset-[var(--fundo)]'
         } ${currentClass}`}
@@ -4513,7 +4515,7 @@ function CaseVisualBlock({ variant }: { variant: string }) {
 }
 
 function GenericProjectCasePage({ slug }: ProjectCasePageProps) {
-  const { t } = useI18n();
+  const { language, t } = useI18n();
   const projectIndex = Math.max(projectSlugs.indexOf(slug), 0);
   const project = t.projects[projectIndex];
   const sections = [
@@ -4569,7 +4571,7 @@ function GenericProjectCasePage({ slug }: ProjectCasePageProps) {
             <p className="mt-5 font-sans text-base leading-7 text-[var(--cinza-escuro)] dark:text-white">
               {t.projectPage.nextText}
             </p>
-            <Button href="/#projetos" variant="outlineSecondary" className="mt-8">
+            <Button href={getLocalizedHref(language, '/', '#projetos')} variant="outlineSecondary" className="mt-8">
               {t.projectPage.back}
             </Button>
           </div>
@@ -4685,7 +4687,7 @@ function AppRemazaCasePage() {
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
               <a
-                href="/#projetos"
+                href={getLocalizedHref(language, '/', '#projetos')}
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
@@ -4828,7 +4830,7 @@ function FrestoCasePage() {
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
               <a
-                href="/#projetos"
+                href={getLocalizedHref(language, '/', '#projetos')}
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
@@ -4979,7 +4981,7 @@ function MotoRemazaCasePage() {
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
               <a
-                href="/#projetos"
+                href={getLocalizedHref(language, '/', '#projetos')}
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
@@ -5125,7 +5127,7 @@ function Gamp21CasePage() {
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
               <a
-                href="/#projetos"
+                href={getLocalizedHref(language, '/', '#projetos')}
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
@@ -5271,7 +5273,7 @@ function DaitanCasePage() {
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
               <a
-                href="/#projetos"
+                href={getLocalizedHref(language, '/', '#projetos')}
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />
@@ -5439,7 +5441,7 @@ function ConsorcioRemazaCasePage() {
           <aside className="hidden md:block">
             <div className="sticky top-24 grid gap-8">
               <a
-                href="/#projetos"
+                href={getLocalizedHref(language, '/', '#projetos')}
                 className="inline-flex w-fit items-center gap-2 rounded-md border border-[var(--blue-padrao)] bg-white px-4 py-3 font-display text-xs font-bold text-[var(--blue-padrao)] transition hover:border-[var(--tradewind-padrao)] hover:text-[var(--tradewind-escuro)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tradewind-padrao)] focus-visible:ring-offset-4 dark:border-[var(--blue-border)] dark:bg-transparent dark:text-[var(--blue-border)] dark:focus-visible:ring-offset-[var(--fundo)]"
               >
                 <ArrowLeft size={16} />

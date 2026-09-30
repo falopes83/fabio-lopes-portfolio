@@ -43,17 +43,31 @@ function setCanonical(href: string) {
   element.setAttribute('href', href);
 }
 
+function syncAlternateLinks(config: SeoConfig) {
+  document.head.querySelectorAll('link[data-seo-alternate="true"]').forEach((link) => link.remove());
+
+  config.alternates.forEach((alternate) => {
+    const link = document.createElement('link');
+    link.rel = 'alternate';
+    link.hreflang = alternate.hrefLang;
+    link.href = alternate.href;
+    link.dataset.seoAlternate = 'true';
+    document.head.appendChild(link);
+  });
+}
+
 export function SEO({ config }: SEOProps) {
   useEffect(() => {
     document.title = config.title;
-    document.documentElement.lang = 'pt-BR';
+    document.documentElement.lang = config.htmlLang;
 
     setMetaName('description', config.description);
     setMetaName('robots', config.robots ?? 'index, follow');
     setMetaName('googlebot', config.robots ?? 'index, follow');
     setCanonical(config.canonical);
+    syncAlternateLinks(config);
 
-    setMetaProperty('og:locale', 'pt_BR');
+    setMetaProperty('og:locale', config.language === 'pt' ? 'pt_BR' : config.language === 'en' ? 'en_US' : 'es_ES');
     setMetaProperty('og:site_name', 'Fabio Lopes');
     setMetaProperty('og:type', config.ogType ?? 'website');
     setMetaProperty('og:title', config.ogTitle ?? config.title);

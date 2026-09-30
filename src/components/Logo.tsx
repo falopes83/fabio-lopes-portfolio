@@ -1,10 +1,11 @@
 type LogoProps = {
+  href?: string;
   light?: boolean;
 };
 
-export function Logo({ light = false }: LogoProps) {
+export function Logo({ href = '/', light = false }: LogoProps) {
   return (
-    <a href="/" className="inline-flex items-center" aria-label="Fabio Lopes">
+    <a href={href} className="inline-flex items-center" aria-label="Fabio Lopes">
       {light ? (
         <img src="/assets/logo-alt.svg" alt="Fabio Lopes" className="h-11 w-auto" fetchPriority="low" />
       ) : (

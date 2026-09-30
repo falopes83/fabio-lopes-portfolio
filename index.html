@@ -3,6 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        var supportedLanguages = ['pt', 'en', 'es'];
+        var projectSlugs = ['app-remaza', 'fresto', 'moto-remaza', 'gamp21', 'daitan', 'consorcio-remaza'];
+        var contentRoutes = ['/'].concat(projectSlugs.map(function (slug) { return '/projetos/' + slug; }));
+        var path = window.location.pathname.replace(/\/+$/, '') || '/';
+        var firstSegment = path.split('/')[1];
+
+        if (supportedLanguages.indexOf(firstSegment) !== -1) return;
+        if (contentRoutes.indexOf(path) === -1) return;
+
+        function readSavedLanguage() {
+          try {
+            var savedLanguage = window.localStorage.getItem('language');
+            return supportedLanguages.indexOf(savedLanguage) !== -1 ? savedLanguage : null;
+          } catch (error) {
+            return null;
+          }
+        }
+
+        function matchLanguage(value) {
+          if (!value) return null;
+          var baseLanguage = String(value).toLowerCase().split('-')[0];
+          return supportedLanguages.indexOf(baseLanguage) !== -1 ? baseLanguage : null;
+        }
+
+        function detectBrowserLanguage() {
+          var preferences = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+
+          for (var index = 0; index < preferences.length; index += 1) {
+            var language = matchLanguage(preferences[index]);
+            if (language) return language;
+          }
+
+          return null;
+        }
+
+        var language = readSavedLanguage() || detectBrowserLanguage();
+        if (!language) return;
+
+        var nextPath = path === '/' ? '/' + language : '/' + language + path;
+        var nextUrl = nextPath + window.location.search + window.location.hash;
+        var currentUrl = window.location.pathname + window.location.search + window.location.hash;
+
+        if (nextUrl !== currentUrl) {
+          window.location.replace(nextUrl);
+        }
+      })();
+    </script>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

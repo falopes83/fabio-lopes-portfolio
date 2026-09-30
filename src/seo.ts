@@ -1,4 +1,12 @@
-import { projectSlugs } from './data/content';
+import { dictionary, Language, projectSlugs } from './data/content';
+import {
+  contentRoutes,
+  getLocalizedPath,
+  getRouteInfo,
+  htmlLangByLanguage,
+  isKnownContentPath,
+  supportedLanguages,
+} from './languageRouting';
 
 export const siteUrl = 'https://falopes.com.br';
 export const defaultSocialImage = '/assets/fabiolopes-real.webp';
@@ -7,9 +15,15 @@ export type StructuredData = Record<string, unknown>;
 
 export type SeoConfig = {
   path: string;
+  language: Language;
+  htmlLang: string;
   title: string;
   description: string;
   canonical: string;
+  alternates: Array<{
+    hrefLang: string;
+    href: string;
+  }>;
   robots?: string;
   ogTitle?: string;
   ogDescription?: string;
@@ -105,12 +119,62 @@ export const caseSeo: CaseSeo[] = [
   },
 ];
 
-export const publicRoutes = ['/', ...projectSlugs.map((slug) => `/projetos/${slug}`)];
-export const indexableRoutes = ['/', ...caseSeo.filter((item) => item.indexable).map((item) => `/projetos/${item.slug}`)];
+const legacyRoutes = contentRoutes;
+const localizedRoutes = supportedLanguages.flatMap((language) =>
+  contentRoutes.map((contentPath) => getLocalizedPath(language, contentPath)),
+);
+
+export const publicRoutes = [...legacyRoutes, ...localizedRoutes];
+export const indexableRoutes = supportedLanguages.flatMap((language) =>
+  ['/', ...caseSeo.filter((item) => item.indexable).map((item) => `/projetos/${item.slug}`)].map((contentPath) =>
+    getLocalizedPath(language, contentPath),
+  ),
+);
+
+const homeSeoByLanguage: Record<Language, { title: string; description: string; jobTitle: string; profileName: string }> = {
+  pt: {
+    title: 'Fabio Lopes | UX & Product Designer',
+    description:
+      'Portfólio de Fabio Lopes, UX/Product Designer especializado em produtos digitais, sites, sistemas e aplicativos. Conheça meus projetos e minha atuação em UX.',
+    jobTitle: 'UX/Product Designer',
+    profileName: 'Portfólio de Fabio Lopes',
+  },
+  en: {
+    title: 'Fabio Lopes | UX & Product Designer',
+    description:
+      'Fabio Lopes portfolio, UX/Product Designer specialized in digital products, websites, systems and apps. Explore projects and UX consulting work.',
+    jobTitle: 'UX/Product Designer',
+    profileName: 'Fabio Lopes portfolio',
+  },
+  es: {
+    title: 'Fabio Lopes | UX & Product Designer',
+    description:
+      'Portafolio de Fabio Lopes, UX/Product Designer especializado en productos digitales, sitios, sistemas y aplicaciones. Conoce proyectos y consultoría en UX.',
+    jobTitle: 'UX/Product Designer',
+    profileName: 'Portafolio de Fabio Lopes',
+  },
+};
 
 function absoluteUrl(path: string) {
   if (path.startsWith('http')) return path;
   return `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`;
+}
+
+function localizedAbsoluteUrl(language: Language, contentPath: string) {
+  return absoluteUrl(getLocalizedPath(language, contentPath));
+}
+
+function alternateLinks(contentPath: string) {
+  return [
+    ...supportedLanguages.map((language) => ({
+      hrefLang: htmlLangByLanguage[language],
+      href: localizedAbsoluteUrl(language, contentPath),
+    })),
+    {
+      hrefLang: 'x-default',
+      href: absoluteUrl('/'),
+    },
+  ];
 }
 
 function breadcrumbSchema(items: SeoConfig['breadcrumbs']) {
@@ -128,17 +192,18 @@ function breadcrumbSchema(items: SeoConfig['breadcrumbs']) {
   };
 }
 
-function homeStructuredData() {
+function homeStructuredData(language: Language) {
+  const homeSeo = homeSeoByLanguage[language];
+
   return [
     {
       '@context': 'https://schema.org',
       '@type': 'Person',
       name: 'Fabio Lopes',
-      url: siteUrl,
+      url: localizedAbsoluteUrl(language, '/'),
       image: absoluteUrl(defaultSocialImage),
-      jobTitle: 'UX/Product Designer',
-      description:
-        'UX/Product Designer especializado em produtos digitais, sites, sistemas, aplicativos e consultoria em UX.',
+      jobTitle: homeSeo.jobTitle,
+      description: homeSeo.description,
       sameAs: socialLinks,
       knowsAbout: [
         'UX Design',
@@ -154,97 +219,112 @@ function homeStructuredData() {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Fabio Lopes | UX & Product Designer',
-      url: siteUrl,
-      inLanguage: 'pt-BR',
+      url: localizedAbsoluteUrl(language, '/'),
+      inLanguage: htmlLangByLanguage[language],
     },
     {
       '@context': 'https://schema.org',
       '@type': 'ProfilePage',
-      name: 'Portfólio de Fabio Lopes',
-      url: siteUrl,
-      inLanguage: 'pt-BR',
+      name: homeSeo.profileName,
+      url: localizedAbsoluteUrl(language, '/'),
+      inLanguage: htmlLangByLanguage[language],
       mainEntity: {
         '@type': 'Person',
         name: 'Fabio Lopes',
-        url: siteUrl,
+        url: localizedAbsoluteUrl(language, '/'),
       },
     },
   ];
 }
 
-function caseStructuredData(item: CaseSeo) {
+function caseStructuredData(item: CaseSeo, language: Language, contentPath: string, title: string, description: string) {
   return [
     {
       '@context': 'https://schema.org',
       '@type': 'CreativeWork',
       name: item.name,
-      headline: item.title,
-      description: item.description,
-      url: absoluteUrl(`/projetos/${item.slug}`),
+      headline: title,
+      description,
+      url: localizedAbsoluteUrl(language, contentPath),
       image: absoluteUrl(item.image),
       creator: {
         '@type': 'Person',
         name: 'Fabio Lopes',
         url: siteUrl,
       },
-      inLanguage: 'pt-BR',
+      inLanguage: htmlLangByLanguage[language],
     },
   ];
 }
 
 export function getSeoConfig(pathname: string): SeoConfig {
-  const cleanPath = pathname.replace(/\/$/, '') || '/';
+  const route = getRouteInfo(pathname);
+  const cleanPath = route.contentPath;
+  const language = route.language ?? 'pt';
 
   if (cleanPath === '/') {
-    const breadcrumbs = [{ name: 'Home', item: '/' }];
+    const homeSeo = homeSeoByLanguage[language];
+    const breadcrumbs = [{ name: 'Home', item: getLocalizedPath(language, '/') }];
 
     return {
-      path: '/',
-      title: 'Fabio Lopes | UX & Product Designer',
-      description:
-        'Portfólio de Fabio Lopes, UX/Product Designer especializado em produtos digitais, sites, sistemas e aplicativos. Conheça meus projetos e minha atuação em UX.',
-      canonical: siteUrl,
+      path: getLocalizedPath(language, '/'),
+      language,
+      htmlLang: htmlLangByLanguage[language],
+      title: homeSeo.title,
+      description: homeSeo.description,
+      canonical: localizedAbsoluteUrl(language, '/'),
+      alternates: alternateLinks('/'),
       ogType: 'profile',
       ogImage: absoluteUrl(defaultSocialImage),
       twitterCard: 'summary_large_image',
       breadcrumbs,
-      structuredData: [...homeStructuredData(), breadcrumbSchema(breadcrumbs)].filter(Boolean) as StructuredData[],
+      structuredData: [...homeStructuredData(language), breadcrumbSchema(breadcrumbs)].filter(Boolean) as StructuredData[],
     };
   }
 
   const caseItem = caseSeo.find((item) => cleanPath === `/projetos/${item.slug}`);
 
   if (caseItem) {
+    const projectIndex = projectSlugs.indexOf(caseItem.slug);
+    const translatedProject = dictionary[language].projects[projectIndex];
+    const title = language === 'pt' ? caseItem.title : `${translatedProject.title} | UX/Product Design case`;
+    const description = language === 'pt' ? caseItem.description : translatedProject.description;
     const breadcrumbs = [
-      { name: 'Home', item: '/' },
-      { name: 'Projetos', item: '/#projetos' },
-      { name: caseItem.name, item: `/projetos/${caseItem.slug}` },
+      { name: 'Home', item: getLocalizedPath(language, '/') },
+      { name: dictionary[language].projectsIntro.eyebrow, item: `${getLocalizedPath(language, '/')}#projetos` },
+      { name: translatedProject.title, item: getLocalizedPath(language, `/projetos/${caseItem.slug}`) },
     ];
 
     return {
-      path: `/projetos/${caseItem.slug}`,
-      title: caseItem.title,
-      description: caseItem.description,
-      canonical: absoluteUrl(`/projetos/${caseItem.slug}`),
+      path: getLocalizedPath(language, `/projetos/${caseItem.slug}`),
+      language,
+      htmlLang: htmlLangByLanguage[language],
+      title,
+      description,
+      canonical: localizedAbsoluteUrl(language, `/projetos/${caseItem.slug}`),
+      alternates: alternateLinks(`/projetos/${caseItem.slug}`),
       robots: caseItem.indexable ? 'index, follow' : 'noindex, follow',
-      ogTitle: caseItem.ogTitle,
-      ogDescription: caseItem.ogDescription,
+      ogTitle: language === 'pt' ? caseItem.ogTitle : translatedProject.title,
+      ogDescription: language === 'pt' ? caseItem.ogDescription : translatedProject.description,
       ogType: 'article',
       ogImage: absoluteUrl(caseItem.image),
       twitterCard: 'summary_large_image',
       breadcrumbs,
       structuredData: caseItem.indexable
-        ? ([...caseStructuredData(caseItem), breadcrumbSchema(breadcrumbs)].filter(Boolean) as StructuredData[])
+        ? ([...caseStructuredData(caseItem, language, `/projetos/${caseItem.slug}`, title, description), breadcrumbSchema(breadcrumbs)].filter(Boolean) as StructuredData[])
         : [],
     };
   }
 
   return {
-    path: cleanPath,
+    path: route.pathname,
+    language,
+    htmlLang: htmlLangByLanguage[language],
     title: 'Página não encontrada | Fabio Lopes',
     description:
       'A página solicitada não foi encontrada. Volte para o portfólio de Fabio Lopes ou acesse os projetos de UX/Product Design.',
     canonical: absoluteUrl(cleanPath),
+    alternates: isKnownContentPath(cleanPath) ? alternateLinks(cleanPath) : [],
     robots: 'noindex, follow',
     ogType: 'website',
     ogImage: absoluteUrl(defaultSocialImage),
@@ -258,8 +338,13 @@ export function getSitemapUrls() {
 }
 
 export function isPublicRoute(pathname: string) {
-  const cleanPath = pathname.replace(/\/$/, '') || '/';
-  return publicRoutes.includes(cleanPath);
+  const route = getRouteInfo(pathname);
+
+  if (route.hasExplicitLanguage && !route.language) {
+    return false;
+  }
+
+  return isKnownContentPath(route.contentPath);
 }
 
 export function isCaseIndexable(slug: string) {

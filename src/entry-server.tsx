@@ -37,7 +37,11 @@ export function renderHead(pathname: string) {
     `<meta name="robots" content="${escapeHtml(robots)}" />`,
     `<meta name="googlebot" content="${escapeHtml(robots)}" />`,
     `<link rel="canonical" href="${escapeHtml(config.canonical)}" />`,
-    '<meta property="og:locale" content="pt_BR" />',
+    ...config.alternates.map(
+      (alternate) =>
+        `<link rel="alternate" hreflang="${escapeHtml(alternate.hrefLang)}" href="${escapeHtml(alternate.href)}" />`,
+    ),
+    `<meta property="og:locale" content="${escapeHtml(config.language === 'pt' ? 'pt_BR' : config.language === 'en' ? 'en_US' : 'es_ES')}" />`,
     '<meta property="og:site_name" content="Fabio Lopes" />',
     `<meta property="og:type" content="${escapeHtml(config.ogType ?? 'website')}" />`,
     `<meta property="og:title" content="${escapeHtml(ogTitle)}" />`,
@@ -54,6 +58,10 @@ export function renderHead(pathname: string) {
   ]
     .filter(Boolean)
     .join('\n    ');
+}
+
+export function renderHtmlLang(pathname: string) {
+  return getSeoConfig(pathname).htmlLang;
 }
 
 export { getSitemapUrls, publicRoutes };

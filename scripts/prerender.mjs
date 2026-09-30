@@ -12,7 +12,7 @@ const serverEntry = await findExistingFile(serverEntryCandidates);
 const serverEntryUrl = pathToFileURL(serverEntry);
 serverEntryUrl.searchParams.set('v', String(Date.now()));
 
-const { render, renderHead, publicRoutes, getSitemapUrls } = await import(serverEntryUrl.href);
+const { render, renderHead, renderHtmlLang, publicRoutes, getSitemapUrls } = await import(serverEntryUrl.href);
 const routes = [...publicRoutes, '/404'];
 
 async function findExistingFile(candidates) {
@@ -52,6 +52,7 @@ function cleanUrlOutputPath(route) {
 
 function buildHtml(route) {
   return template
+    .replace('<html lang="pt-BR">', `<html lang="${renderHtmlLang(route)}">`)
     .replace('<!--app-head-->', renderHead(route))
     .replace('<div id="root"></div>', `<div id="root">${render(route)}</div>`);
 }

@@ -1,4 +1,5 @@
 import { useI18n } from '../i18n';
+import { getLocalizedHref } from '../languageRouting';
 import { openContactForm } from '../utils/contact';
 import { getCvDownload } from '../utils/cv';
 import { Button } from './Button';
@@ -83,7 +84,7 @@ export function Footer() {
           <h2 className="max-w-md text-3xl font-extrabold leading-tight md:text-4xl">{t.footer.headline}</h2>
           <p className="mt-5 max-w-xl text-sm font-semibold leading-7 text-white/66">{t.footer.text}</p>
           <div className="mt-8">
-            <Logo light />
+            <Logo href={getLocalizedHref(language, '/')} light />
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import { ChevronDown, Menu, Moon, Sun, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { languages, Language, projectSlugs } from '../data/content';
 import { useI18n } from '../i18n';
+import { getLocalizedHref } from '../languageRouting';
 import { openContactForm } from '../utils/contact';
 import { Button } from './Button';
 import { Logo } from './Logo';
@@ -150,19 +151,27 @@ function LanguageDropdown({ controlClasses, className = '' }: { controlClasses: 
 export function Header() {
   const [isDark, setIsDark] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useI18n();
+  const { language, t } = useI18n();
   const ThemeIcon = isDark ? Moon : Sun;
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDark(true);
+    try {
+      const savedTheme = window.localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        setIsDark(true);
+      }
+    } catch {
+      // Theme storage is optional.
     }
   }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark);
-    window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    try {
+      window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch {
+      // Keep the selected theme in the current session if storage is unavailable.
+    }
   }, [isDark]);
 
   const controlClasses =
@@ -171,14 +180,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ocean/10 bg-white/90 backdrop-blur-xl dark:border-[color:rgba(20,51,79,0.6)] dark:bg-[color:rgba(11,17,32,0.95)]">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Logo />
+        <Logo href={getLocalizedHref(language, '/')} />
 
         <nav className="hidden items-center gap-8 text-sm font-semibold text-ink/70 md:flex dark:text-[var(--cinza-claro)]">
           {t.navItems.map((item) =>
             isProjectsItem(item) ? (
               <div key={item} className="group relative py-5">
                 <a
-                  href="/#projetos"
+                  href={getLocalizedHref(language, '/', '#projetos')}
                   className="inline-flex items-center gap-1 transition-colors duration-300 hover:text-teal dark:hover:text-[var(--tradewind-border)]"
                 >
                   {item}
@@ -188,7 +197,7 @@ export function Header() {
                   {t.projects.map((project, index) => (
                     <a
                       key={project.title}
-                      href={`/projetos/${projectSlugs[index]}`}
+                      href={getLocalizedHref(language, `/projetos/${projectSlugs[index]}`)}
                       className="block rounded px-3 py-3 font-display text-sm font-bold text-[var(--blue-padrao)] transition hover:bg-[var(--blue-claro)] dark:text-white dark:hover:bg-white/10"
                     >
                       {project.title}
@@ -199,7 +208,7 @@ export function Header() {
             ) : (
               <a
                 key={item}
-                href={`/#${sectionId(item)}`}
+                href={getLocalizedHref(language, '/', `#${sectionId(item)}`)}
                 className="transition-colors duration-300 hover:text-teal dark:hover:text-[var(--tradewind-border)]"
               >
                 {item}
@@ -236,7 +245,7 @@ export function Header() {
               isProjectsItem(item) ? (
                 <div key={item} className="grid gap-2">
                   <a
-                    href="/#projetos"
+                    href={getLocalizedHref(language, '/', '#projetos')}
                     onClick={() => setIsOpen(false)}
                     className="transition-colors duration-300 hover:text-teal dark:hover:text-[var(--tradewind-border)]"
                   >
@@ -246,7 +255,7 @@ export function Header() {
                     {t.projects.map((project, index) => (
                       <a
                         key={project.title}
-                        href={`/projetos/${projectSlugs[index]}`}
+                        href={getLocalizedHref(language, `/projetos/${projectSlugs[index]}`)}
                         onClick={() => setIsOpen(false)}
                         className="py-1 font-display text-xs font-semibold text-[var(--cinza-escuro)] transition-colors duration-300 hover:text-teal dark:text-white dark:hover:text-[var(--tradewind-border)]"
                       >
@@ -258,7 +267,7 @@ export function Header() {
               ) : (
                 <a
                   key={item}
-                  href={`/#${sectionId(item)}`}
+                  href={getLocalizedHref(language, '/', `#${sectionId(item)}`)}
                   onClick={() => setIsOpen(false)}
                   className="transition-colors duration-300 hover:text-teal dark:hover:text-[var(--tradewind-border)]"
                 >

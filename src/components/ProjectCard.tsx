@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { projectSlugs } from '../data/content';
 import { useI18n } from '../i18n';
+import { getLocalizedHref } from '../languageRouting';
 import { Button } from './Button';
 
 type ProjectCardProps = {
@@ -14,8 +15,8 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ index, project }: ProjectCardProps) {
-  const { t } = useI18n();
-  const href = `/projetos/${projectSlugs[index]}`;
+  const { language, t } = useI18n();
+  const href = getLocalizedHref(language, `/projetos/${projectSlugs[index]}`);
 
   return (
     <article className="group">

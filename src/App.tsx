@@ -5,10 +5,12 @@ import { Footer } from './components/Footer';
 import { FloatingContact } from './components/FloatingContact';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { LanguagePreferenceModal } from './components/LanguagePreferenceModal';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ServicesSection } from './components/ServicesSection';
 import { SEO } from './components/SEO';
 import { I18nProvider } from './i18n';
+import { getRouteInfo } from './languageRouting';
 import { ProjectCasePage } from './pages/ProjectCasePage';
 import { getSeoConfig, isPublicRoute } from './seo';
 
@@ -72,7 +74,8 @@ function NotFoundPage() {
 
 export default function App({ initialPath = '/' }: AppProps) {
   const [path, setPath] = useState(() => getCurrentPath(initialPath));
-  const projectSlug = path.match(/^\/projetos\/([^/]+)\/?$/)?.[1];
+  const routeInfo = getRouteInfo(path);
+  const projectSlug = routeInfo.contentPath.match(/^\/projetos\/([^/]+)\/?$/)?.[1];
   const seoConfig = getSeoConfig(path);
   const isKnownRoute = isPublicRoute(path);
 
@@ -84,7 +87,7 @@ export default function App({ initialPath = '/' }: AppProps) {
   }, []);
 
   return (
-    <I18nProvider>
+    <I18nProvider initialPath={initialPath}>
       <div className="min-h-screen bg-paper text-ink antialiased dark:bg-deep dark:text-paper">
         <SEO config={seoConfig} />
         <Header />
@@ -93,6 +96,7 @@ export default function App({ initialPath = '/' }: AppProps) {
         {!isKnownRoute ? <NotFoundPage /> : null}
         <Footer />
         <FloatingContact />
+        <LanguagePreferenceModal />
       </div>
     </I18nProvider>
   );
